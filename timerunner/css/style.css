@@ -1,4 +1,4 @@
-html, body{padding: 0; margin: 0; overflow: hidden;}
+html, body{padding: 0; margin: 0;}
 
 html, body, main{height: 100%; width: 100%;}
 
@@ -39,6 +39,9 @@ main{
     background-image: url('../images/skies.png');
     background-repeat: no-repeat;
     background-size: cover;
+
+    flex: 1 1 auto;
+    min-height: 0;
 }
 
 
@@ -58,16 +61,30 @@ a{
 
 a:hover{color: #00aeff; font-weight: bold;}
 
-.logo{height: 25rem; margin-top: 10rem; margin-left: 5rem;}
+.logo{
+    height: 45vh;
+    width: auto;
+    max-width: 20rem;
+    margin-top: 5vh; 
+    margin-left: 7vw;
+}
 
 footer img{height: 3rem; width: 4rem;}
 
 .action-buttons{height: fit-content; margin-top: 5rem; margin-left: 8rem;}
 
-.action-buttons div{height: 9rem; width: 9rem; background-color: #567C8D;}
+.action-buttons div{height: 21vh; width: 21vh; background-color: #567C8D;}
 
-.press-button{height: 8.5rem; width: 8.5rem; font-size: 28px;}
+.press-button{height: 20vh; width: 20vh; font-size: 28px;}
 
 .press-button:hover{background-color: #FAD5DE; color: #fff; -webkit-text-stroke: 1px #000;}
 
 
+
+
+
+@media(max-width: 1440px) and (max-height: 1080px){
+    .logo{height: 20rem; width: 20rem;}
+    .action-buttons div{height: 7rem; width: 7rem;}
+    .press-button{height: 6.5rem; width: 6.5rem; font-size: 18px;}
+}
