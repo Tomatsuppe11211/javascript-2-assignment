@@ -1,0 +1,73 @@
+html, body{padding: 0; margin: 0; overflow: hidden;}
+
+html, body, main{height: 100%; width: 100%;}
+
+
+body, main, footer, nav, .action-buttons, .action-buttons div, .press-button{display: flex;}
+
+body, main{flex-direction: column;}
+
+
+footer, nav, .action-buttons{flex-direction: row;}
+
+footer, .action-buttons div, .press-button{justify-content: center;}
+
+footer, nav, .action-buttons div, .press-button{align-items: center;}
+
+footer, .press-button{background-color: #fff;}
+
+
+nav, .action-buttons{justify-content: space-evenly;}
+
+
+.action-buttons div, .press-button{border-radius: 5rem;} 
+
+
+.logo, .action-buttons{width: 25rem;}
+
+
+
+
+
+
+
+
+
+body{font-family: monospace;}
+
+main{
+    background-image: url('../images/skies.png');
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+
+footer{height: 5rem; position: relative; bottom: 0;}
+
+
+nav{width: 60rem;}
+
+
+a{
+    text-decoration: none; 
+    color: #000; 
+    font-size: 20px;
+    width: 12rem;
+    text-align: center;
+}
+
+a:hover{color: #00aeff; font-weight: bold;}
+
+.logo{height: 25rem; margin-top: 10rem; margin-left: 5rem;}
+
+footer img{height: 3rem; width: 4rem;}
+
+.action-buttons{height: fit-content; margin-top: 5rem; margin-left: 8rem;}
+
+.action-buttons div{height: 9rem; width: 9rem; background-color: #567C8D;}
+
+.press-button{height: 8.5rem; width: 8.5rem; font-size: 28px;}
+
+.press-button:hover{background-color: #FAD5DE; color: #fff; -webkit-text-stroke: 1px #000;}
+
+
