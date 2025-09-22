@@ -1,0 +1,212 @@
+html, body{padding: 0; margin: 0;}
+
+html, body, main{height: 100%; width: 100%;}
+
+
+body, main, footer, nav, .action-buttons, .action-buttons div, .press-button{display: flex;}
+
+body, main{flex-direction: column;}
+
+
+footer, nav, .action-buttons{flex-direction: row;}
+
+footer, .action-buttons div, .press-button{justify-content: center;}
+
+footer, nav, .action-buttons div, .press-button{align-items: center;}
+
+footer, .press-button{background-color: #fff;}
+
+
+nav, .action-buttons{justify-content: space-evenly;}
+
+
+.action-buttons div, .press-button{border-radius: 5rem;} 
+
+
+.logo, .action-buttons{width: 25rem;}
+
+
+a:hover, .press-button:hover ~ .press-button a{font-weight: bold;}
+
+
+
+
+
+
+body{font-family: monospace;}
+
+main{
+    background-image: url('../images/skies.png');
+    background-repeat: no-repeat;
+    background-size: cover;
+    flex: 1 1 auto;
+    min-height: 0;
+}
+
+
+footer{height: 5rem;}
+
+
+nav{width: 60rem;}
+
+
+a{
+    text-decoration: none; 
+    color: #000; 
+    font-size: 20px;
+    width: 12rem;
+    text-align: center;
+}
+
+a:hover{color: #00aeff;}
+
+.logo{
+    height: 20rem;
+    width: 20rem;
+    margin-top: 2rem; 
+    margin-left: 5rem;
+}
+
+footer img{height: 3rem; width: 4rem;}
+
+.action-buttons{height: fit-content; margin-top: 5rem; margin-left: 8rem;}
+
+.action-buttons div{height: 8.5rem; width: 8.5rem; background-color: #567C8D;}
+
+.press-button{height: 8rem; width: 8rem; font-size: 24px;}
+
+.press-button:hover{background-color: #FAD5DE; color: #A6F2FF; -webkit-text-stroke: 0.5px #000;}
+
+.fade-text{
+    position: absolute;
+    right: 10rem;
+    top: 1rem;
+    font-size: 22px;
+    color: #fff;
+    -webkit-text-stroke: 1px #000;
+}
+
+.fade-text h1{margin-top: 3rem;}
+
+.second{margin-left: 15rem;}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/*login css*/
+.forms{justify-content: center; align-items: center;}
+
+form{
+    border: solid black;
+    border-radius: 1.5rem;
+    width: 35rem;
+    height: auto;
+    background-color: #A6F2FF;
+    box-shadow: 4px 6px 4px #000;
+    display: flex;
+    flex-direction: column;
+    padding: 1.5rem;
+    align-items: center;
+}
+
+form h1{text-align: center; font-size: 40px;}
+
+form input{
+    height: 2rem; 
+    width: 30rem; 
+    border-radius: 1rem;
+    padding-left: 1rem;
+    font-size: 16px;
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+    box-shadow: inset 2px 3px 3px #000;
+}
+
+form a{text-decoration: underline; color:#00aeff;}
+
+label{font-size: 20px; margin-top: 1rem; width: 30rem; text-align: left;}
+
+#loginButton{
+    font-size: 18px;
+    padding: 0.5rem;
+    margin-top: 1rem;
+    border-radius: 1.5rem;
+    width: 8rem;
+    box-shadow: 4px 5px 4px #000;
+    background-color: #fff;
+}
+
+#loginButton:hover{font-weight: bold; background-color: #FAD5DE;}
+
+p{font-size: 18px; margin-top: 0.2rem;}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/*Making an amimation for the fade text on index.html*/
+@keyframes textFade{0% {opacity: 0;} 100%{opacity: 100;}}
+
+#first{animation-name: textFade; animation-duration: 3s;}
+#second{animation-name: textFade; animation-duration: 5s;}
+#third{animation-name: textFade; animation-duration: 7s;}
+#fourth{animation-name: textFade; animation-duration: 9s;}
+#fifth{animation-name: textFade; animation-duration: 11s;}
+
+
+
