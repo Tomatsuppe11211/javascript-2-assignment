@@ -3,18 +3,19 @@ html, body{padding: 0; margin: 0;}
 html, body, main{height: 100%; width: 100%;}
 
 
-body, main, footer, nav, .action-buttons, .action-buttons div, .press-button{display: flex;}
+body, main, footer, nav, .action-buttons, .action-buttons div, .press-button,
+form{display: flex;}
 
-body, main{flex-direction: column;}
+body, main, form{flex-direction: column;}
 
 
 footer, nav, .action-buttons{flex-direction: row;}
 
-footer, .action-buttons div, .press-button{justify-content: center;}
+footer, .action-buttons div, .press-button, .forms{justify-content: center;}
 
-footer, nav, .action-buttons div, .press-button{align-items: center;}
+footer, nav, .action-buttons div, .press-button, form, .forms{align-items: center;}
 
-footer, .press-button{background-color: #fff;}
+footer, .press-button, #loginButton{background-color: #fff;}
 
 
 nav, .action-buttons{justify-content: space-evenly;}
@@ -26,7 +27,26 @@ nav, .action-buttons{justify-content: space-evenly;}
 .logo, .action-buttons{width: 25rem;}
 
 
-a:hover, .press-button:hover ~ .press-button a{font-weight: bold;}
+a, label{font-size: 20px;}
+
+a:hover, .press-button:hover ~ .press-button a, #loginButton:hover{font-weight: bold;}
+
+
+form, #loginButton{border-radius: 1.5rem; box-shadow: 4px 6px 4px #000;}
+
+form h1, a{text-align: center;}
+
+form input, label{width: 30rem;}
+
+form input, label, #loginButton{margin-top: 1rem;}
+
+
+p, #loginButton{font-size: 18px;}
+
+
+.press-button, #loginButton{width: 8rem;}
+
+.press-button:hover, #loginButton:hover{background-color: #FAD5DE;}
 
 
 
@@ -52,10 +72,8 @@ nav{width: 60rem;}
 
 a{
     text-decoration: none; 
-    color: #000; 
-    font-size: 20px;
+    color: #000;
     width: 12rem;
-    text-align: center;
 }
 
 a:hover{color: #00aeff;}
@@ -73,9 +91,9 @@ footer img{height: 3rem; width: 4rem;}
 
 .action-buttons div{height: 8.5rem; width: 8.5rem; background-color: #567C8D;}
 
-.press-button{height: 8rem; width: 8rem; font-size: 24px;}
+.press-button{height: 8rem; font-size: 24px;}
 
-.press-button:hover{background-color: #FAD5DE; color: #A6F2FF; -webkit-text-stroke: 0.5px #000;}
+.press-button:hover{color: #A6F2FF; -webkit-text-stroke: 0.5px #000;}
 
 .fade-text{
     position: absolute;
@@ -93,83 +111,33 @@ footer img{height: 3rem; width: 4rem;}
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-/*login css*/
-.forms{justify-content: center; align-items: center;}
-
 form{
-    border: solid black;
-    border-radius: 1.5rem;
+    border: solid #000;
     width: 35rem;
     height: auto;
     background-color: #A6F2FF;
-    box-shadow: 4px 6px 4px #000;
-    display: flex;
-    flex-direction: column;
     padding: 1.5rem;
-    align-items: center;
 }
 
-form h1{text-align: center; font-size: 40px;}
+form h1{font-size: 40px;}
 
 form input{
-    height: 2rem; 
-    width: 30rem; 
+    height: 2rem;
     border-radius: 1rem;
     padding-left: 1rem;
     font-size: 16px;
-    margin-top: 1rem;
     margin-bottom: 1rem;
     box-shadow: inset 2px 3px 3px #000;
 }
 
 form a{text-decoration: underline; color:#00aeff;}
 
-label{font-size: 20px; margin-top: 1rem; width: 30rem; text-align: left;}
+label{text-align: left;}
 
-#loginButton{
-    font-size: 18px;
-    padding: 0.5rem;
-    margin-top: 1rem;
-    border-radius: 1.5rem;
-    width: 8rem;
-    box-shadow: 4px 5px 4px #000;
-    background-color: #fff;
-}
+#loginButton{padding: 0.5rem;}
 
-#loginButton:hover{font-weight: bold; background-color: #FAD5DE;}
+p{margin-top: 0.2rem;}
 
-p{font-size: 18px; margin-top: 0.2rem;}
 
 
 
