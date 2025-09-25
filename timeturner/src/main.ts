@@ -2,11 +2,13 @@ import '../css/style.css'
 
 
 
-
-import'../src/account/login'
-
-
-
+if(window.location.pathname.includes('login.html')){
+  import ('../src/account/login.ts').then((module) => {
+    console.log('login.ts loaded...')
+  }).catch((error) => {
+    console.error('Could not load the login.ts', error)
+  })
+}
 
 
 
