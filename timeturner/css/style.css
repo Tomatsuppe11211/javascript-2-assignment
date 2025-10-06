@@ -1,6 +1,6 @@
 html, body{padding: 0; margin: 0;}
 
-html, body, main{height: 100%; width: 100%;}
+html, body, main{height: auto; width: 100%;}
 
 
 body, main, footer, nav, .action-buttons, .action-buttons div, .press-button,
@@ -178,3 +178,89 @@ p{margin-top: 0.2rem;}
 
 
 
+
+
+
+
+
+
+
+
+
+/*Phone start*/
+@media(min-width: 275px){
+    .logo{height: 10rem; width: 10rem; }
+
+    .action-buttons{width: 60vw;}
+    .action-buttons div{ height: 3.7rem; width: 3.7rem;}
+    .press-button{height: 3.5rem; width: 3.5rem; font-size: 12px;}
+
+    footer a{font-size: 8px; margin-top: 1rem;}
+    footer img{height: 1.5rem; width: 2rem;}
+}
+
+
+
+
+
+
+
+
+
+
+/*Phone end*/
+@media(min-width: 360px){
+    .action-buttons{width: 60vw;}
+
+    .action-buttons div{height: 4rem; width: 4rem;}
+
+    .press-button{height: 3.8rem; width: 3.8rem;}
+
+    footer a{font-size: 12px;}
+    footer img{height: 3rem; width: 4rem;}
+}
+
+
+
+
+
+
+/*from phone and tablet*/
+@media(max-width: 768px){
+
+    .action-buttons, .logo{margin-left: 0; }
+
+    main{align-items: center;}
+
+    .action-buttons{margin-bottom: 5rem; margin-top: 2rem;}
+
+    .logo{margin-top: 1rem;}
+
+    .fade-text{display: none;}
+
+    footer{height: }
+    footer nav{flex-direction: column;}
+    footer a{width: fit-content;}
+}
+
+
+
+
+
+
+
+
+
+/*Tablet standing*/
+@media(min-width: 769px){
+    
+
+    .logo{height: 15rem; width: 15rem;}
+    
+    .fade-text{font-size: 15px; right: 2rem;}
+    .fade-text h1{margin-top: 1.5rem;}
+    .second{margin-left: 7rem;}
+
+    .action-buttons{width: 20rem; border: solid black;}
+    .action-buttons div{height: 7rem; width: 7rem;}
+}
