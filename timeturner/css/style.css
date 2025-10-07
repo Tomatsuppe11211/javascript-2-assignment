@@ -64,7 +64,7 @@ main{
 }
 
 
-footer{height: 5rem;}
+footer{height: auto;}
 
 
 nav{width: 60rem;}
@@ -102,6 +102,7 @@ footer img{height: 3rem; width: 4rem;}
     font-size: 22px;
     color: #fff;
     -webkit-text-stroke: 1px #000;
+    display: none;
 }
 
 .fade-text h1{margin-top: 3rem;}
@@ -199,15 +200,6 @@ p{margin-top: 0.2rem;}
     footer img{height: 1.5rem; width: 2rem;}
 }
 
-
-
-
-
-
-
-
-
-
 /*Phone end*/
 @media(min-width: 360px){
     .action-buttons div, footer img{width: 4rem;}
@@ -220,10 +212,6 @@ p{margin-top: 0.2rem;}
 }
 
 
-
-
-
-
 /*from phone and tablet*/
 @media(max-width: 767px){
     .action-buttons, .logo{margin-left: 0; }
@@ -234,9 +222,6 @@ p{margin-top: 0.2rem;}
 
     .logo{margin-top: 1rem;}
 
-    .fade-text{display: none;}
-
-    footer{height: auto;}
     footer nav{flex-direction: column;}
     footer a{width: fit-content;}
 }
@@ -249,66 +234,106 @@ p{margin-top: 0.2rem;}
 
 
 
-/*Tablet start standing*/
-@media(min-width: 768px) and (max-height: 1024px){
-    body{height: 100vh;}
+
+
+/*Tablet vertical*/
+@media(min-width: 768px){
+    .logo, .second, .action-buttons{margin-left: 0;}
+
+    .fade-text h1, footer a{margin-top: 1.5rem;}
+    
+
     main{align-items: center;}
 
-    .logo{height: 15rem; width: 15rem; margin-left: 0;}
+    .logo{height: 15rem; width: 15rem;}
     
-    .fade-text{font-size: 15px; right: 0; position: relative; text-align: center;}
-    .fade-text h1{margin-top: 1.5rem;}
-    .second{margin-left: 0;}
-
-    .action-buttons{width: 20rem; margin-left: 0; margin-bottom: 2rem;}
+    .fade-text{
+        font-size: 15px; 
+        right: 0; 
+        position: relative; 
+        text-align: center; 
+        display: block;
+    }
+    
+    .action-buttons{width: 60vw; margin-bottom: 2rem;}
     .action-buttons div{height: 7rem; width: 7rem;}
     .press-button{height: 6.7rem; width: 6.7rem; font-size: 20px;}
 
     footer nav{flex-direction: column;}
-    footer a{font-size: 18px; margin-top: 0;}
+    footer a{font-size: 18px;}
     footer img{height: 5rem; width: 6.5rem;}
 }
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-/*tablet start laying*/
-@media(min-width: 1024px) and (max-height: 768px){
+/*tablet horisontal*/
+@media(min-width: 1024px){
     body{height: 100vh;}
     main{align-items: start;}
     .logo{margin-left: 10rem; margin-top: 5rem;}
 
-    .fade-text{position: absolute; right: 5rem; top: 5rem; font-size: 18px;}
+    .fade-text{
+        position: absolute; 
+        right: 5rem; 
+        top: 5rem; 
+        font-size: 18px;
+        display: block;
+        text-align: start;
+    }
     .fade-text h1{margin-top: 2.5rem;}
-    .second{margin-left: 10rem;}
+    .second{margin-left: 7rem;}
 
-    .action-buttons{margin-left: 7rem; margin-top: 5rem;}
+    .action-buttons{margin-left: 7rem; margin-top: 5rem; width: 20rem;}
 
-    footer{height: 5rem;}
     footer nav{flex-direction: row; align-items: center; height: auto;}
     footer img{height: 3rem; width: 4rem;}
-    footer a{width: fit-content;}
+    footer a{width: fit-content; font-size: 20px;}
+}
+
+
+
+/*from horisontal tablet to smallest desktop*/
+@media(min-width: 1200px){.action-buttons{margin-left: 15vw;}}
+
+
+
+
+
+
+/*366px width desktop 1*/
+@media(min-width: 1366px){
+    .press-button, footer a{font-size: 25px;}
+    
+    .logo{height: 20rem; width: 22rem;}
+
+    .fade-text{font-size: 22px;}
+
+    .action-buttons{height: auto; width: 30rem; margin-left: 10vw;}
+    .action-buttons div{height: 9rem; width: 9rem;}
+    .press-button{height: 8.5rem; width: 8.5rem;}
+}
+
+
+/*1440px width desktop*/
+@media(min-width: 1440px){
+    .logo{height: 25rem; width: 26rem;}
+
+    .fade-text{font-size: 25px;}
+    .fade-text h1{margin-top: 3.5rem;}
+
+    .action-buttons{margin-left: 22vh; width: 35rem;}
+    .action-buttons div{height: 10rem; width: 10rem;}
+    .press-button{font-size: 28px; height: 9.5rem; width: 9.5rem;}
+}
+
+
+/*Small change in wider screens from 1700px*/
+@media(min-width: 1700px){
+    .fade-text{right: 10vw;}
+    .second{margin-left: 12rem;}
+}
+
+
+
+/*Full HD size*/
+@media(min-width: 1920px){
+    
 }
