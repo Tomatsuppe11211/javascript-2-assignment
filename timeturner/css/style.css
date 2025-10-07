@@ -210,14 +210,13 @@ p{margin-top: 0.2rem;}
 
 /*Phone end*/
 @media(min-width: 360px){
-    .action-buttons{width: 60vw;}
+    .action-buttons div, footer img{width: 4rem;}
 
-    .action-buttons div{height: 4rem; width: 4rem;}
-
+    .action-buttons div{height: 4rem;}
     .press-button{height: 3.8rem; width: 3.8rem;}
 
     footer a{font-size: 12px;}
-    footer img{height: 3rem; width: 4rem;}
+    footer img{height: 3rem; }
 }
 
 
@@ -226,8 +225,7 @@ p{margin-top: 0.2rem;}
 
 
 /*from phone and tablet*/
-@media(max-width: 768px){
-
+@media(max-width: 767px){
     .action-buttons, .logo{margin-left: 0; }
 
     main{align-items: center;}
@@ -238,7 +236,7 @@ p{margin-top: 0.2rem;}
 
     .fade-text{display: none;}
 
-    footer{height: }
+    footer{height: auto;}
     footer nav{flex-direction: column;}
     footer a{width: fit-content;}
 }
@@ -251,16 +249,66 @@ p{margin-top: 0.2rem;}
 
 
 
-/*Tablet standing*/
-@media(min-width: 769px){
-    
+/*Tablet start standing*/
+@media(min-width: 768px) and (max-height: 1024px){
+    body{height: 100vh;}
+    main{align-items: center;}
 
-    .logo{height: 15rem; width: 15rem;}
+    .logo{height: 15rem; width: 15rem; margin-left: 0;}
     
-    .fade-text{font-size: 15px; right: 2rem;}
+    .fade-text{font-size: 15px; right: 0; position: relative; text-align: center;}
     .fade-text h1{margin-top: 1.5rem;}
-    .second{margin-left: 7rem;}
+    .second{margin-left: 0;}
 
-    .action-buttons{width: 20rem; border: solid black;}
+    .action-buttons{width: 20rem; margin-left: 0; margin-bottom: 2rem;}
     .action-buttons div{height: 7rem; width: 7rem;}
+    .press-button{height: 6.7rem; width: 6.7rem; font-size: 20px;}
+
+    footer nav{flex-direction: column;}
+    footer a{font-size: 18px; margin-top: 0;}
+    footer img{height: 5rem; width: 6.5rem;}
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/*tablet start laying*/
+@media(min-width: 1024px) and (max-height: 768px){
+    body{height: 100vh;}
+    main{align-items: start;}
+    .logo{margin-left: 10rem; margin-top: 5rem;}
+
+    .fade-text{position: absolute; right: 5rem; top: 5rem; font-size: 18px;}
+    .fade-text h1{margin-top: 2.5rem;}
+    .second{margin-left: 10rem;}
+
+    .action-buttons{margin-left: 7rem; margin-top: 5rem;}
+
+    footer{height: 5rem;}
+    footer nav{flex-direction: row; align-items: center; height: auto;}
+    footer img{height: 3rem; width: 4rem;}
+    footer a{width: fit-content;}
 }
