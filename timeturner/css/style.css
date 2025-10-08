@@ -1,7 +1,4 @@
-html, body{padding: 0; margin: 0;}
-
-html, body, main{height: auto; width: 100%;}
-
+html, body{padding: 0; margin: 0; min-height: 100vh;}
 
 body, main, footer, nav, .action-buttons, .action-buttons div, .press-button,
 form{display: flex;}
@@ -9,19 +6,21 @@ form{display: flex;}
 body, main, form{flex-direction: column;}
 
 
-footer, nav, .action-buttons{flex-direction: row;}
-
 footer, .action-buttons div, .press-button, .forms{justify-content: center;}
 
 footer, nav, .action-buttons div, .press-button, form, .forms{align-items: center;}
 
 footer, .press-button, #loginButton{background-color: #fff;}
 
+footer nav, footer img{height: 100%;}
+
 
 nav, .action-buttons{justify-content: space-evenly;}
 
+nav, .action-buttons{flex-direction: row;}
 
-.action-buttons div, .press-button{border-radius: 5rem;} 
+
+.action-buttons div, .press-button{border-radius: 100%} 
 
 
 .logo, .action-buttons{width: 25rem;}
@@ -29,7 +28,7 @@ nav, .action-buttons{justify-content: space-evenly;}
 
 a, label{font-size: 20px;}
 
-a:hover, .press-button:hover ~ .press-button a, #loginButton:hover{font-weight: bold;}
+a:hover, .press-button:hover ~ .press-button a, #loginButton:hover, label{font-weight: bold;}
 
 
 form, #loginButton{border-radius: 1.5rem; box-shadow: 4px 6px 4px #000;}
@@ -53,19 +52,20 @@ p, #loginButton{font-size: 18px;}
 
 
 
-body{font-family: monospace;}
+body{
+    font-family: monospace; 
+    min-height: 100vh;
 
-main{
     background-image: url('../images/skies.png');
     background-repeat: no-repeat;
     background-size: cover;
-    flex: 1 1 auto;
-    min-height: 0;
 }
 
+header{flex: 0 0 auto;}
 
-footer{height: auto;}
+main{flex: 1 1 auto;}
 
+footer{flex: 0 0 auto;}
 
 nav{width: 60rem;}
 
@@ -85,13 +85,12 @@ a:hover{color: #00aeff;}
     margin-left: 5rem;
 }
 
-footer img{height: 3rem; width: 4rem;}
+footer nav{width: 100%;}
+
 
 .action-buttons{height: fit-content; margin-top: 5rem; margin-left: 8rem;}
 
-.action-buttons div{height: 8.5rem; width: 8.5rem; background-color: #567C8D;}
-
-.press-button{height: 8rem; font-size: 24px;}
+.press-button{height: 8rem; font-size: 24px; border: solid #567C8D; }
 
 .press-button:hover{color: #A6F2FF; -webkit-text-stroke: 0.5px #000;}
 
@@ -119,8 +118,6 @@ form{
     background-color: #A6F2FF;
     padding: 1.5rem;
 }
-
-form h1{font-size: 40px;}
 
 form input{
     height: 2rem;
@@ -188,152 +185,130 @@ p{margin-top: 0.2rem;}
 
 
 
-/*Phone start*/
-@media(min-width: 275px){
-    .logo{height: 10rem; width: 10rem; }
+/*before phone = hidden*/
+@media(max-width: 319px){body{display: none;}}
 
-    .action-buttons{width: 60vw;}
-    .action-buttons div{ height: 3.7rem; width: 3.7rem;}
-    .press-button{height: 3.5rem; width: 3.5rem; font-size: 12px;}
+/*phone vertical*/
+@media(min-width: 320px){
+    .logo, .action-buttons{margin-left: 0;}
+    .logo, footer a{margin-top: 1rem;}
 
-    footer a{font-size: 8px; margin-top: 1rem;}
-    footer img{height: 1.5rem; width: 2rem;}
-}
+    .press-button, footer a{font-size: 12px;}
 
-/*Phone end*/
-@media(min-width: 360px){
-    .action-buttons div, footer img{width: 4rem;}
-
-    .action-buttons div{height: 4rem;}
-    .press-button{height: 3.8rem; width: 3.8rem;}
-
-    footer a{font-size: 12px;}
-    footer img{height: 3rem; }
-}
+    form, .action-buttons{margin-bottom: 5rem;}
+    form input, form label{width: 12rem;}
+    form input, form label, form p, form a, #loginButton{font-size: 14px;}
 
 
-/*from phone and tablet*/
-@media(max-width: 767px){
-    .action-buttons, .logo{margin-left: 0; }
 
-    main{align-items: center;}
+    main{justify-content: space-evenly; align-items: center;}
 
-    .action-buttons{margin-bottom: 5rem; margin-top: 2rem;}
+    .logo{height: 10rem; width: 10rem;}
 
-    .logo{margin-top: 1rem;}
+    .action-buttons{width: 80vw;  margin-top: 2rem;}
+    .press-button{height: 3.5rem; width: 3.5rem;}
 
     footer nav{flex-direction: column;}
     footer a{width: fit-content;}
+    footer img{height: 3rem; width: 4rem;}
+
+    form{width: 60vw;}
+    form h1{font-size: 25px;}
+    form input{padding: 0 0.5rem;}
+    #loginButton{width: 5rem;}
 }
 
+/*Quick costumization*/
+@media(min-height: 700px){
+    .press-button{font-size: 16px ; height: 5.3rem; width: 5.3rem;}
 
+    footer a{font-size: 14px;}
+}
 
-
-
-
-
-
-
-
+/*Quick costumization*/
+@media(min-height: 800px){.logo{height: 12rem; width: 12rem;}}
 
 /*Tablet vertical*/
 @media(min-width: 768px){
-    .logo, .second, .action-buttons{margin-left: 0;}
-
-    .fade-text h1, footer a{margin-top: 1.5rem;}
-    
-
-    main{align-items: center;}
+    .fade-text h1{margin-top: 1.5rem;}
 
     .logo{height: 15rem; width: 15rem;}
     
     .fade-text{
-        font-size: 15px; 
-        right: 0; 
+        font-size: 14px; 
+        right: 0;
         position: relative; 
         text-align: center; 
         display: block;
     }
-    
-    .action-buttons{width: 60vw; margin-bottom: 2rem;}
-    .action-buttons div{height: 7rem; width: 7rem;}
-    .press-button{height: 6.7rem; width: 6.7rem; font-size: 20px;}
 
-    footer nav{flex-direction: column;}
+    .second{margin-left: 0;}
+
+    .action-buttons{margin-bottom: 2rem; margin-top: 3rem;}
+    .press-button{height: 6.3rem; width: 6.3rem; font-size: 18px;}
+
     footer a{font-size: 18px;}
-    footer img{height: 5rem; width: 6.5rem;}
 }
 
+/*Quick costumization*/
+@media(min-width: 1100px){.action-buttons{width: 40vw;}}
+
 /*tablet horisontal*/
-@media(min-width: 1024px){
-    body{height: 100vh;}
+@media(min-width: 1280px){
+    .action-buttons, .logo{margin-top: 5rem;}
+
+    .fade-text, footer a{font-size: 20px;}
+    
     main{align-items: start;}
-    .logo{margin-left: 10rem; margin-top: 5rem;}
+
+    .logo{margin-left: 10rem; height: 20rem; width: 20rem;}
 
     .fade-text{
         position: absolute; 
         right: 5rem; 
-        top: 5rem; 
-        font-size: 18px;
+        top: 7rem; 
         display: block;
         text-align: start;
     }
     .fade-text h1{margin-top: 2.5rem;}
+
     .second{margin-left: 7rem;}
 
-    .action-buttons{margin-left: 7rem; margin-top: 5rem; width: 20rem;}
+    .action-buttons{margin-left: 10rem;}
+    .press-button{height: 7.7rem; width: 7.7rem; font-size: 22px;}
 
-    footer nav{flex-direction: row; align-items: center; height: auto;}
-    footer img{height: 3rem; width: 4rem;}
-    footer a{width: fit-content; font-size: 20px;}
+    footer nav{flex-direction: row;}
 }
 
-
-
-/*from horisontal tablet to smallest desktop*/
-@media(min-width: 1200px){.action-buttons{margin-left: 15vw;}}
-
-
-
-
-
-
-/*366px width desktop 1*/
+/*desktop resolution width: 1366px*/
 @media(min-width: 1366px){
     .press-button, footer a{font-size: 25px;}
-    
-    .logo{height: 20rem; width: 22rem;}
 
     .fade-text{font-size: 22px;}
 
-    .action-buttons{height: auto; width: 30rem; margin-left: 10vw;}
-    .action-buttons div{height: 9rem; width: 9rem;}
     .press-button{height: 8.5rem; width: 8.5rem;}
 }
 
-
 /*1440px width desktop*/
 @media(min-width: 1440px){
-    .logo{height: 25rem; width: 26rem;}
+    .logo{height: 22rem; width: 22rem;}
 
     .fade-text{font-size: 25px;}
     .fade-text h1{margin-top: 3.5rem;}
 
-    .action-buttons{margin-left: 22vh; width: 35rem;}
-    .action-buttons div{height: 10rem; width: 10rem;}
     .press-button{font-size: 28px; height: 9.5rem; width: 9.5rem;}
 }
 
+/*Quick costumization*/
+@media(min-width: 1700px){.second{margin-left: 10rem;} .fade-text{right: 8rem;}}
 
-/*Small change in wider screens from 1700px*/
-@media(min-width: 1700px){
-    .fade-text{right: 10vw;}
-    .second{margin-left: 12rem;}
-}
-
-
-
-/*Full HD size*/
+/*Full HD size desktop*/
 @media(min-width: 1920px){
-    
+    .logo, .second{margin-left: 15rem;}
+
+    .logo{height: 30rem; width: 30rem;}
+
+    .fade-text h1{font-size: 50px;}
+
+    .action-buttons{margin-left: 10rem; margin-top: 2rem;}
 }
