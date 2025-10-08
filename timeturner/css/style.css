@@ -196,9 +196,8 @@ p{margin-top: 0.2rem;}
     .press-button, footer a{font-size: 12px;}
 
     form, .action-buttons{margin-bottom: 5rem;}
-    form input, form label{width: 12rem;}
-    form input, form label, form p, form a, #loginButton{font-size: 14px;}
-
+    form input, form label{width: 90%;}
+    form input, label, form p, form a, #loginButton{font-size: 14px;}
 
 
     main{justify-content: space-evenly; align-items: center;}
@@ -214,7 +213,6 @@ p{margin-top: 0.2rem;}
 
     form{width: 60vw;}
     form h1{font-size: 25px;}
-    form input{padding: 0 0.5rem;}
     #loginButton{width: 5rem;}
 }
 
@@ -291,12 +289,13 @@ p{margin-top: 0.2rem;}
 
 /*1440px width desktop*/
 @media(min-width: 1440px){
-    .logo{height: 22rem; width: 22rem;}
+    .logo{height: 20rem; width: 20rem; margin-top: 2rem;}
 
-    .fade-text{font-size: 25px;}
-    .fade-text h1{margin-top: 3.5rem;}
+    .fade-text{font-size: 22px; top: 1rem;}
+    .fade-text h1{margin-top: 3rem;}
 
-    .press-button{font-size: 28px; height: 9.5rem; width: 9.5rem;}
+    .action-buttons{margin-top: 1rem;}
+    .press-button{font-size: 28px; height: 9rem; width: 9rem;}
 }
 
 /*Quick costumization*/
