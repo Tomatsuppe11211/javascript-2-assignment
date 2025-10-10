@@ -28,10 +28,10 @@ nav, .action-buttons{flex-direction: row;}
 
 a, label{font-size: 20px;}
 
-a:hover, .press-button:hover ~ .press-button a, #loginButton:hover, label{font-weight: bold;}
+a:hover, .press-button:hover ~ .press-button a, #loginButton:hover, label, #registerButton:hover{font-weight: bold;}
 
 
-form, #loginButton{border-radius: 1.5rem; box-shadow: 4px 6px 4px #000;}
+form, #loginButton, #registerButton{border-radius: 1.5rem; box-shadow: 4px 6px 4px #000;}
 
 form h1, a{text-align: center;}
 
@@ -46,6 +46,7 @@ p, #loginButton{font-size: 18px;}
 .press-button, #loginButton{width: 8rem;}
 
 .press-button:hover, #loginButton:hover{background-color: #FAD5DE;}
+#registerButton:hover{background-color: #A6F2FF;}
 
 
 
@@ -115,7 +116,6 @@ form{
     border: solid #000;
     width: 35rem;
     height: auto;
-    background-color: #A6F2FF;
     padding: 1.5rem;
 }
 
@@ -130,9 +130,12 @@ form input{
 
 form a{text-decoration: underline; color:#00aeff;}
 
+#loginForm{background-color: #A6F2FF;}
+#registerForm{background-color: #FAD5DE; margin-top: 2rem;}
+
 label{text-align: left;}
 
-#loginButton{padding: 0.5rem;}
+#loginButton, #registerButton{padding: 0.5rem;}
 
 p{margin-top: 0.2rem;}
 
@@ -142,7 +145,7 @@ p{margin-top: 0.2rem;}
 
 
 
-#loginMessage{display: none; color: #ff0000;}
+#loginMessage, #registerMessage{display: none; color: #ff0000;}
 
 
 
@@ -196,8 +199,8 @@ p{margin-top: 0.2rem;}
     .press-button, footer a{font-size: 12px;}
 
     form, .action-buttons{margin-bottom: 5rem;}
-    form input, form label{width: 90%;}
-    form input, label, form p, form a, #loginButton{font-size: 14px;}
+    form input, label{width: 90%;}
+    form input, label, form p, form a, #loginButton, #registerButton{font-size: 14px;}
 
 
     main{justify-content: space-evenly; align-items: center;}
@@ -213,7 +216,7 @@ p{margin-top: 0.2rem;}
 
     form{width: 60vw;}
     form h1{font-size: 25px;}
-    #loginButton{width: 5rem;}
+    #loginButton, #registerButton{width: 5rem;}
 }
 
 /*Quick costumization*/
@@ -228,6 +231,9 @@ p{margin-top: 0.2rem;}
 
 /*Tablet vertical*/
 @media(min-width: 768px){
+    form input, label, form p, form a, #loginButton, #registerButton{font-size: 18px;}
+    form input, form p, label{width: 75%;}
+    
     .fade-text h1{margin-top: 1.5rem;}
 
     .logo{height: 15rem; width: 15rem;}
@@ -246,10 +252,21 @@ p{margin-top: 0.2rem;}
     .press-button{height: 6.3rem; width: 6.3rem; font-size: 18px;}
 
     footer a{font-size: 18px;}
+
+    #registerButton{width: 7rem;}
 }
 
 /*Quick costumization*/
-@media(min-width: 1100px){.action-buttons{width: 40vw;}}
+@media(min-width: 1100px){
+    form input, label, form p, form a, #loginButton, footer a, #registerButton{font-size: 22px;}
+
+    .action-buttons{width: 40vw;}
+    
+    form{width: 50vw;}
+    form h1{font-size: 35px;}
+    form input{padding: 0.3rem 0.6rem;}
+    #loginButton, #registerButton{width: 7rem;}
+}
 
 /*tablet horisontal*/
 @media(min-width: 1280px){
@@ -280,6 +297,8 @@ p{margin-top: 0.2rem;}
 
 /*desktop resolution width: 1366px*/
 @media(min-width: 1366px){
+    form input, label, form p{width: 60%;}
+    
     .press-button, footer a{font-size: 25px;}
 
     .fade-text{font-size: 22px;}
@@ -299,15 +318,27 @@ p{margin-top: 0.2rem;}
 }
 
 /*Quick costumization*/
-@media(min-width: 1700px){.second{margin-left: 10rem;} .fade-text{right: 8rem;}}
+@media(min-width: 1550px){form input, label, form p{width: 55%;}}
+@media(min-width: 1700px){
+    form input, label, form p, form a, #loginButton, #registerButton{font-size: 25px;}
+    
+    .second{margin-left: 10rem;} .fade-text{right: 8rem;}
+    
+    form h1{font-size: 50px;}
+
+    #registerButton{width: 9rem;}
+}
 
 /*Full HD size desktop*/
 @media(min-width: 1920px){
+    form input, label, form p{width: 50%;}
+    
     .logo, .second{margin-left: 15rem;}
+
 
     .logo{height: 30rem; width: 30rem;}
 
     .fade-text h1{font-size: 50px;}
 
-    .action-buttons{margin-left: 10rem; margin-top: 2rem;}
+    .action-buttons{margin-left: 10rem; margin-top: 2rem;}  
 }

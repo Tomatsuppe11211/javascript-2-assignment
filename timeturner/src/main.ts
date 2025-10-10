@@ -11,6 +11,16 @@ if(window.location.pathname.includes('login.html')){
 }
 
 
+if(window.location.pathname.includes('register.html')){
+  import ('../src/account/register.ts').then((module) => {
+    console.log('register.ts loaded...')
+  }).catch((error) => {
+    console.error('Could not load the register.ts', error)
+  })
+}
+
+
+
 
 
 
