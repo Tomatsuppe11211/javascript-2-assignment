@@ -10,21 +10,18 @@
     <main class="forms">
         <form id="registerForm">
             <h1>Register</h1>
-
-            <label for="firstName">Firstname</label>
-            <input type="text" placeholder="Firstname" id="firstName">
-
-            <label for="lastName">Lastname</label>
-            <input type="text" placeholder="Lastname" id="lastName">
-
-            <label for="username">Username</label>
-            <input type="text" placeholder="Username">
+            
+            <label for="usename">Username</label>
+            <input type="text" placeholder="Username" id="username" required>
 
             <label for="email">Email</label>
-            <input type="email" placeholder="Email">
+            <input type="email" placeholder="Email" id="email" required>
 
             <label for="password">Password</label>
-            <input type="password" placeholder="Password">
+            <input type="password" placeholder="Password" id="password" required>
+
+            <label for="confirmPassword">Confirm password</label>
+            <input type="password" placeholder="Confirm password" id="confirmPassword" required>
 
             <button id="registerButton">Register</button>
 

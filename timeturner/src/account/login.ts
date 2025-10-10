@@ -1,4 +1,4 @@
-
+console.log('login.ts loaded...')
 const BASE_URL = 'https://v2.api.noroff.dev'
 
 const userEmail = document.getElementById('loginEmail') as HTMLInputElement
@@ -22,7 +22,7 @@ loginButton.addEventListener("click", async function(e){
         throw new Error('Email or password cannot be blank')
     } 
     
-    const currentUser = {
+    const currentUser: currentUser = {
         email: userEmail.value,
         password: userPassword.value
     }
@@ -51,8 +51,10 @@ loginButton.addEventListener("click", async function(e){
         message.style.webkitTextStroke = '0.5px #000'
         message.innerHTML = 'Logged in successfully'
 
+        localStorage.setItem('currentUser', JSON.stringify(currentUser))
+
         setTimeout(() => {
-            window.location.href = '../index.html'
+            window.location.href = '../index.html' //change to feed page
         }, 2000);
         
 

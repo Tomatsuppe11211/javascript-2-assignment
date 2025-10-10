@@ -1,22 +1,16 @@
 import '../css/style.css'
 
+const currentUser = localStorage.getItem('currentUser')
+if(currentUser){console.log(currentUser)} 
 
 
 if(window.location.pathname.includes('login.html')){
-  import ('../src/account/login.ts').then((module) => {
-    console.log('login.ts loaded...')
-  }).catch((error) => {
-    console.error('Could not load the login.ts', error)
-  })
+  import ('../src/account/login.ts')
 }
 
 
 if(window.location.pathname.includes('register.html')){
-  import ('../src/account/register.ts').then((module) => {
-    console.log('register.ts loaded...')
-  }).catch((error) => {
-    console.error('Could not load the register.ts', error)
-  })
+  import ('../src/account/register.ts')
 }
 
 
