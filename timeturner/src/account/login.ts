@@ -38,29 +38,34 @@ loginButton.addEventListener("click", async function(e){
                 password: currentUser.password
             })
         })
+        
+        const data = await response.json()
+        const userData = data.data || data
+
+        const loggedInUser = {username: userData.name}
 
         if(!response.ok){
-            throw new Error('Login failed')
+            const errorMessage = data.errors?.[0]?.message || data.message || 'Login failed'
+            
+            message.style.display = 'block'
+            message.innerHTML = errorMessage
+            return
         }
-
-        const data = await response.json()
-        console.log('data: ', data)
         
         message.style.color = '#3bff93ff'
         message.style.display = 'block'
         message.style.webkitTextStroke = '0.5px #000'
         message.innerHTML = 'Logged in successfully'
 
-        localStorage.setItem('currentUser', JSON.stringify(currentUser))
+        localStorage.setItem('currentUser', JSON.stringify(loggedInUser))
+        localStorage.setItem('profileData', JSON.stringify(userData))
 
         setTimeout(() => {
             window.location.href = '../index.html' //change to feed page
         }, 2000);
         
-
         return data
 
-        
     } catch(error){
         message.style.display = 'block'
         message.innerHTML = "Username or password is wrong"
