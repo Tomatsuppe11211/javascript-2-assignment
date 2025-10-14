@@ -1,4 +1,3 @@
-console.log('login.ts loaded...')
 const BASE_URL = 'https://v2.api.noroff.dev'
 
 const userEmail = document.getElementById('loginEmail') as HTMLInputElement

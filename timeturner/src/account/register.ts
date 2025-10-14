@@ -1,5 +1,3 @@
-console.log('register.ts loaded...')
-
 const BASE_URL = "https://v2.api.noroff.dev"
 
 const username = document.getElementById("username") as HTMLInputElement

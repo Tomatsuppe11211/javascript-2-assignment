@@ -14,6 +14,9 @@ if(window.location.pathname.includes('register.html')){
 }
 
 
+if(window.location.pathname.includes('/post/index.html')){
+  import ('../post/feed.ts')
+}
 
 
 
