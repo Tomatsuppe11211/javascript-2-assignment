@@ -70,7 +70,7 @@ button.addEventListener('click', async function(e){
             localStorage.setItem('currentUser', JSON.stringify(loggedInUser.username))
 
             setTimeout(() => {
-                window.location.href = '../login.html' //change to feed page
+                window.location.href = '../../post/index.html' //change to feed page
             }, 2000);
 
             return data

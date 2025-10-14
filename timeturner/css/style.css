@@ -30,7 +30,6 @@ a, label{font-size: 20px;}
 
 a:hover, .press-button:hover ~ .press-button a, #loginButton:hover, label, #registerButton:hover{font-weight: bold;}
 
-
 form, #loginButton, #registerButton{border-radius: 1.5rem; box-shadow: 4px 6px 4px #000;}
 
 form h1, a{text-align: center;}
@@ -39,14 +38,17 @@ form input, label{width: 30rem;}
 
 form input, label, #loginButton{margin-top: 1rem;}
 
-
 p, #loginButton{font-size: 18px;}
-
 
 .press-button, #loginButton{width: 8rem;}
 
 .press-button:hover, #loginButton:hover{background-color: #FAD5DE;}
-#registerButton:hover{background-color: #A6F2FF;}
+
+#loginMessage, #registerMessage{display: none; color: #ff0000;}
+
+#loginForm, #registerButton:hover{background-color: #A6F2FF;}
+
+
 
 
 
@@ -62,11 +64,66 @@ body{
     background-size: cover;
 }
 
-header{flex: 0 0 auto;}
+
+
+
+
+
+
+
+header, footer{flex: 0 0 auto;}
+
+
+
+
+/*Starting for header on feed page*/
+/*--------------------------------------------------*/
+header{height: 3rem;}
+
+header nav{
+    height: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    width: 100%;
+    background-color: #fff;
+}
+
+header a{font-size: 25px;}
+
+.active{color: #00aeff; font-weight: bold;}
+/*----------------------------------------------------*/
+
+
+
+
+
+
+/*Testing post layout*/
+/*----------------------------------------------------*/
+#postFeed{display: flex; justify-content: center; align-items: center;}
+
+.post{border: Solid black; height: auto; width: 60vw;}
+/*----------------------------------------------------*/
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 main{flex: 1 1 auto;}
-
-footer{flex: 0 0 auto;}
 
 nav{width: 60rem;}
 
@@ -130,7 +187,7 @@ form input{
 
 form a{text-decoration: underline; color:#00aeff;}
 
-#loginForm{background-color: #A6F2FF;}
+
 #registerForm{background-color: #FAD5DE; margin-top: 2rem;}
 
 label{text-align: left;}
@@ -145,7 +202,6 @@ p{margin-top: 0.2rem;}
 
 
 
-#loginMessage, #registerMessage{display: none; color: #ff0000;}
 
 
 

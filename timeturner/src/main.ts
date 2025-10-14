@@ -1,7 +1,9 @@
 import '../css/style.css'
 
 const currentUser = localStorage.getItem('currentUser')
-if(currentUser){console.log(currentUser)} 
+const profileData = localStorage.getItem('profileData')
+
+if(currentUser || profileData){console.log('User logged in!')} 
 
 
 if(window.location.pathname.includes('login.html')){

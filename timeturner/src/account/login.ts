@@ -60,7 +60,7 @@ loginButton.addEventListener("click", async function(e){
         localStorage.setItem('profileData', JSON.stringify(userData))
 
         setTimeout(() => {
-            window.location.href = '../index.html' //change to feed page
+            window.location.href = '../../post/index.html' //change to feed page
         }, 2000);
         
         return data
