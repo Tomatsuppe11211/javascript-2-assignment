@@ -58,6 +58,7 @@ loginButton.addEventListener("click", async function(e){
 
         localStorage.setItem('currentUser', JSON.stringify(loggedInUser))
         localStorage.setItem('profileData', JSON.stringify(userData))
+        localStorage.setItem('accessToken', data.accessToken)
 
         setTimeout(() => {
             window.location.href = '../../post/index.html' //change to feed page

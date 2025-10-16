@@ -110,6 +110,46 @@ header a{font-size: 25px;}
 
 
 
+/*creating profile layout*/
+/*----------------------------------------------------*/
+#showProfile{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.profile-card{
+    border: solid black;
+    padding: 2rem;
+    width: 50rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.profile-card div{width: 70%; border: Solid black; padding: 1rem; display: flex; flex-direction: column; align-items: center;}
+.profile-card div h2{font-size: 22px; width: 100%; text-align: start;}
+.profile-card div p{font-size: 18px;}
+
+#bioInput{
+    height: 7rem; 
+    width:30rem; ; 
+    padding: 0.5rem; 
+    font-size: 18px;
+}
+
+#avatar{
+    height: 10rem; 
+    width: 10rem; 
+    border: Solid black;
+}
+
+
+/*----------------------------------------------------*/
+
+
+
 
 
 

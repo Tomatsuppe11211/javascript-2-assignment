@@ -20,7 +20,9 @@ if(window.location.pathname.includes('/post/index.html')){
   import ('../post/feed.ts')
 }
 
-
+if(window.location.pathname.includes('/account/profile.html')){
+  import ('../src/account/profile.ts')
+}
 
 
 
