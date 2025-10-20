@@ -103,7 +103,31 @@ header a{font-size: 25px;}
 /*----------------------------------------------------*/
 #postFeed{display: flex; justify-content: center; align-items: center;}
 
-.post{border: Solid black; height: auto; width: 60vw;}
+#showAllPosts{
+    border: Solid black; 
+    height: auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 80vw;
+}
+
+.extraInfo{
+    display: flex;
+    flex-direction: row;
+    width: 90%;
+    justify-content: center;
+    align-items: center;
+    height: fit-content;
+    text-align: center;
+}
+
+.seeMoreButton{
+    font-size: 10px;
+    width: 4rem;
+    height: 1.2rem
+}
+
 /*----------------------------------------------------*/
 
 
@@ -313,6 +337,16 @@ p{margin-top: 0.2rem;}
     form{width: 60vw;}
     form h1{font-size: 25px;}
     #loginButton, #registerButton{width: 5rem;}
+
+
+
+
+    #showAllPosts div {width: 90%; padding: 0.2rem;}
+    #showAllPosts img{height: 150px; width: 100%;}
+    #showAllPosts h1{font-size: 12px; text-align: center;}
+    #showAllPosts p{font-size: 10px; width: 90%;}
+    .postCU{color: #9a9a9a;}
+
 }
 
 /*Quick costumization*/

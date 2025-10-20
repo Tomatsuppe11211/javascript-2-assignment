@@ -2,7 +2,7 @@ const URL = 'https://v2.api.noroff.dev/social/posts'
 
 
 
-
+const showPosts = document.getElementById('showAllPosts')
 
 interface profileToken {accessToken: string}
 
@@ -80,7 +80,69 @@ async function getPosts(){
         }
 
         const data = await response.json()
-        console.log('posts: ', data)
+        const posts = data.data
+        console.log(posts)
+
+        for(let i = 0; i < posts.length; i++){
+            console.log(posts[i])
+
+            const postDiv = document.createElement('div')
+            postDiv.className = 'postDiv'
+
+            if(!posts[i].media || posts[i].media === null){
+                console.log('No image found or is set to null')
+            } else {
+                const postImage = document.createElement('img')
+                postImage.className = 'postImage'
+                postImage.src = posts[i].media.url
+                postDiv.appendChild(postImage) 
+            }
+            
+
+            const postTitle = document.createElement('h1')
+            postTitle.className = 'postTitle'
+            postTitle.innerHTML = posts[i].title
+            postDiv.appendChild(postTitle)
+
+            const postContent = document.createElement('p')
+            postContent.className = 'postContent'
+            postContent.innerHTML = posts[i].body
+            postDiv.appendChild(postContent)
+
+
+            const dateCU = document.createElement('p')
+            dateCU.className = 'postCU'
+            if(posts[i].updated){
+                dateCU.innerHTML = 'Updated: ' + posts[i].updated
+            } else {
+                dateCU.innerHTML = 'Created: ' +  posts[i].created
+            }
+            postDiv.appendChild(dateCU)
+
+
+
+            const extraInfo = document.createElement('section')
+            extraInfo.className = 'extraInfo'
+            postDiv.appendChild(extraInfo)
+
+
+
+
+
+            const reactions = document.createElement('p')
+            reactions.className = 'reacions'
+            reactions.innerHTML = 'Reactions: ' + posts[i]._count.reactions
+            extraInfo.appendChild(reactions)
+
+            const comments = document.createElement('p')
+            comments.className = 'comments'
+            comments.innerHTML = 'Comments: ' + posts[i]._count.comments
+            extraInfo.appendChild(comments)
+
+            showPosts?.appendChild(postDiv)
+        }
+        
+
         return data
 
     } catch(error){
