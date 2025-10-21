@@ -1,14 +1,16 @@
 html, body{padding: 0; margin: 0; min-height: 100vh;}
 
 body, main, footer, nav, .action-buttons, .action-buttons div, .press-button,
-form{display: flex;}
+form, #postFeed, #showAllPosts, .extraInfo, nav div{display: flex;}
 
-body, main, form{flex-direction: column;}
+body, main, form, #showAllPosts{flex-direction: column;}
 
 
-footer, .action-buttons div, .press-button, .forms{justify-content: center;}
+footer, .action-buttons div, .press-button, .forms, 
+#postFeed, .extraInfo{justify-content: center;}
 
-footer, nav, .action-buttons div, .press-button, form, .forms{align-items: center;}
+footer, nav, .action-buttons div, .press-button, form, .forms, 
+#postFeed, #showAllPosts, .extraInfo, nav div{align-items: center;}
 
 footer, .press-button, #loginButton{background-color: #fff;}
 
@@ -17,7 +19,7 @@ footer nav, footer img{height: 100%;}
 
 nav, .action-buttons{justify-content: space-evenly;}
 
-nav, .action-buttons{flex-direction: row;}
+nav, .action-buttons, .extraInfo, nav div{flex-direction: row;}
 
 
 .action-buttons div, .press-button{border-radius: 100%} 
@@ -32,7 +34,7 @@ a:hover, .press-button:hover ~ .press-button a, #loginButton:hover, label, #regi
 
 form, #loginButton, #registerButton{border-radius: 1.5rem; box-shadow: 4px 6px 4px #000;}
 
-form h1, a{text-align: center;}
+form h1, a, #showAllPosts h1, .extraInfo{text-align: center;}
 
 form input, label{width: 30rem;}
 
@@ -48,7 +50,7 @@ p, #loginButton{font-size: 18px;}
 
 #loginForm, #registerButton:hover{background-color: #A6F2FF;}
 
-
+#showAllPosts, .extraInfo, nav div{height: fit-content;}
 
 
 
@@ -101,33 +103,12 @@ header a{font-size: 25px;}
 
 /*Testing post layout*/
 /*----------------------------------------------------*/
-#postFeed{display: flex; justify-content: center; align-items: center;}
-
-#showAllPosts{
-    border: Solid black; 
-    height: auto;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    width: 80vw;
-}
-
-.extraInfo{
-    display: flex;
-    flex-direction: row;
-    width: 90%;
-    justify-content: center;
-    align-items: center;
-    height: fit-content;
-    text-align: center;
-}
-
-.seeMoreButton{
-    font-size: 10px;
-    width: 4rem;
-    height: 1.2rem
-}
-
+#showAllPosts{width: 80vw; padding: 0.5rem 0;}
+.extraInfo{width: 90%;}
+.postDiv{border: solid #9a9a9a; box-shadow: #000 4px 6px 4px;}
+nav div{justify-content: space-between;}
+nav input{border: none}
+.postCU{color: #9a9a9a;}
 /*----------------------------------------------------*/
 
 
@@ -314,13 +295,14 @@ p{margin-top: 0.2rem;}
 /*phone vertical*/
 @media(min-width: 320px){
     .logo, .action-buttons{margin-left: 0;}
-    .logo, footer a{margin-top: 1rem;}
+    .logo, footer a, .postDiv{margin-top: 1rem;}
 
-    .press-button, footer a{font-size: 12px;}
+    .press-button, footer a, #showAllPosts h1{font-size: 12px;}
 
     form, .action-buttons{margin-bottom: 5rem;}
-    form input, label{width: 90%;}
-    form input, label, form p, form a, #loginButton, #registerButton{font-size: 14px;}
+    form input, label, #showAllPosts div, #showAllPosts p{width: 90%;}
+    form input, label, form p, form a, #loginButton, 
+    #registerButton, nav input{font-size: 14px;}
 
 
     main{justify-content: space-evenly; align-items: center;}
@@ -335,34 +317,57 @@ p{margin-top: 0.2rem;}
     footer img{height: 3rem; width: 4rem;}
 
     form{width: 60vw;}
-    form h1{font-size: 25px;}
+    form h1, nav i{font-size: 25px;}
     #loginButton, #registerButton{width: 5rem;}
 
-
-
-
-    #showAllPosts div {width: 90%; padding: 0.2rem;}
+    #showAllPosts div {padding: 0.2rem;}
     #showAllPosts img{height: 150px; width: 100%;}
-    #showAllPosts h1{font-size: 12px; text-align: center;}
-    #showAllPosts p{font-size: 10px; width: 90%;}
-    .postCU{color: #9a9a9a;}
 
+
+    #showAllPosts p{font-size: 10px;}
+
+    .desktopNav{display: none;}
+    
+    nav div{
+        border: 1px solid #000; 
+        width: 20rem; 
+        padding: 0.5rem; 
+        border-radius: 10rem;
+    }
+
+    nav input{width: 70%;}
+
+    nav div i{font-size: 15px;}
+
+    .postDiv{margin-bottom: 1rem;}
 }
 
 /*Quick costumization*/
+@media(min-width: 500px){
+    #showAllPosts img{height: 200px;}
+    #showAllPosts h1{font-size: 16px;}
+    #showAllPosts p{font-size: 14px;}
+    nav div{width: 15rem;}
+    nav input{width: 80%;}
+}
+@media(min-width: 700px){#showAllPosts img{height: 250px;}}
 @media(min-height: 700px){
     .press-button{font-size: 16px ; height: 5.3rem; width: 5.3rem;}
 
     footer a{font-size: 14px;}
 }
-
-/*Quick costumization*/
 @media(min-height: 800px){.logo{height: 12rem; width: 12rem;}}
+
+
 
 /*Tablet vertical*/
 @media(min-width: 768px){
-    form input, label, form p, form a, #loginButton, #registerButton{font-size: 18px;}
+    form input, label, form p, form a, #loginButton, #registerButton,
+    footer a, .press-button, nav div i, nav input, #showAllPosts p{font-size: 18px;}
+
     form input, form p, label{width: 75%;}
+
+    .action-buttons, #showAllPosts{margin-top: 3rem;}
     
     .fade-text h1{margin-top: 1.5rem;}
 
@@ -378,17 +383,28 @@ p{margin-top: 0.2rem;}
 
     .second{margin-left: 0;}
 
-    .action-buttons{margin-bottom: 2rem; margin-top: 3rem;}
-    .press-button{height: 6.3rem; width: 6.3rem; font-size: 18px;}
-
-    footer a{font-size: 18px;}
+    .action-buttons{margin-bottom: 2rem;}
+    .press-button{height: 6.3rem; width: 6.3rem;}
 
     form{width: 50vw;}
 
     #registerButton{width: 7rem;}
+
+    .mobileNav{display: none;}
+    .desktopNav{display: flex;}
+
+    nav div{padding: 0.5rem 0.7rem; width: 12rem; margin-right: 1rem;}
+    nav input{width: 80%;}
+
+    #showAllPosts h1{font-size: 26px;}
+
+    .postDiv{margin-bottom: 3rem;}
+
+    #showAllPosts{width: 50vw;}
 }
 
 /*Quick costumization*/
+@media(min-width: 950px){#showAllPosts img{height: 350px;}}
 @media(min-width: 1100px){
     form input, label, form p, form a, #loginButton, footer a, #registerButton{font-size: 22px;}
 
@@ -400,11 +416,15 @@ p{margin-top: 0.2rem;}
     #loginButton, #registerButton{width: 7rem;}
 }
 
+
+
 /*tablet horisontal*/
 @media(min-width: 1280px){
     .action-buttons, .logo{margin-top: 5rem;}
 
-    .fade-text, footer a{font-size: 20px;}
+    .fade-text, footer a, nav input{font-size: 20px;}
+
+    .press-button, #showAllPosts p{font-size: 22px;}
     
     main{align-items: start;}
 
@@ -422,12 +442,16 @@ p{margin-top: 0.2rem;}
     .second{margin-left: 7rem;}
 
     .action-buttons{margin-left: 10rem;}
-    .press-button{height: 7.7rem; width: 7.7rem; font-size: 22px;}
+    .press-button{height: 7.7rem; width: 7.7rem;}
 
     footer nav{flex-direction: row;}
+
+    #showAllPosts h1{font-size: 30px;}
+
+    .postDiv{margin-bottom: 5rem;}
 }
 
-/*desktop resolution width: 1366px*/
+/*Desktop screens*/
 @media(min-width: 1366px){
     form input, label, form p{width: 60%;}
     
@@ -439,8 +463,6 @@ p{margin-top: 0.2rem;}
 
     form{width: 40vw;}
 }
-
-/*1440px width desktop*/
 @media(min-width: 1440px){
     .logo{height: 20rem; width: 20rem; margin-top: 2rem;}
 
@@ -452,7 +474,10 @@ p{margin-top: 0.2rem;}
 }
 
 /*Quick costumization*/
-@media(min-width: 1550px){form input, label, form p{width: 55%;}}
+@media(min-width: 1550px){
+    form input, label, form p{width: 55%;}
+    #showAllPosts img{max-height: 600px;}
+}
 @media(min-width: 1700px){
     form input, label, form p, form a, #loginButton, #registerButton{font-size: 25px;}
     
@@ -474,5 +499,5 @@ p{margin-top: 0.2rem;}
 
     .fade-text h1{font-size: 50px;}
 
-    .action-buttons{margin-left: 10rem; margin-top: 2rem;}  
+    .action-buttons{margin-left: 10rem; margin-top: 2rem;}
 }
