@@ -1,28 +1,93 @@
-let profileData = JSON.parse(localStorage.getItem('profileData'))
-console.log(profileData)
+const avatarDisplay = document.getElementById("avatar") as HTMLImageElement
+const userNameDisplay = document.getElementById('usersName') as HTMLElement
+const bioText = document.getElementById("bioText") as HTMLParagraphElement
+const updateProfileButton = document.getElementById("changeBioButton") as HTMLButtonElement
 
-const accessToken = localStorage.getItem('accessToken')
-console.log(accessToken)
+
+let profileData = localStorage.getItem('profileData')
+
+
+interface profileToken {accessToken: string, name: string}
+
+let profile: profileToken | null = null
+
+if(profileData){profile = JSON.parse(profileData)}
+
+const token = profile?.accessToken
+
+
+
 
 
 async function getSocialProfile(){
-    console.log('fetching profile for: ', profileData.name)
-    
+    const apiKey = localStorage.getItem('CurrentKey')
+
     try{
-        const response = await fetch('https://v2.api.noroff.dev/social/profiles/' + profileData.name, {
+        if(!apiKey){throw new Error('API-key missing!')}
+        
+        const response = await fetch(`https://v2.api.noroff.dev/social/profiles/${profile?.name}`,  {
             method: 'GET',
             headers:{
-                'Authorization': `Bearer ${accessToken}`,
-                'Content-Type': 'application/json'
+                'Authorization': `Bearer ${token}`,
+                'Content-Type': 'application/json', 
+                'X-Noroff-API-Key': apiKey
             }
         })
 
         if(!response.ok){
             console.log('There was an error fetching the profile')
+            const errorText = await response.text()
+            console.log(`response: ${errorText}`)
             return
         }
 
         const data = await response.json()
+
+        const profileInfo = data.data
+
+        console.log(profileInfo)
+
+
+        if(profileInfo.avatar.url){
+            avatarDisplay.src = profileInfo.avatar.url
+        }
+
+        
+        userNameDisplay.innerHTML = profileInfo.name
+
+        if(profileInfo.bio === null || !profileInfo.bio){
+            bioText.innerHTML = "This bio is empty"
+        } else {
+            bioText.innerHTML = profileInfo.bio
+        }
+
+
+        updateProfileButton.addEventListener('click', editBio)
+        //Look at this function when editing profile.
+        function editBio(){
+            if(!profileInfo.bio || profileInfo.bio === null){
+                bioText.innerHTML = '<textarea id="bioInput"></textarea>'
+            } else {
+                bioText.innerHTML = `<textarea id="bioInput" value="${profileInfo.bio}"></textarea>`
+            }
+    
+            
+
+            updateProfileButton.removeEventListener('click', editBio)
+            updateProfileButton.addEventListener('click', readBio)
+
+            function readBio(){
+                const newBio = document.getElementById("bioInput") as HTMLInputElement
+                bioText.innerHTML = `<p id="bioText">${newBio.value}</p>`
+                updateProfileButton.removeEventListener('click', readBio)
+                updateProfileButton.addEventListener('click', editBio)
+            }
+        }
+
+
+
+
+
         console.log(data)
         return data
 
@@ -30,43 +95,10 @@ async function getSocialProfile(){
         console.error('Error: ', error)
     }
 }
-
-
 getSocialProfile()
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-const userNameDisplay = document.getElementById('usersName') as HTMLElement
-userNameDisplay.innerHTML = profileData.name
-
-const bioText = document.getElementById("bioText") as HTMLElement
-if(profileData.bio === null || !profileData.bio){
-    bioText.innerHTML = "This bio is empty"
-} else {
-    bioText.innerHTML = profileData.bio
-}
-
-
-const updateProfileButton = document.getElementById("changeBioButton") as HTMLButtonElement
-updateProfileButton.addEventListener('click', editBio)
-
-function editBio(){
-    bioText.innerHTML = "<textarea id='bioInput'></textarea>"
-
-    updateProfileButton.removeEventListener('click', editBio)
-}
 
 
 

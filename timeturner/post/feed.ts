@@ -26,7 +26,7 @@ async function createApiKey(){
         method: 'POST',
         headers: {
             'Authorization': `Bearer ${token}`,
-            'Content-Type': 'Application/json'
+            'Content-Type': 'application/json'
         },
         body: JSON.stringify({name: `current apiKey`})
     })
