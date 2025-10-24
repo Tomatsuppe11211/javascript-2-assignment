@@ -1,7 +1,10 @@
+const bannerDisplay = document.getElementById("banner") as HTMLImageElement
 const avatarDisplay = document.getElementById("avatar") as HTMLImageElement
 const userNameDisplay = document.getElementById('usersName') as HTMLElement
 const bioText = document.getElementById("bioText") as HTMLParagraphElement
-const updateProfileButton = document.getElementById("changeBioButton") as HTMLButtonElement
+const profileCount = document.getElementById('profileInfo') as HTMLDivElement
+const editprofileButton = document.getElementById("editProfileButton") as HTMLButtonElement
+const postsDisplay = document.getElementById('myPosts')
 
 
 let profileData = localStorage.getItem('profileData')
@@ -15,13 +18,11 @@ if(profileData){profile = JSON.parse(profileData)}
 
 const token = profile?.accessToken
 
-
+const apiKey = localStorage.getItem('CurrentKey')
 
 
 
 async function getSocialProfile(){
-    const apiKey = localStorage.getItem('CurrentKey')
-
     try{
         if(!apiKey){throw new Error('API-key missing!')}
         
@@ -45,11 +46,15 @@ async function getSocialProfile(){
 
         const profileInfo = data.data
 
-        console.log(profileInfo)
 
+        if(profileInfo.banner.url){
+            bannerDisplay.src = profileInfo.banner.url
+            bannerDisplay.alt = profileInfo.banner.alt
+        }
 
         if(profileInfo.avatar.url){
             avatarDisplay.src = profileInfo.avatar.url
+            bannerDisplay.alt = profileInfo.banner.alt
         }
 
         
@@ -61,31 +66,17 @@ async function getSocialProfile(){
             bioText.innerHTML = profileInfo.bio
         }
 
+        const postsCount = document.createElement('p')
+        postsCount.innerHTML = `Posts: ${profileInfo._count.posts}`
+        profileCount.appendChild(postsCount)
 
-        updateProfileButton.addEventListener('click', editBio)
-        //Look at this function when editing profile.
-        function editBio(){
-            if(!profileInfo.bio || profileInfo.bio === null){
-                bioText.innerHTML = '<textarea id="bioInput"></textarea>'
-            } else {
-                bioText.innerHTML = `<textarea id="bioInput" value="${profileInfo.bio}"></textarea>`
-            }
-    
-            
+        const followingCount = document.createElement('p')
+        followingCount.innerHTML = `Following: ${profileInfo._count.following}`
+        profileCount.appendChild(followingCount)
 
-            updateProfileButton.removeEventListener('click', editBio)
-            updateProfileButton.addEventListener('click', readBio)
-
-            function readBio(){
-                const newBio = document.getElementById("bioInput") as HTMLInputElement
-                bioText.innerHTML = `<p id="bioText">${newBio.value}</p>`
-                updateProfileButton.removeEventListener('click', readBio)
-                updateProfileButton.addEventListener('click', editBio)
-            }
-        }
-
-
-
+        const followersCount = document.createElement('p')
+        followersCount.innerHTML = `Followers: ${profileInfo._count.followers}`
+        profileCount.appendChild(followersCount)
 
 
         console.log(data)
@@ -95,12 +86,64 @@ async function getSocialProfile(){
         console.error('Error: ', error)
     }
 }
-getSocialProfile()
+
+
+editprofileButton.addEventListener('click', function(){
+    window.location.href="../../index.html" //change with edit profile page
+})
 
 
 
+async function getPosts(){
+    await getSocialProfile()
 
+    try{
+        const response =  await fetch(`https://v2.api.noroff.dev/social/profiles/${profile?.name}/posts`, {
+            method: 'GET',
+            headers:{
+                'Authorization': `Bearer ${token}`,
+                'Content-Type': 'application/json', 
+                'X-Noroff-API-Key': apiKey
+            }
+        })
 
+        if(!response.ok){
+            console.log(`someting went wrong!`)
+            const errorMessage = await response.text()
+            console.log(`Response: ${errorMessage}`)
+        }
 
+        const data = await response.json()
+        console.log(data)
 
+        const myPosts = data.data
+        
+        if(data && myPosts.length !== 0){
+            console.log(data)
+
+            for(let i = 0; i < myPosts.length; i++){
+                const post = document.createElement('div')
+                post.className = 'UserPosts'
+                const postImg = document.createElement('img')
+                const postTitle = document.createElement('h2')
+
+                postImg.src = myPosts.media.url
+                post.appendChild(postImg)
+
+                postTitle.innerHTML = myPosts.title
+                post.appendChild(postTitle)
+
+                postsDisplay?.appendChild(post)
+            }
+        } else {
+            console.log('no posts found')
+        }
+        
+        
+    } catch (error){
+        console.error(error)
+    }
+}
+
+getPosts()
 
