@@ -80,7 +80,7 @@ header, footer{flex: 0 0 auto;}
 
 /*Starting for header on feed page*/
 /*--------------------------------------------------*/
-header{height: 3rem;}
+header{height: auto; padding: 2rem 0; border: solid black; background-color: #fff;}
 
 header nav{
     height: 100%;
@@ -88,7 +88,6 @@ header nav{
     flex-direction: row;
     justify-content: center;
     width: 100%;
-    background-color: #fff;
 }
 
 header a{font-size: 25px;}

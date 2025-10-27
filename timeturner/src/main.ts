@@ -1,9 +1,13 @@
 import '../css/style.css'
 
 const currentUser = localStorage.getItem('currentUser')
-const profileData = localStorage.getItem('profileData')
 
-if(currentUser || profileData){console.log('User logged in!')} 
+
+if(currentUser && window.location.pathname.includes('/index.html')){
+  if(!window.location.pathname.includes('post/index.html')){
+    window.location.href= '/post/index.html'
+  }
+}
 
 
 if(window.location.pathname.includes('login.html')){
@@ -18,13 +22,17 @@ if(window.location.pathname.includes('register.html')){
 
 if(window.location.pathname.includes('/post/index.html')){
   import ('../post/feed.ts')
+  if(!currentUser){window.location.href = '../index.html'}
 }
 
 if(window.location.pathname.includes('/account/profile.html')){
   import ('../src/account/profile.ts')
+  if(!currentUser){window.location.href = '../../index.html'}
 }
 
-
+if(window.location.pathname.includes('create-post.html')){
+  import('../post/create-post.ts')
+}
 
 
 
