@@ -38,7 +38,9 @@ form h1, a, #showAllPosts h1, .extraInfo{text-align: center;}
 
 form input, label{width: 30rem;}
 
-form input, label, #loginButton{margin-top: 1rem;}
+form input, label, #loginButton, #createPostForm textarea{margin-top: 1rem;}
+
+form, #createPostForm, #createPostButton{border: Solid #000;}
 
 p, #loginButton{font-size: 18px;}
 
@@ -48,12 +50,21 @@ p, #loginButton{font-size: 18px;}
 
 #loginMessage, #registerMessage{display: none; color: #ff0000;}
 
-#loginForm, #registerButton:hover{background-color: #A6F2FF;}
+#loginForm, #registerButton:hover, #createPostForm{background-color: #A6F2FF;}
 
 #showAllPosts, .extraInfo, nav div{height: fit-content;}
 
+#createPostForm, .action-buttons{margin-top: 5rem;}
+
+#editProfileButton, #createPostButton{
+    border-radius: 10rem; 
+    background-color: #00aeff;
+    color: #fff;
+    box-shadow: 4px 5px 4px #000;
+}
 
 
+#editProfileButton:hover, #createPostButton:hover{color: #000; background-color: #FAD5DE;}
 
 
 
@@ -153,19 +164,8 @@ nav input{border: none}
     border: Solid black;
 }
 
-#editProfileButton{
-    font-size: 16px;
-    padding: 0.5rem;
-    border-radius: 10rem;
-    background-color: #00aeff;
-    color: #fff;
-    box-shadow: 4px 5px 4px #000;
-}
+#editProfileButton{font-size: 16px;}
 
-#editProfileButton:hover{
-    background-color: #FAD5DE;
-    color: #000;
-}
 
 #profileInfo{
     display: flex;
@@ -178,6 +178,19 @@ nav input{border: none}
 /*----------------------------------------------------*/
 
 
+
+
+
+
+
+/*create post page*/
+/*------------------------------------------------------*/
+#createPostForm textarea{
+    border-radius: 0.5rem;
+    padding: 0.5rem;
+    box-shadow: inset 2px 3px 3px #000;
+}
+/*------------------------------------------------------*/
 
 
 
@@ -215,7 +228,7 @@ a:hover{color: #00aeff;}
 footer nav{width: 100%;}
 
 
-.action-buttons{height: fit-content; margin-top: 5rem; margin-left: 8rem;}
+.action-buttons{height: fit-content; margin-left: 8rem;}
 
 .press-button{height: 8rem; font-size: 24px; border: solid #567C8D; }
 
@@ -239,7 +252,6 @@ footer nav{width: 100%;}
 
 
 form{
-    border: solid #000;
     width: 35rem;
     height: auto;
     padding: 1.5rem;
@@ -261,7 +273,8 @@ form a{text-decoration: underline; color:#00aeff;}
 
 label{text-align: left;}
 
-#loginButton, #registerButton{padding: 0.5rem;}
+#loginButton, #registerButton, #editProfileButton, 
+#createPostButton{padding: 0.5rem;}
 
 p{margin-top: 0.2rem;}
 
@@ -324,9 +337,9 @@ p{margin-top: 0.2rem;}
     .press-button, footer a, #showAllPosts h1{font-size: 12px;}
 
     form, .action-buttons{margin-bottom: 5rem;}
-    form input, label, #showAllPosts div, #showAllPosts p{width: 90%;}
-    form input, label, form p, form a, #loginButton, 
-    #registerButton, nav input{font-size: 14px;}
+    form input, label, #showAllPosts div, #showAllPosts p, #createPostForm textarea{width: 90%;}
+    form input, label, form p, form a, #loginButton, #createPostForm textarea,
+    #registerButton, nav input, #createPostButton{font-size: 14px;}
 
 
     main{justify-content: space-evenly; align-items: center;}
@@ -342,7 +355,7 @@ p{margin-top: 0.2rem;}
 
     form{width: 60vw;}
     form h1, nav i{font-size: 25px;}
-    #loginButton, #registerButton{width: 5rem;}
+    #loginButton, #registerButton, #createPostButton{width: 5rem;}
 
     #showAllPosts div {padding: 0.2rem;}
     #showAllPosts img{height: 150px; width: 100%;}
@@ -387,9 +400,10 @@ p{margin-top: 0.2rem;}
 /*Tablet vertical*/
 @media(min-width: 768px){
     form input, label, form p, form a, #loginButton, #registerButton,
-    footer a, .press-button, nav div i, nav input, #showAllPosts p{font-size: 18px;}
+    footer a, .press-button, nav div i, nav input, #showAllPosts p,
+    #createPostForm textarea, #createPostButton{font-size: 18px;}
 
-    form input, form p, label{width: 75%;}
+    form input, form p, label, #createPostForm textarea{width: 75%;}
 
     .action-buttons, #showAllPosts{margin-top: 3rem;}
     
@@ -412,7 +426,7 @@ p{margin-top: 0.2rem;}
 
     form{width: 50vw;}
 
-    #registerButton{width: 7rem;}
+    #registerButton, #createPostButton{width: 7rem;}
 
     .mobileNav{display: none;}
     .desktopNav{display: flex;}
@@ -430,14 +444,15 @@ p{margin-top: 0.2rem;}
 /*Quick costumization*/
 @media(min-width: 950px){#showAllPosts img{height: 350px;}}
 @media(min-width: 1100px){
-    form input, label, form p, form a, #loginButton, footer a, #registerButton{font-size: 22px;}
+    form input, label, form p, form a, #loginButton, footer a, 
+    #registerButton, #createPostForm textarea, #createPostButton{font-size: 22px;}
 
     .action-buttons{width: 40vw;}
     
     form{width: 50vw;}
     form h1{font-size: 35px;}
     form input{padding: 0.3rem 0.6rem;}
-    #loginButton, #registerButton{width: 7rem;}
+    #loginButton, #registerButton, #createPostButton{width: 7rem;}
 }
 
 
@@ -477,7 +492,7 @@ p{margin-top: 0.2rem;}
 
 /*Desktop screens*/
 @media(min-width: 1366px){
-    form input, label, form p{width: 60%;}
+    form input, label, form p, #createPostForm textarea{width: 60%;}
     
     .press-button, footer a{font-size: 25px;}
 
@@ -499,22 +514,23 @@ p{margin-top: 0.2rem;}
 
 /*Quick costumization*/
 @media(min-width: 1550px){
-    form input, label, form p{width: 55%;}
+    form input, label, form p, #createPostForm textarea{width: 55%;}
     #showAllPosts img{max-height: 600px;}
 }
 @media(min-width: 1700px){
-    form input, label, form p, form a, #loginButton, #registerButton{font-size: 25px;}
+    form input, label, form p, form a, #loginButton, #registerButton,
+    #createPostForm textarea, #createPostButton{font-size: 25px;}
     
     .second{margin-left: 10rem;} .fade-text{right: 8rem;}
     
     form h1{font-size: 50px;}
 
-    #registerButton{width: 9rem;}
+    #registerButton, #createPostButton{width: 9rem;}
 }
 
 /*Full HD size desktop*/
 @media(min-width: 1920px){
-    form input, label, form p{width: 50%;}
+    form input, label, form p, #createPostForm textarea{width: 50%;}
     
     .logo, .second{margin-left: 15rem;}
 

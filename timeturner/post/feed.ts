@@ -15,8 +15,6 @@ if (getProfile){profile = JSON.parse(getProfile)}
 
 const token = profile?.accessToken
 
-console.log(profile)
-
 
 
 
@@ -79,7 +77,6 @@ async function getPosts(){
 
         const data = await response.json()
         const posts = data.data
-        console.log(posts.length + ' posts found')
 
         for(let i = 0; i < posts.length; i++){
             const postDiv = document.createElement('div')
