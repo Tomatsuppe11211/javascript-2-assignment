@@ -117,7 +117,8 @@ async function getPosts(){
             showPosts?.appendChild(postDiv)
 
             showPosts?.addEventListener('click', function(){
-                window.location.href = 'https://www.google.com/' //change to postView page
+                sessionStorage.setItem('postId', posts[i].id)
+                window.location.href = 'single-post.html' //change to postView page
             }) 
         }
         return data

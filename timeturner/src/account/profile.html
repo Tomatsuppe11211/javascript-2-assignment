@@ -4,13 +4,28 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Timeturner.com/my-profile</title>
+    <script src="https://kit.fontawesome.com/8908c40066.js" crossorigin="anonymous"></script>
 </head>
 <body>
     <header>
-        <nav>
-            <a href="../../post/index.html" >Feed</a>
-            <a href="#" class="active">Profile</a>
+        <nav class="desktopNav">
+            <a href="index.html">Feed</a>
+            <a href="../src/account/profile.html">Profile</a>
             <a href="#">Settings</a>
+            <div>
+                <i class="fa-solid fa-magnifying-glass" id="desktopSearch"></i>
+                <input type="text" placeholder="Search...">
+            </div>
+        </nav>
+
+        <nav class="mobileNav">
+            <a href="index.html"><i class="fa-solid fa-house"></i></a>
+            <a href="../src/account/profile.html"><i class="fa-solid fa-user"></i></a>
+            <a href=""><i class="fa-solid fa-gear"></i></a>
+            <div>
+                <i class="fa-solid fa-magnifying-glass" id="mobileSearch"></i>
+                <input type="text" placeholder="Search...">
+            </div>
         </nav>
     </header>
 
@@ -28,11 +43,13 @@
 
             <div id="profileInfo"></div>
             
-           <a href=""><button id="editProfileButton">Edit Profile</button></a>
+            <a href=""><button id="editProfileButton">Edit Profile</button></a>
+
+            <a href="../../post/create-post.html"><button id="newPostButton">New Post</button></a>
 
            <div id="myPosts"></div>
 
-           <a href="../../post/create-post.html"><button id="newPostButton">New Post</button></a>
+           
         </section>
     </main>
 

@@ -66,7 +66,8 @@ createPostButton.addEventListener('click', async function(e){
 
         if(!response.ok){
             console.log('Something went wrong! with creating this post:')
-            console.log(response.text)
+            const errormessage = await response.text()
+            console.log(`error: ${errormessage}`)
             return
         }
 

@@ -35,6 +35,10 @@ if(window.location.pathname.includes('create-post.html')){
 }
 
 
+if(window.location.pathname.includes('single-post.html')){
+  import('../post/single-post.ts')
+}
+
 
 
 

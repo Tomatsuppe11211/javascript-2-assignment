@@ -18,7 +18,7 @@ if(profileData){profile = JSON.parse(profileData)}
 
 const token = profile?.accessToken
 
-const apiKey = localStorage.getItem('CurrentKey')
+const apiKey = localStorage.getItem('CurrentKey') || ''
 
 
 
@@ -114,24 +114,63 @@ async function getPosts(){
         }
 
         const data = await response.json()
-        console.log(data)
 
         const myPosts = data.data
+        console.log(myPosts)
         
         if(data && myPosts.length !== 0){
             console.log(data)
 
             for(let i = 0; i < myPosts.length; i++){
+                console.log(myPosts[i])
+                
                 const post = document.createElement('div')
-                post.className = 'UserPosts'
-                const postImg = document.createElement('img')
+                post.className = 'userPosts'
+
+                if(myPosts[i].media !== null){
+                    const postImg = document.createElement('img')
+                    postImg.className = 'profilePostImage'
+                    postImg.src = myPosts[i].media.url
+                    post.appendChild(postImg)
+                } else {
+                    const postImg = document.createElement('div')
+                    postImg.className = 'profilePostImage'
+                    postImg.style.backgroundColor = '#00aeff'
+                    post.appendChild(postImg)
+                }
+                
+                
+
+                
+
                 const postTitle = document.createElement('h2')
-
-                postImg.src = myPosts.media.url
-                post.appendChild(postImg)
-
-                postTitle.innerHTML = myPosts.title
+                postTitle.innerHTML = myPosts[i].title
                 post.appendChild(postTitle)
+
+                const deleteButton = document.createElement('button')
+                deleteButton.className = 'deletePostButtons'
+                deleteButton.innerHTML = 'Delete'
+
+                deleteButton.addEventListener('click', async function(){
+                    await fetch(`https://v2.api.noroff.dev/social/posts/${myPosts[i].id}`, {
+                        method: 'DELETE',
+                        headers: {
+                            'Authorization': `Bearer ${token}`,
+                            'Content-Type': 'application/json', 
+                            'X-Noroff-API-Key': apiKey
+                        }
+                    })
+
+                    alert('Deleted')
+
+                    postsDisplay.innerHTML = ''
+                    bioText.innerHTML = ''
+                    profileCount.innerHTML = ''
+
+                    getPosts()
+                })
+
+                post.appendChild(deleteButton)
 
                 postsDisplay?.appendChild(post)
             }
