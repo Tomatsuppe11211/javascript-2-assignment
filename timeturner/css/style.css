@@ -190,6 +190,10 @@ nav input{border: none}
     padding: 0.5rem;
     box-shadow: inset 2px 3px 3px #000;
 }
+
+#createPostButton{
+    height: fit-content;
+}
 /*------------------------------------------------------*/
 
 
@@ -377,6 +381,8 @@ p{margin-top: 0.2rem;}
     nav div i{font-size: 15px;}
 
     .postDiv{margin-bottom: 1rem;}
+
+    header{height: 0.1rem;}
 }
 
 /*Quick costumization*/
