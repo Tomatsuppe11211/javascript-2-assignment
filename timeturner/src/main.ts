@@ -1,6 +1,7 @@
 import '../css/style.css'
 
-const currentUser = localStorage.getItem('currentUser')
+const currentUser = sessionStorage.getItem('currentUser')
+console.log(currentUser)
 
 
 if(currentUser && window.location.pathname.includes('/index.html')){

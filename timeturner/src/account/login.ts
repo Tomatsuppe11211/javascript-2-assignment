@@ -56,11 +56,11 @@ loginButton.addEventListener("click", async function(e){
         message.style.webkitTextStroke = '0.5px #000'
         message.innerHTML = 'Logged in successfully'
 
-        localStorage.setItem('currentUser', JSON.stringify(loggedInUser))
+        sessionStorage.setItem('currentUser', JSON.stringify(loggedInUser))
         sessionStorage.setItem('profileData', JSON.stringify(userData))
 
         setTimeout(() => {
-            window.location.href = '../../post/index.html' //change to feed page
+            window.location.href = '../../post/index.html'
         }, 2000);
         
         return data

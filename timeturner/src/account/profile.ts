@@ -166,8 +166,7 @@ async function getPosts(){
                     postsDisplay.innerHTML = ''
                     bioText.innerHTML = ''
                     profileCount.innerHTML = ''
-
-                    getPosts()
+                    //getPosts()
                 })
 
                 post.appendChild(deleteButton)
