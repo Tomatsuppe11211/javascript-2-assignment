@@ -18,7 +18,7 @@ if(profileData){profile = JSON.parse(profileData)}
 
 const token = profile?.accessToken
 
-const apiKey = localStorage.getItem('CurrentKey') || ''
+const apiKey = sessionStorage.getItem('CurrentKey') || ''
 
 
 

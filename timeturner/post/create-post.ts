@@ -17,7 +17,7 @@ const token = profile?.accessToken
 
 console.log(profile)
 
-const API_KEY = localStorage.getItem('CurrentKey') || ''
+const API_KEY = sessionStorage.getItem('CurrentKey') || ''
 console.log(API_KEY)
 
 

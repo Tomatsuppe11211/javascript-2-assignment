@@ -57,8 +57,7 @@ loginButton.addEventListener("click", async function(e){
         message.innerHTML = 'Logged in successfully'
 
         localStorage.setItem('currentUser', JSON.stringify(loggedInUser))
-        localStorage.setItem('profileData', JSON.stringify(userData))
-        localStorage.setItem('accessToken', data.accessToken)
+        sessionStorage.setItem('profileData', JSON.stringify(userData))
 
         setTimeout(() => {
             window.location.href = '../../post/index.html' //change to feed page

@@ -218,10 +218,65 @@ nav input{border: none}
 
 
 
+/*for the single post page*/
+/*------------------------------------------------------*/
+#backButton{
+    border: solid black;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    align-items: center;
+    height: fit-content;
+    width: 7rem;
+    padding: 0.2rem;
+    line-height: 100%;
+}
+
+#backButton i, #backButton p{margin: 0; padding: 0;}
+
+#backButton:hover{color: #00aeff;}
+
+#singlePost{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
 
 
 
+#aPost{
+    border: solid black;
+    height: fit-content;
+    margin: 2rem 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    border-radius: 2rem;
+    padding: 1rem;
+    background-color: #A6F2FF;
+}
 
+#aPost h1{text-align: center;}
+
+#aPost img, #aPost p, #aPost div{width: 80%;}
+
+#aPost img{border-radius: 2rem;}
+
+#interactions{
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    justify-content: space-evenly;
+    color: #00aeff; 
+    -webkit-text-stroke: 1px #000;
+}
+
+#interactions p{margin: 0; padding: 0; width: fit-content}
+
+
+/*------------------------------------------------------*/
 
 
 

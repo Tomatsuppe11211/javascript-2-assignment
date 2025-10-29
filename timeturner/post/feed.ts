@@ -31,7 +31,7 @@ async function createApiKey(){
 
     const data = await response.json()
     const currentKey = data.data.key
-    localStorage.setItem('CurrentKey', currentKey)
+    sessionStorage.setItem('CurrentKey', currentKey)
     return data.data.key
 }
 
@@ -116,9 +116,9 @@ async function getPosts(){
 
             showPosts?.appendChild(postDiv)
 
-            showPosts?.addEventListener('click', function(){
+            postDiv?.addEventListener('click', function(){
                 sessionStorage.setItem('postId', posts[i].id)
-                window.location.href = 'single-post.html' //change to postView page
+                window.location.href = 'single-post.html'
             }) 
         }
         return data
