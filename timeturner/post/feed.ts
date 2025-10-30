@@ -4,7 +4,7 @@ const showPosts = document.getElementById('showAllPosts')
 
 interface profileToken {accessToken: string}
 
-const getProfile = localStorage.getItem('profileData')
+const getProfile = sessionStorage.getItem('profileData')
 
 //returning to landing page if no user is logged in
 if(!getProfile){window.location.href = '../index.html'}
@@ -62,7 +62,7 @@ async function getPosts(){
     }
 
     try{
-        const response = await fetch(URL, {
+        const response = await fetch(`${URL}?_author=true`, {
             method: 'GET',
             headers: {
                 'Content-Type': 'application/json',
@@ -94,6 +94,12 @@ async function getPosts(){
             postTitle.className = 'postTitle'
             postTitle.innerHTML = posts[i].title
             postDiv.appendChild(postTitle)
+
+            const postAuthor = document.createElement('a')
+            postAuthor.href = 'https://www.google.com' //change with userProfile page
+            postAuthor.className = 'postAuthor'
+            postAuthor.innerHTML = `by ${posts[i].author.name}`
+            postDiv.appendChild(postAuthor)
 
             const postContent = document.createElement('p')
             postContent.className = 'postContent'

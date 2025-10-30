@@ -1,7 +1,11 @@
 import '../css/style.css'
 
 const currentUser = sessionStorage.getItem('currentUser')
-console.log(currentUser)
+if(currentUser && currentUser !== null){
+  console.log(currentUser)
+}
+
+
 
 
 if(currentUser && window.location.pathname.includes('/index.html')){
@@ -40,6 +44,10 @@ if(window.location.pathname.includes('single-post.html')){
   import('../post/single-post.ts')
 }
 
+
+if(window.location.pathname.includes('/edit-post.html')){
+  import('../post/edit-post.ts')
+}
 
 
 

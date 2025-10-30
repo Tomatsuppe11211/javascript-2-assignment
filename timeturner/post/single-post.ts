@@ -1,4 +1,5 @@
 const postDisplay = document.getElementById('aPost')
+const tabName = document.getElementById('tabName')
 
 const id = sessionStorage.getItem('postId')
 
@@ -35,9 +36,12 @@ async function getPost(){
 
 
         const data = await response.json()
-        console.log(data)
         const postDetails = data.data
-        console.log(postDetails)
+
+        if(tabName && tabName !== null){
+            tabName.innerHTML = `Timeturner.com/${postDetails.title}`
+        }
+         
 
         if(postDetails.media !== null && postDetails.media.url !== null){
             const postImage = document.createElement('img')

@@ -7,7 +7,7 @@ const editprofileButton = document.getElementById("editProfileButton") as HTMLBu
 const postsDisplay = document.getElementById('myPosts')
 
 
-let profileData = localStorage.getItem('profileData')
+let profileData = sessionStorage.getItem('profileData')
 
 
 interface profileToken {accessToken: string, name: string}
@@ -20,6 +20,7 @@ const token = profile?.accessToken
 
 const apiKey = sessionStorage.getItem('CurrentKey') || ''
 
+let totalPosts = 0
 
 
 async function getSocialProfile(){
@@ -46,6 +47,7 @@ async function getSocialProfile(){
 
         const profileInfo = data.data
 
+        totalPosts = profileInfo._count.posts
 
         if(profileInfo.banner.url){
             bannerDisplay.src = profileInfo.banner.url
@@ -67,6 +69,7 @@ async function getSocialProfile(){
         }
 
         const postsCount = document.createElement('p')
+        postsCount.id = 'postsCount'
         postsCount.innerHTML = `Posts: ${profileInfo._count.posts}`
         profileCount.appendChild(postsCount)
 
@@ -78,8 +81,6 @@ async function getSocialProfile(){
         followersCount.innerHTML = `Followers: ${profileInfo._count.followers}`
         profileCount.appendChild(followersCount)
 
-
-        console.log(data)
         return data
 
     } catch(error){
@@ -116,7 +117,6 @@ async function getPosts(){
         const data = await response.json()
 
         const myPosts = data.data
-        console.log(myPosts)
         
         if(data && myPosts.length !== 0){
             console.log(data)
@@ -152,6 +152,8 @@ async function getPosts(){
                 deleteButton.innerHTML = 'Delete'
 
                 deleteButton.addEventListener('click', async function(){
+                    const postCount = document.getElementById('postsCount')
+
                     await fetch(`https://v2.api.noroff.dev/social/posts/${myPosts[i].id}`, {
                         method: 'DELETE',
                         headers: {
@@ -163,13 +165,30 @@ async function getPosts(){
 
                     alert('Deleted')
 
-                    postsDisplay.innerHTML = ''
-                    bioText.innerHTML = ''
-                    profileCount.innerHTML = ''
-                    //getPosts()
+                    postsDisplay?.removeChild(post)
+                    totalPosts = totalPosts - 1
+                    
+                    if(postCount !== null){
+                        postCount.innerHTML = `Posts: ${myPosts.length}`
+                    }
                 })
 
                 post.appendChild(deleteButton)
+
+
+
+                const editButton = document.createElement('button')
+                editButton.id = 'editPostButton'
+                editButton.innerHTML = 'Edit'
+                post.appendChild(editButton)
+
+
+                editButton.addEventListener('click', function(){
+                    sessionStorage.setItem('editId', myPosts[i].id)
+                    window.location.href = "../../post/edit-post.html"
+                })
+
+
 
                 postsDisplay?.appendChild(post)
             }
