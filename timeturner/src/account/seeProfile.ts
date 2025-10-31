@@ -3,6 +3,7 @@ const avatarDisplay = document.getElementById("avatar") as HTMLImageElement
 const userNameDisplay = document.getElementById('usersName') as HTMLHeadingElement
 const bioText = document.getElementById("bioText") as HTMLParagraphElement
 const profileCount = document.getElementById('profileInfo') as HTMLDivElement
+const followButton = document.getElementById('followButton') as HTMLButtonElement
 const secondUserNameDisplay = document.getElementById('userNameProfile') as HTMLHeadingElement
 const postsDisplay = document.getElementById('userPosts') as HTMLDivElement
 
@@ -72,6 +73,7 @@ async function getProfile(){
         const followingCount = document.createElement('p')
         followingCount.innerHTML = `Following: ${userInfo._count.following}`
         profileCount.appendChild(followingCount)
+        
 
         secondUserNameDisplay.innerHTML = `${userInfo.name}'s posts`
 
@@ -140,3 +142,105 @@ async function getProfile(){
 }
 
 getProfile()
+
+
+followButton.addEventListener('click', follow)
+//followButton.addEventListener('click', unFollow)
+
+async function follow(){
+    try{
+        const response = await fetch(`https://v2.api.noroff.dev/social/profiles/${seeUserProfile}/follow`, {
+            method: 'PUT',
+            headers:{
+                'Authorization': `Bearer ${token}`,
+                'Content-Type': 'application/json', 
+                'X-Noroff-API-Key': apiKey
+            }
+        })
+
+        if(!response.ok){
+            const errorMessage = await response.text()
+            console.log(errorMessage)
+            return
+        }
+
+        alert(`You are now following ${seeUserProfile}`)
+
+        followButton.innerHTML = 'Unfollow'
+        followButton.removeEventListener('click', follow)
+        followButton.addEventListener('click', unFollow)
+    } catch(error){
+        console.error(error)
+    }
+}
+
+async function unFollow(){
+    try{
+        const response = await fetch(`https://v2.api.noroff.dev/social/profiles/${seeUserProfile}/unfollow`, {
+            method: 'PUT',
+            headers:{
+                'Authorization': `Bearer ${token}`,
+                'Content-Type': 'application/json', 
+                'X-Noroff-API-Key': apiKey
+            }
+        })
+
+        if(!response.ok){
+            const errorMessage = await response.text()
+            console.log(errorMessage)
+            return
+        }
+
+        alert(`You have unfollowed ${seeUserProfile}`)
+
+        followButton.innerHTML = 'Follow'
+        followButton.removeEventListener('click', follow)
+        followButton.addEventListener('click', unFollow)
+    } catch(error){
+        console.error(error)
+    }
+}
+
+
+console.log('Checking following users')
+
+async function checkFollowedUsers(){
+    try{
+        const response = await fetch(`https://v2.api.noroff.dev/social/profiles/${profile?.name}?_following=true`, {
+            method: 'GET',
+            headers: {
+                'Authorization': `Bearer ${token}`,
+                'Content-Type': 'application/json', 
+                'X-Noroff-API-Key': apiKey
+            }
+        })
+
+        if(!response.ok){
+            const errorMessage = await response.text()
+            console.log(errorMessage)
+            return
+        }
+
+        const data = await response.json()
+        console.log('you are following:')
+        const followedData = data.data.following
+        console.log(followedData)
+
+        for(let i = 0; i < followedData.length; i++){
+            if(followedData[i].name === seeUserProfile){
+                console.log('you are following this user')
+                followButton.innerHTML = 'unfollow'
+                followButton.addEventListener('click', unFollow)
+            } else {
+                console.log('you are not following this user')
+                followButton.innerHTML = 'Follow'
+                followButton.addEventListener('click', follow)
+            }
+        }
+    } catch(error){
+        console.error(error)
+    }
+}
+
+
+checkFollowedUsers()
