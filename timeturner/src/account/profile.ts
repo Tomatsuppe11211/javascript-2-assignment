@@ -131,6 +131,7 @@ async function getPosts(){
                     const postImg = document.createElement('img')
                     postImg.className = 'profilePostImage'
                     postImg.src = myPosts[i].media.url
+                    postImg.alt = myPosts[i].media.alt
                     post.appendChild(postImg)
                 } else {
                     const postImg = document.createElement('div')
@@ -189,6 +190,10 @@ async function getPosts(){
                 })
 
 
+                post.addEventListener('click', function(){
+                    sessionStorage.setItem('postId', myPosts[i].id)
+                    window.location.href = '../../post/single-post.html'
+                })
 
                 postsDisplay?.appendChild(post)
             }

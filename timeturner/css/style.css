@@ -76,6 +76,8 @@ body{
     background-image: url('../images/skies.png');
     background-repeat: no-repeat;
     background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
 }
 
 
@@ -182,7 +184,7 @@ nav input{border: none}
     height: 10rem; width: 10rem;
 }
 
-#myPosts{
+#myPosts, #userPosts{
     display: flex;
     flex-wrap: wrap;
     justify-content: space-evenly;
