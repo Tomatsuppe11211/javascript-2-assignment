@@ -50,6 +50,11 @@ if(window.location.pathname.includes('/edit-post.html')){
 }
 
 
+if(window.location.pathname.includes('seeProfile.html')){
+  import('../src/account/seeProfile.ts')
+}
+
+
 
 
 

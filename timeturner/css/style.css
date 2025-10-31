@@ -117,6 +117,8 @@ header a{font-size: 25px;}
 #showAllPosts{width: 80vw; padding: 0.5rem 0;}
 .extraInfo{width: 90%;}
 .postDiv{border: solid #9a9a9a; box-shadow: #000 4px 6px 4px;}
+.postDiv:nth-child(odd){background-color: #A6F2FF;}
+.postDiv:nth-child(even){background-color: #FAD5DE;}
 nav div{justify-content: space-between;}
 nav input{border: none}
 .postCU{color: #9a9a9a;}

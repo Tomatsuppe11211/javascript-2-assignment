@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Timeturner.com/see-Profile</title>
+    <script src="https://kit.fontawesome.com/8908c40066.js" crossorigin="anonymous"></script>
+</head>
+<body>
+    <header>
+        <nav class="desktopNav">
+            <a href="index.html">Feed</a>
+            <a href="../src/account/profile.html">Profile</a>
+            <a href="#">Settings</a>
+            <div>
+                <i class="fa-solid fa-magnifying-glass" id="desktopSearch"></i>
+                <input type="text" placeholder="Search...">
+            </div>
+        </nav>
+
+        <nav class="mobileNav">
+            <a href="index.html"><i class="fa-solid fa-house"></i></a>
+            <a href="../src/account/profile.html"><i class="fa-solid fa-user"></i></a>
+            <a href=""><i class="fa-solid fa-gear"></i></a>
+            <div>
+                <i class="fa-solid fa-magnifying-glass" id="mobileSearch"></i>
+                <input type="text" placeholder="Search...">
+            </div>
+        </nav>
+    </header>
+
+    <main id="showProfile">
+        <section class="profile-card">
+            <img alt="banner" id="banner">
+            <img alt="Avatar" id="avatar">
+
+            <h1 id="usersName">User_name</h1>
+
+            <div id="bioDisplay">
+                <h2>Bio</h2>
+                <p id="bioText">This bio is empty</p>
+            </div>
+
+            <div id="profileInfo"></div>
+
+           <div id="userPosts">
+                <h2 id="userNameProfile">User's posts</h2>
+           </div>
+
+           
+        </section>
+    </main>
+
+    <footer>
+        <nav>
+          <a href="#">Contact</a>
+          <a href="#">Privacy Policy</a>
+          <a href="#">Terms of use</a>
+          <a href="../../index.html"><img src="../../images/footer_logo.png"></a>
+        </nav>
+    </footer>
+
+    <script type="module" src="/src/main.ts"></script>
+</body>
+</html>

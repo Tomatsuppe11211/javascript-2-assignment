@@ -54,7 +54,7 @@ createApiKey()
 
 async function getPosts(){
     const apiKey = await createApiKey()
-    localStorage.getItem('currentKey')
+    sessionStorage.getItem('currentKey')
 
     if(!token){
         console.log('There was an error fetching posts')
@@ -96,9 +96,12 @@ async function getPosts(){
             postDiv.appendChild(postTitle)
 
             const postAuthor = document.createElement('a')
-            postAuthor.href = 'https://www.google.com' //change with userProfile page
+            postAuthor.href = '../src/account/seeProfile.html'
             postAuthor.className = 'postAuthor'
             postAuthor.innerHTML = `by ${posts[i].author.name}`
+            postAuthor.addEventListener('click', function(){
+                sessionStorage.setItem('seeProfile', posts[i].author.name)
+            })
             postDiv.appendChild(postAuthor)
 
             const postContent = document.createElement('p')

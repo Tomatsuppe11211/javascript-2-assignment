@@ -95,7 +95,7 @@ saveChangesButton.addEventListener('click', async function(e){
             'Content-Type': 'application/json', 
             'X-Noroff-API-Key': apiKey
         },
-        body: JSON.stringify({newPostData})
+        body: JSON.stringify(newPostData)
     })
     
     if(!response.ok){
