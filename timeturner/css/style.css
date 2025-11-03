@@ -523,9 +523,9 @@ p{margin-top: 0.2rem;}
 
 /*Tablet vertical*/
 @media(min-width: 768px){
-    form input, label, form p, form a, #loginButton, #registerButton,
-    footer a, .press-button, nav div i, nav input, #showAllPosts p,
-    #createPostForm textarea, #editPostForm textarea, #createPostButton{font-size: 18px;}
+    form input, label, form p, form a, #loginButton, #registerButton, footer a, .press-button, 
+    nav div i, nav input, #showAllPosts p, #createPostForm textarea, #editPostForm textarea, 
+    #createPostButton, #bioDisplay p, #profileInfo p, .deletePostButtons, .editPostButtons{font-size: 18px;}
 
     form input, form p, label, #createPostForm textarea, #editPostForm textarea{width: 75%;}
 
@@ -535,8 +535,10 @@ p{margin-top: 0.2rem;}
 
     #registerButton, #createPostButton{width: 7rem;}
 
-    
-    
+    nav input, .profile-card{width: 80%;}
+    nav a, nav input, #bioDisplay h2{font-size: 22px;}
+
+
     .fade-text{
         font-size: 14px; 
         right: 0;
@@ -557,37 +559,41 @@ p{margin-top: 0.2rem;}
     .mobileNav{display: none;}
     .desktopNav{display: flex;}
     nav div{padding: 0.5rem 0.7rem; width: 12rem; margin-right: 1rem;}
-    nav input{width: 80%;}
-    nav a, nav input{font-size: 22px;}
 
     #showAllPosts{width: 50vw;}
     #showAllPosts h1{font-size: 26px;}
     .postDiv{margin-bottom: 3rem;}
 
-    .profile-card h1{font-size: 25px;}
-    #bioDisplay h2{font-size: 22px;}
-    #bioDisplay p, #profileInfo p{font-size: 18px;}
+    .profile-card h1{font-size: 28px;}
     #profileInfo{flex-direction: row;}
     #newPostButton{margin-top: 5rem;}
+    #myPosts{margin-top: 2rem;}
     #avatar{height: 20%; width: 20%;}
     #banner{height: 200px;}
 }
 
 /*Quick costumization*/
 @media(min-height: 800px){.logo{height: 12rem; width: 12rem;}}
-@media(min-width: 950px){#showAllPosts img{height: 350px;}}
+@media(min-width: 950px){
+    #showAllPosts img{height: 350px;}
+    .profile-card{width: 65%;}
+}
 @media(min-width: 1100px){
-    form input, label, form p, form a, #loginButton, footer a, 
-    #registerButton, #createPostForm textarea, #editPostForm textarea, 
-    #createPostButton, .editPostButtons, #newPostButton{font-size: 22px;}
+    form input, label, form p, form a, #loginButton, footer a, #registerButton, 
+    #createPostForm textarea, #editPostForm textarea, #createPostButton, #newPostButton, 
+    #editProfileButton{font-size: 22px;}
 
     .action-buttons{width: 40vw;}
     
     form{width: 50vw;}
     form h1{font-size: 35px;}
     form input{padding: 0.3rem 0.6rem;}
-    #loginButton, #registerButton, #createPostButton, 
-    .editPostButtons, #newPostButton{width: 7rem;}
+    #loginButton, #registerButton, #createPostButton{width: 7rem;}
+
+    .profile-card{width: 60%;}
+    .profile-card h2{font-size: 18px}
+    #bioDisplay p, #profileInfo p, .deletePostButtons, .editPostButtons, 
+    #editProfileButton, #newPostButton{font-size: 16px;}
 }
 
 
@@ -623,6 +629,8 @@ p{margin-top: 0.2rem;}
     #showAllPosts h1{font-size: 30px;}
 
     .postDiv{margin-bottom: 5rem;}
+
+    .profile-card{width: 55%;}
 }
 
 /*Desktop screens*/
@@ -645,6 +653,11 @@ p{margin-top: 0.2rem;}
 
     .action-buttons{margin-top: 1rem;}
     .press-button{font-size: 28px; height: 9rem; width: 9rem;}
+
+    .profile-card{width: 50%;}
+    .profile-card h1{font-size: 30px;}
+    .profile-card h2, #bioDisplay h2{font-size: 25px;}
+    #bioDisplay p, #profileInfo p{font-size: 20px;}
 }
 
 /*Quick costumization*/
