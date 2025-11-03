@@ -3,7 +3,7 @@ const avatarDisplay = document.getElementById("avatar") as HTMLImageElement
 const userNameDisplay = document.getElementById('usersName') as HTMLElement
 const bioText = document.getElementById("bioText") as HTMLParagraphElement
 const profileCount = document.getElementById('profileInfo') as HTMLDivElement
-const editprofileButton = document.getElementById("editProfileButton") as HTMLButtonElement
+const editProfileButton = document.getElementById("editProfileButton") as HTMLButtonElement
 const postsDisplay = document.getElementById('myPosts')
 
 
@@ -19,8 +19,6 @@ if(profileData){profile = JSON.parse(profileData)}
 const token = profile?.accessToken
 
 const apiKey = sessionStorage.getItem('CurrentKey') || ''
-
-let totalPosts = 0
 
 
 async function getSocialProfile(){
@@ -46,8 +44,6 @@ async function getSocialProfile(){
         const data = await response.json()
 
         const profileInfo = data.data
-
-        totalPosts = profileInfo._count.posts
 
         if(profileInfo.banner.url){
             bannerDisplay.src = profileInfo.banner.url
@@ -89,7 +85,7 @@ async function getSocialProfile(){
 }
 
 
-editprofileButton.addEventListener('click', function(){
+editProfileButton.addEventListener('click', function(){
     window.location.href="../../index.html" //change with edit profile page
 })
 
@@ -133,24 +129,42 @@ async function getPosts(){
                     postImg.src = myPosts[i].media.url
                     postImg.alt = myPosts[i].media.alt
                     post.appendChild(postImg)
+
+                    postImg.addEventListener('click', function(){
+                        sessionStorage.setItem('postId', myPosts[i].id)
+                        window.location.href = '../../post/single-post.html'
+                    })
                 } else {
                     const postImg = document.createElement('div')
                     postImg.className = 'profilePostImage'
                     postImg.style.backgroundColor = '#00aeff'
                     post.appendChild(postImg)
+
+                    postImg.addEventListener('click', function(){
+                        sessionStorage.setItem('postId', myPosts[i].id)
+                        window.location.href = '../../post/single-post.html'
+                    })
                 }
                 
-                
-
-                
-
                 const postTitle = document.createElement('h2')
                 postTitle.innerHTML = myPosts[i].title
                 post.appendChild(postTitle)
 
+
+
+                const actionButtons = document.createElement('div')
+                actionButtons.className = 'postActions'
+
+                const editButton = document.createElement('button')
+                editButton.className = 'editPostButtons'
+                editButton.innerHTML = 'Edit'
+                actionButtons.appendChild(editButton)
+
                 const deleteButton = document.createElement('button')
                 deleteButton.className = 'deletePostButtons'
                 deleteButton.innerHTML = 'Delete'
+                actionButtons.appendChild(deleteButton)
+
 
                 deleteButton.addEventListener('click', async function(){
                     const postCount = document.getElementById('postsCount')
@@ -167,21 +181,13 @@ async function getPosts(){
                     alert('Deleted')
 
                     postsDisplay?.removeChild(post)
-                    totalPosts = totalPosts - 1
                     
                     if(postCount !== null){
                         postCount.innerHTML = `Posts: ${myPosts.length}`
                     }
                 })
 
-                post.appendChild(deleteButton)
-
-
-
-                const editButton = document.createElement('button')
-                editButton.id = 'editPostButton'
-                editButton.innerHTML = 'Edit'
-                post.appendChild(editButton)
+                
 
 
                 editButton.addEventListener('click', function(){
@@ -189,13 +195,10 @@ async function getPosts(){
                     window.location.href = "../../post/edit-post.html"
                 })
 
-
-                post.addEventListener('click', function(){
-                    sessionStorage.setItem('postId', myPosts[i].id)
-                    window.location.href = '../../post/single-post.html'
-                })
-
+                post.appendChild(actionButtons)
                 postsDisplay?.appendChild(post)
+
+                
             }
         } else {
             console.log('no posts found')
