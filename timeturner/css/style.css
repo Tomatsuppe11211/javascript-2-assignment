@@ -656,8 +656,10 @@ p{margin-top: 0.2rem;}
 
     .profile-card{width: 50%;}
     .profile-card h1{font-size: 30px;}
-    .profile-card h2, #bioDisplay h2{font-size: 25px;}
+    .profile-card h2, #bioDisplay h2{font-size: 20px;}
     #bioDisplay p, #profileInfo p{font-size: 20px;}
+    .userPosts{width: 35%; border: solid black;}
+    .userPosts img{width: 100%; height: 60%;}
 }
 
 /*Quick costumization*/
@@ -667,14 +669,13 @@ p{margin-top: 0.2rem;}
 }
 @media(min-width: 1700px){
     form input, label, form p, form a, #loginButton, #registerButton,
-    #createPostForm textarea, #editPostForm textarea, #createPostButton, 
-    .editPostButtons, #newPostButton{font-size: 25px;}
+    #createPostForm textarea, #editPostForm textarea, #createPostButton{font-size: 25px;}
     
     .second{margin-left: 10rem;} .fade-text{right: 8rem;}
     
     form h1{font-size: 50px;}
 
-    #registerButton, .editPostButtons, #newPostButton{width: 9rem;}
+    #registerButton{width: 9rem;}
 }
 
 /*Full HD size desktop*/
