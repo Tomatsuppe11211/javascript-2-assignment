@@ -95,10 +95,9 @@ async function getPosts(){
             postTitle.innerHTML = posts[i].title
             postDiv.appendChild(postTitle)
 
-            const postAuthor = document.createElement('a')
-            postAuthor.href = '../src/account/seeProfile.html'
+            const postAuthor = document.createElement('p')
             postAuthor.className = 'postAuthor'
-            postAuthor.innerHTML = `by ${posts[i].author.name}`
+            postAuthor.innerHTML = `by <a href="../src/account/seeProfile.html">${posts[i].author.name}</a>`
             postAuthor.addEventListener('click', function(){
                 sessionStorage.setItem('seeProfile', posts[i].author.name)
             })

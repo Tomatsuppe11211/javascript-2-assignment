@@ -1,5 +1,5 @@
-const bannerDisplay = document.getElementById("banner") as HTMLImageElement
-const avatarDisplay = document.getElementById("avatar") as HTMLImageElement
+const bannerDisplay = document.getElementById("myBanner") as HTMLImageElement
+const avatarDisplay = document.getElementById("myAvatar") as HTMLImageElement
 const userNameDisplay = document.getElementById('usersName') as HTMLElement
 const bioText = document.getElementById("bioText") as HTMLParagraphElement
 const profileCount = document.getElementById('profileInfo') as HTMLDivElement
