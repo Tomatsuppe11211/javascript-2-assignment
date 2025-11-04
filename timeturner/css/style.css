@@ -1,16 +1,16 @@
 html, body{padding: 0; margin: 0; min-height: 100vh;}
 
 body, main, footer, nav, .action-buttons, .action-buttons div, .press-button,
-form, #postFeed, #showAllPosts, .extraInfo, nav div{display: flex;}
+form, #postFeed, #showAllPosts, .extraInfo, nav div, .postDiv{display: flex;}
 
-body, main, form, #showAllPosts{flex-direction: column;}
+body, main, form, #showAllPosts, .postDiv{flex-direction: column;}
 
 
 footer, .action-buttons div, .press-button, .forms, 
-#postFeed, .extraInfo{justify-content: center;}
+#postFeed, .extraInfo, .postDiv{justify-content: center;}
 
 footer, nav, .action-buttons div, .press-button, form, .forms, 
-#postFeed, #showAllPosts, .extraInfo, nav div{align-items: center;}
+#postFeed, #showAllPosts, .extraInfo, nav div, .postDiv{align-items: center;}
 
 footer, .press-button, #loginButton{background-color: #fff;}
 
@@ -34,7 +34,7 @@ a:hover, .press-button:hover ~ .press-button a, #loginButton:hover, label, #regi
 
 form, #loginButton, #registerButton{border-radius: 1.5rem; box-shadow: 4px 6px 4px #000;}
 
-form h1, a, #showAllPosts h1, .extraInfo{text-align: center;}
+form h1, a, #showAllPosts h1{text-align: center;}
 
 form input, label{width: 30rem;}
 
@@ -123,6 +123,8 @@ header a{font-size: 25px;}
 .postDiv{border: solid #9a9a9a; box-shadow: #000 4px 6px 4px;}
 .postDiv:nth-child(odd){background-color: #A6F2FF;}
 .postDiv:nth-child(even){background-color: #FAD5DE;}
+.postDiv a, .postDiv p{width: 90%; text-align: start;}
+.extraInfo p{text-align: center;}
 nav div{justify-content: space-between;}
 nav input{border: none}
 .postCU{color: #9a9a9a;}
@@ -431,19 +433,18 @@ p{margin-top: 0.2rem;}
 /*phone vertical*/
 @media(min-width: 320px){
     .logo, .action-buttons{margin-left: 0;}
-
     .logo, footer a, .postDiv, .userPosts, .userPosts h2, #newPostButton{margin-top: 1rem;}
 
-    .press-button, footer a, #showAllPosts h1{font-size: 12px;}
+    .press-button, footer a, .postDiv p{font-size: 12px;}
 
     form, .action-buttons{margin-bottom: 5rem;}
 
-    form input, label, #showAllPosts div, #showAllPosts p, #createPostForm textarea, 
-    #editPostForm textarea, .profile-card{width: 90%;}
+    form input, label, .postDiv, #createPostForm textarea, 
+    #editPostForm textarea, .profile-card, .postDiv p{width: 90%;}
 
     form input, label, form p, form a, #loginButton, #createPostForm textarea, #editPostForm textarea,
     #registerButton, nav input, #createPostButton, #profileInfo p, #bioDisplay p,
-    #editProfileButton, .editPostButtons, .deletePostButtons, #newPostButton{font-size: 14px;}
+    #editProfileButton, .editPostButtons, .deletePostButtons, #newPostButton, .postDiv h1{font-size: 14px;}
 
     #editProfileButton, .editPostButtons, .deletePostButtons, #newPostButton{
         padding: 0.1rem 0.3rem;
@@ -454,9 +455,6 @@ p{margin-top: 0.2rem;}
     .userPosts img, .userPosts h2, .deletePostButtons{margin-bottom: 0;}
 
     
-
-
-
     main{justify-content: space-evenly; align-items: center;}
 
     .logo{height: 10rem; width: 10rem;}
@@ -472,9 +470,9 @@ p{margin-top: 0.2rem;}
     form h1, nav i{font-size: 25px;}
     
 
-    #showAllPosts div {padding: 0.2rem;}
-    #showAllPosts img{height: 150px; width: 100%;}
-    #showAllPosts p{font-size: 10px;}
+    .postDiv {padding: 0.2rem;}
+    .postDiv img{height: 150px; width: 100%;}
+    .postDiv a{font-size: 10px;}
 
     .desktopNav{display: none;}
     nav div{
@@ -505,16 +503,22 @@ p{margin-top: 0.2rem;}
 
 /*Quick costumization*/
 @media(min-width: 500px){
-    #showAllPosts img{height: 200px;}
-    #showAllPosts h1{font-size: 16px;}
-    #showAllPosts p{font-size: 14px;}
+    .postDiv, nav input{width: 80%;}
+    
+    .postDiv img{height: 200px;}
+    .postDiv h1{font-size: 16px;}
+    .postDiv p{font-size: 14px;}
+    .postDiv a{font-size: 12px;}
+    
     nav div{width: 15rem;}
-    nav input{width: 80%;}
     .profile-card h1{font-size: 22px;}
     #avatar{width: 25%; height: 25%;}
     #bioDisplay h2{font-size: 18px;}
 }
-@media(min-width: 700px){#showAllPosts img{height: 250px;}}
+@media(min-width: 700px){
+    .postDiv{width: 60%;}
+    .postDiv img{height: 200px;}
+}
 @media(min-height: 700px){
     .press-button{font-size: 16px ; height: 5.3rem; width: 5.3rem;}
     footer a{font-size: 14px;}
@@ -524,7 +528,7 @@ p{margin-top: 0.2rem;}
 /*Tablet vertical*/
 @media(min-width: 768px){
     form input, label, form p, form a, #loginButton, #registerButton, footer a, .press-button, 
-    nav div i, nav input, #showAllPosts p, #createPostForm textarea, #editPostForm textarea, 
+    nav div i, nav input, .postDiv p, #createPostForm textarea, #editPostForm textarea, 
     #createPostButton, #bioDisplay p, #profileInfo p, .deletePostButtons, .editPostButtons{font-size: 18px;}
 
     form input, form p, label, #createPostForm textarea, #editPostForm textarea{width: 75%;}
@@ -536,8 +540,10 @@ p{margin-top: 0.2rem;}
     #registerButton, #createPostButton{width: 7rem;}
 
     nav input, .profile-card{width: 80%;}
+
     nav a, nav input, #bioDisplay h2{font-size: 22px;}
 
+    .logo{height: 15rem; width: 15rem;}
 
     .fade-text{
         font-size: 14px; 
@@ -547,9 +553,8 @@ p{margin-top: 0.2rem;}
         display: block;
     }
     .fade-text h1{margin-top: 1.5rem;}
-
-    .logo{height: 15rem; width: 15rem;}
     .second{margin-left: 0;}
+
 
     .action-buttons{margin-bottom: 2rem;}
     .press-button{height: 6.3rem; width: 6.3rem;}
@@ -560,9 +565,10 @@ p{margin-top: 0.2rem;}
     .desktopNav{display: flex;}
     nav div{padding: 0.5rem 0.7rem; width: 12rem; margin-right: 1rem;}
 
-    #showAllPosts{width: 50vw;}
-    #showAllPosts h1{font-size: 26px;}
-    .postDiv{margin-bottom: 3rem;}
+    .postDiv{margin-bottom: 3rem; width: 70%;}
+    .postDiv h1{font-size: 26px;}
+    .postDiv img{height: 250px;}
+    .postDiv a{font-size: 16px;}
 
     .profile-card h1{font-size: 28px;}
     #profileInfo{flex-direction: row;}
@@ -584,7 +590,7 @@ p{margin-top: 0.2rem;}
     #editProfileButton{font-size: 22px;}
 
     .action-buttons{width: 40vw;}
-    
+
     form{width: 50vw;}
     form h1{font-size: 35px;}
     form input{padding: 0.3rem 0.6rem;}
@@ -605,7 +611,7 @@ p{margin-top: 0.2rem;}
     .fade-text, footer a, nav input{font-size: 20px;}
 
     .press-button, #showAllPosts p{font-size: 22px;}
-    
+
     main{align-items: start;}
 
     .logo{margin-left: 10rem; height: 20rem; width: 20rem;}
@@ -618,7 +624,6 @@ p{margin-top: 0.2rem;}
         text-align: start;
     }
     .fade-text h1{margin-top: 2.5rem;}
-
     .second{margin-left: 7rem;}
 
     .action-buttons{margin-left: 10rem;}
@@ -629,14 +634,13 @@ p{margin-top: 0.2rem;}
     #showAllPosts h1{font-size: 30px;}
 
     .postDiv{margin-bottom: 5rem;}
-
     .profile-card{width: 55%;}
 }
 
 /*Desktop screens*/
 @media(min-width: 1366px){
     form input, label, form p, #createPostForm textarea, #editPostForm textarea{width: 60%;}
-    
+
     .press-button, footer a{font-size: 25px;}
 
     .fade-text{font-size: 22px;}
@@ -649,16 +653,20 @@ p{margin-top: 0.2rem;}
     .logo{height: 20rem; width: 20rem; margin-top: 2rem;}
 
     .fade-text{font-size: 22px; top: 1rem;}
+
     .fade-text h1{margin-top: 3rem;}
 
     .action-buttons{margin-top: 1rem;}
+
     .press-button{font-size: 28px; height: 9rem; width: 9rem;}
 
     .profile-card{width: 50%;}
     .profile-card h1{font-size: 30px;}
     .profile-card h2, #bioDisplay h2{font-size: 20px;}
+
     #bioDisplay p, #profileInfo p{font-size: 20px;}
-    .userPosts{width: 35%; border: solid black;}
+
+    .userPosts{width: 35%;}
     .userPosts img{width: 100%; height: 60%;}
 }
 
@@ -670,9 +678,9 @@ p{margin-top: 0.2rem;}
 @media(min-width: 1700px){
     form input, label, form p, form a, #loginButton, #registerButton,
     #createPostForm textarea, #editPostForm textarea, #createPostButton{font-size: 25px;}
-    
+
     .second{margin-left: 10rem;} .fade-text{right: 8rem;}
-    
+
     form h1{font-size: 50px;}
 
     #registerButton{width: 9rem;}
@@ -681,13 +689,14 @@ p{margin-top: 0.2rem;}
 /*Full HD size desktop*/
 @media(min-width: 1920px){
     form input, label, form p, #createPostForm textarea, #editPostForm textarea{width: 50%;}
-    
     .logo, .second{margin-left: 15rem;}
-
 
     .logo{height: 30rem; width: 30rem;}
 
     .fade-text h1{font-size: 50px;}
 
     .action-buttons{margin-left: 10rem; margin-top: 2rem;}
+
+    .userPosts{height: 320px;}
+    .userPosts img{height: 70%;}
 }
