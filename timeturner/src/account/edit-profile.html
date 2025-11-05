@@ -10,7 +10,7 @@
     <header>
         <nav class="desktopNav">
             <a href="index.html">Feed</a>
-            <a href="../src/account/profile.html" class="active">Profile</a>
+            <a href="../src/account/profile.html">Profile</a>
             <a href="#">Settings</a>
             <div>
                 <i class="fa-solid fa-magnifying-glass" id="desktopSearch"></i>
@@ -20,7 +20,7 @@
 
         <nav class="mobileNav">
             <a href="index.html"><i class="fa-solid fa-house"></i></a>
-            <a href="../src/account/profile.html" class="active"><i class="fa-solid fa-user"></i></a>
+            <a href="../src/account/profile.html"><i class="fa-solid fa-user"></i></a>
             <a href=""><i class="fa-solid fa-gear"></i></a>
             <div>
                 <i class="fa-solid fa-magnifying-glass" id="mobileSearch"></i>
@@ -29,28 +29,19 @@
         </nav>
     </header>
 
-    <main id="showProfile">
-        <section class="profile-card">
-            <img alt="Banner" id="myBanner" class="banner">
-            <img alt="Avatar" id="myAvatar" class="avatar">
+    <main class="forms">
+        <form id="EditProfileForm">
+            <h1>Edit profile</h1>
 
-            <h1 id="usersName">User_name</h1>
+            <label for="changeBanner">Banner</label>
+            <input type="text" placeholder="link to banner image..." id="changeBanner">
 
-            <div id="bioDisplay">
-                <h2>Bio</h2>
-                <p id="bioText">This bio is empty</p>
-            </div>
+            <label for="changeAvatar">Avatar</label>
+            <input type="text" placeholder="link to avatar image" id="changeAvatar">
 
-            <div id="profileInfo"></div>
-            
-            <a href="edit-profile.html"><button id="editProfileButton">Edit Profile</button></a>
-
-            <a href="../../post/create-post.html"><button id="newPostButton">New Post</button></a>
-
-           <div id="myPosts"></div>
-
-           
-        </section>
+            <label for="changeUsername">Username</label>
+            <input type="text" placeholder="change user name" id="changeUsername">
+        </form>
     </main>
 
     <footer>

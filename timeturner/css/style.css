@@ -386,7 +386,14 @@ p{margin-top: 0.2rem;}
 
 #followButton:hover{background-color: #FFF500;font-weight: bold;}
 
-#editPostButton{width: fit-content; margin: 0;}
+#editPostButton{
+    width: fit-content; 
+    margin: 0; 
+    background-color: #A6F2FF;
+    box-shadow: #000 4px 5px 4px;
+}
+
+#editPostButton:hover{font-weight: bold;}
 
 
 
@@ -513,11 +520,12 @@ p{margin-top: 0.2rem;}
     #backButton p, #backButton i{font-size: 14px;}
     #backButton{width: 5rem; margin-left: 10%;}
     #aPost{width: 75vw;}
-    #aPost h1{font-size: 18px;}
+    #aPost{font-size: 18px;}
     #aPost p{font-size: 12px;}
 
     #editPostForm{margin-top: 2rem;}
-    #editPostButton{padding: 0.5rem;}
+    #editPostButton{padding: 0 0.5rem;}
+    #editPostForm h1{font-size: 20px;}
 }
 
 /*Quick costumization*/
@@ -602,6 +610,8 @@ p{margin-top: 0.2rem;}
     #myPosts{margin-top: 2rem;}
     .avatar{height: 10rem; width: 10rem;}
     .banner{height: 15rem;}
+
+    #editPostForm h1{font-size: 22px;}
 }
 
 /*Quick costumization*/
@@ -634,6 +644,8 @@ p{margin-top: 0.2rem;}
     #aPost img{height: 20rem;}
     #aPost p, #backButton p, #backButton i{font-size: 18px;}
     #backButton{margin-left: 100%;}
+
+    #editPostForm h1{font-size: 25px;}
 }
 
 
@@ -669,6 +681,8 @@ p{margin-top: 0.2rem;}
 
     .postDiv{margin-bottom: 5rem;}
     .profile-card{width: 55%;}
+
+    #editPostForm{width: 40%;}
 }
 
 /*Desktop screens*/
@@ -718,6 +732,9 @@ p{margin-top: 0.2rem;}
     #registerButton{width: 9rem;}
 
     #aPost img{height: 25rem;}
+
+    #editPostForm{width: 35%;}
+    #editPostForm h1{font-size: 28px;}
 }
 
 /*Full HD size desktop*/
