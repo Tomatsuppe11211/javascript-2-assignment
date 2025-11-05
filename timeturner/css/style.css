@@ -386,6 +386,8 @@ p{margin-top: 0.2rem;}
 
 #followButton:hover{background-color: #FFF500;font-weight: bold;}
 
+#editPostButton{width: fit-content; margin: 0;}
+
 
 
 
@@ -513,6 +515,9 @@ p{margin-top: 0.2rem;}
     #aPost{width: 75vw;}
     #aPost h1{font-size: 18px;}
     #aPost p{font-size: 12px;}
+
+    #editPostForm{margin-top: 2rem;}
+    #editPostButton{padding: 0.5rem;}
 }
 
 /*Quick costumization*/
