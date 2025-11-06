@@ -399,6 +399,12 @@ p{margin-top: 0.2rem;}
 #editProfileForm{background-color: #A6F2FF;}
 
 
+.termsSections{
+    height: fit-content;
+    border: Solid #000;
+    border-radius: 2rem;
+    background-color: #A6F2FF;
+}
 
 
 
