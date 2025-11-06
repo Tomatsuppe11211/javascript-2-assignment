@@ -1,3 +1,6 @@
+const currentUser = sessionStorage.getItem('currentUser')
+if(!currentUser){window.location.href="../index.html"}
+
 const URL = 'https://v2.api.noroff.dev/social/posts'
 
 const showPosts = document.getElementById('showAllPosts')

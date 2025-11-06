@@ -1,3 +1,6 @@
+const currentUser = sessionStorage.getItem('currentUser')
+if(!currentUser){window.location.href="../../index.html"}
+
 const bannerDisplay = document.getElementById("myBanner") as HTMLImageElement
 const avatarDisplay = document.getElementById("myAvatar") as HTMLImageElement
 const userNameDisplay = document.getElementById('usersName') as HTMLElement

@@ -55,7 +55,9 @@ if(window.location.pathname.includes('seeProfile.html')){
 }
 
 
-
+if(window.location.pathname.includes('edit-profile.html')){
+  import('../src/account/edit-profile.ts')
+}
 
 
 

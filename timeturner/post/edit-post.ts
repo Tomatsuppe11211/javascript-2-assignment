@@ -1,3 +1,6 @@
+const currentUser = sessionStorage.getItem('currentUser')
+if(!currentUser){window.location.href="../index.html"}
+
 const postTitle = document.getElementById('editPostTitle') as HTMLInputElement
 const postBody = document.getElementById('editPostBody') as HTMLInputElement
 const postImageUrl = document.getElementById('postImageUrl') as HTMLInputElement

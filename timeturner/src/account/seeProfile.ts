@@ -1,3 +1,6 @@
+const currentUser = sessionStorage.getItem('currentUser')
+if(!currentUser){window.location.href="../../index.html"}
+
 const bannerDisplay = document.getElementById("userBanner") as HTMLImageElement
 const avatarDisplay = document.getElementById("userAvatar") as HTMLImageElement
 const userNameDisplay = document.getElementById('usersName') as HTMLHeadingElement
@@ -17,7 +20,6 @@ interface profileToken {accessToken: string, name: string}
 let profile: profileToken | null = null
 
 if(profileData){profile = JSON.parse(profileData)}
-console.log(profile)
 
 const token = profile?.accessToken
 
@@ -44,7 +46,6 @@ async function getProfile(){
 
         const data = await response.json()
         const userInfo = data.data
-        console.log(userInfo)
 
 
         bannerDisplay.src = userInfo.banner.url
@@ -55,10 +56,10 @@ async function getProfile(){
 
         userNameDisplay.innerHTML = userInfo.name
 
-        if(!userInfo.body || userInfo.body === null){
+        if(!userInfo.bio || userInfo.bio === null){
             bioText.innerHTML = `${userInfo.name}'s bio is empty`
         } else {
-            bioText.innerHTML = userInfo.body
+            bioText.innerHTML = userInfo.bio
         }
         
 
@@ -74,6 +75,7 @@ async function getProfile(){
         followingCount.innerHTML = `Following: ${userInfo._count.following}`
         profileCount.appendChild(followingCount)
         
+        if(profile?.name === userInfo.name){followButton.style.display = 'none'}
 
         secondUserNameDisplay.innerHTML = `${userInfo.name}'s posts`
 
@@ -96,7 +98,6 @@ async function getProfile(){
 
                 const data = await response.json()
                 const posts = data.data
-                console.log(posts)
 
                 for(let i = 0; i < posts.length; i++){
                     const postDiv = document.createElement('div')
@@ -201,9 +202,6 @@ async function unFollow(){
     }
 }
 
-
-console.log('Checking following users')
-
 async function checkFollowedUsers(){
     try{
         const response = await fetch(`https://v2.api.noroff.dev/social/profiles/${profile?.name}?_following=true`, {
@@ -222,17 +220,13 @@ async function checkFollowedUsers(){
         }
 
         const data = await response.json()
-        console.log('you are following:')
         const followedData = data.data.following
-        console.log(followedData)
 
         for(let i = 0; i < followedData.length; i++){
             if(followedData[i].name === seeUserProfile){
-                console.log('you are following this user')
                 followButton.innerHTML = 'unfollow'
                 followButton.addEventListener('click', unFollow)
             } else {
-                console.log('you are not following this user')
                 followButton.innerHTML = 'Follow'
                 followButton.addEventListener('click', follow)
             }

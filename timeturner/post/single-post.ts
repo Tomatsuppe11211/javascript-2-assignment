@@ -1,3 +1,6 @@
+const currentUser = sessionStorage.getItem('currentUser')
+if(!currentUser){window.location.href="../index.html"}
+
 const postDisplay = document.getElementById('aPost')
 const tabName = document.getElementById('tabName')
 
