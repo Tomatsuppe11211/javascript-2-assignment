@@ -62,23 +62,14 @@ if(window.location.pathname.includes('edit-profile.html')){
 
 
 
-
-//for header in terms of use and privacy policy
-const topHomeButton = document.getElementById('topHomeButton') as HTMLLinkElement
-const bottomHomeButton = document.getElementById('bottomHomeButton') as HTMLLinkElement
-
 if(window.location.pathname.includes('privacy-policy.html')){
   const privacyHeader = document.getElementById('loggedInPrivacyNav') as HTMLHeadingElement
 
-  console.log(currentUser)
-
   if(privacyHeader){
-    if(!currentUser && currentUser !== 'null' ){
+    if(!currentUser && currentUser === null){
       privacyHeader.style.display = 'none'
-      topHomeButton.href = bottomHomeButton.href = 'index.html'
     } else {
       privacyHeader.style.display = 'flex'
-      topHomeButton.href = bottomHomeButton.href = '/post/index.html'
     }
   }  
 }
@@ -89,17 +80,31 @@ if(window.location.pathname.includes('terms-of-use.html')){
   const tersmHeader = document.getElementById('loggedInTermsNav') as HTMLHeadingElement
 
   if(tersmHeader){
-    if(!currentUser || currentUser !== 'null'){
+    if(!currentUser || currentUser === null){
       tersmHeader.style.display = 'none'
-      topHomeButton.href = bottomHomeButton.href = 'index.html'
     } else {
       tersmHeader.style.display = 'flex'
-      topHomeButton.href = bottomHomeButton.href = '/post/index.html'
     }
   } 
 }
 
 
+if(window.location.pathname.includes('contact.html')){
+  const contactHeader = document.getElementById('loggedInContactNav') as HTMLHeadingElement
+  
+  if(!currentUser || currentUser === null){
+      contactHeader.style.display = 'none'
+  } else {
+      contactHeader.style.display = 'flex'
+  }
+
+  const sendButton = document.getElementById('contactButton') as HTMLButtonElement
+  sendButton.addEventListener('click', async function(e){
+    e.preventDefault()
+    alert('Message sent')
+    window.location.href = '../index.html'
+  })
+}
 
 
 

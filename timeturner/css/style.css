@@ -58,7 +58,7 @@ p, #loginButton{font-size: 18px;}
 #createPostForm, .action-buttons{margin-top: 5rem;}
 
 #editProfileButton, #createPostButton, .editPostButtons, #updateButton,
-.deletePostButtons, #newPostButton{
+.deletePostButtons, #newPostButton, #contactForm button{
     border-radius: 10rem; 
     background-color: #00aeff;
     color: #fff;
@@ -68,7 +68,7 @@ p, #loginButton{font-size: 18px;}
 
 
 #editProfileButton:hover, #createPostButton:hover, #newPostButton:hover,
-.editPostButtons:hover, #updateButton:hover{color: #000; background-color: #FAD5DE;}
+.editPostButtons:hover, #updateButton:hover, #contactForm button:hover{color: #000; background-color: #FAD5DE;}
 
 
 
@@ -220,13 +220,13 @@ nav input{border: none}
 
 /*create post page*/
 /*------------------------------------------------------*/
-#createPostForm textarea, #editPostForm textarea, #editProfileForm textarea{
+#createPostForm textarea, #editPostForm textarea, #editProfileForm textarea, #contactForm textarea{
     border-radius: 0.5rem;
     padding: 0.5rem;
     box-shadow: inset 2px 3px 3px #000;
 }
 
-#createPostButton, .editPostButtons, .deletePostButtons, #newPostButton{
+#createPostButton, .editPostButtons, .deletePostButtons, #newPostButton, #contactForm button{
     height: fit-content;
 }
 
@@ -375,7 +375,7 @@ form a{text-decoration: underline; color:#00aeff;}
 label{text-align: left;}
 
 #loginButton, #registerButton, #editProfileButton, 
-#createPostButton, #newPostButton{padding: 0.5rem;}
+#createPostButton, #newPostButton, #contactForm button{padding: 0.5rem;}
 
 p{margin-top: 0.2rem;}
 
@@ -417,7 +417,50 @@ p{margin-top: 0.2rem;}
 
 
 
+/*------------------------------------------------*/
+#settingsList{
+    border: solid #000;
+    box-shadow: 4px 5px 4px;
+    border-radius: 2rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 0.5rem;
+    margin-top: 2rem;
+    margin-bottom: 2rem;
+    background-color: #A6F2FF;
+}
 
+#settingsList a{
+    text-decoration: none;
+    text-align: start;
+    margin-top: 1rem;
+    width: fit-content;
+}
+
+#settingsList h1, #settingsList label{text-align: center;}
+
+#settingsList h2{margin-top: 2rem; margin-bottom: 0;}
+
+#settingsList button{
+    width: fit-content;
+    border-radius: 0.5rem;
+    padding: 0.2rem;
+    background-color: #A6F2FF;
+    box-shadow: 3px 4px 3px;
+    margin-bottom: 1rem;
+}
+
+#settingsList button:hover{
+    background-color: #FAD5DE;
+    font-weight: bold;
+}
+
+#settingsList input{
+    border-radius: 2rem;
+    box-shadow: inset 2px 3px 2px;
+}
+/*------------------------------------------------*/
 
 
 
@@ -460,7 +503,8 @@ p{margin-top: 0.2rem;}
 /*phone vertical*/
 @media(min-width: 320px){
     .logo, .action-buttons{margin-left: 0;}
-    .logo, footer a, .postDiv, .userPosts h2, #newPostButton{margin-top: 1rem;}
+    .logo, footer a, .postDiv, .userPosts h2, #newPostButton, #contactForm button, 
+    #contactForm textarea{margin-top: 1rem;}
 
     .press-button, footer a, .postDiv p, .postDiv a{font-size: 12px;}
 
@@ -469,14 +513,15 @@ p{margin-top: 0.2rem;}
     #loginForm, #registerForm{margin-top: 2rem;}
 
     form input, label, .postDiv, #createPostForm textarea, #editProfileForm textarea, 
-    #editPostForm textarea, .profile-card, .postDiv p{width: 90%;}
+    #editPostForm textarea, .profile-card, .postDiv p, #contactForm textarea{width: 90%;}
 
     form input, label, form p, form a, #loginButton, #createPostForm textarea, #editPostForm textarea,
     #registerButton, nav input, #createPostButton, #profileInfo p, #bioDisplay p, #followButton,
-    #editProfileButton, .editPostButtons, .deletePostButtons, #newPostButton, .postDiv h1{font-size: 14px;}
+    #editProfileButton, .editPostButtons, .deletePostButtons, #newPostButton, .postDiv h1, 
+    #contactForm textarea, #contactForm button{font-size: 14px;}
 
     #editProfileButton, .editPostButtons, .deletePostButtons, #newPostButton, 
-    #followButton, #updateButton{
+    #followButton, #updateButton, #contactForm button{
         padding: 0.1rem 0.3rem;
         border-radius: 0.5rem;
     }
@@ -544,11 +589,19 @@ p{margin-top: 0.2rem;}
     #updateButton, #editProfileForm{margin-top: 2rem;}
     #editProfileForm h1{font-size: 18px;}
 
-    #topHomeButton, #bottomHomeButton{margin-top: 2rem; margin-bottom: 2rem; font-size: 18px;}
+    .homeButtons{margin-top: 2rem; margin-bottom: 2rem; font-size: 18px;}
     .termsSections{padding: 0.5rem; width: 75%;}
     .termsSections p{width: 90%; font-size: 14px; margin-top: 0.5rem;}
     .termsSections h2{font-size: 16px; margin-top: 1rem; text-align: center;}
     .termsSections h1{font-size: 20px; margin: 0; text-align: center; border-bottom: 2px solid #000;}
+
+    #settingsList{width: 75%;}
+    #settingsList h1{font-size: 22px;}
+    #settingsList h2{font-size: 18px;}
+    #settingsList a{font-size: 16px;}
+    #settingsList label{font-size: 14px;}
+    #settingsList input{padding: 0.4rem 0.5rem; font-size: 14px; width: 12rem; margin-top: 0.5rem;}
+    #settingsList button{margin-top: 1rem; padding: 0.1rem 0.5rem; font-size: 14px;}
 }
 
 /*Quick costumization*/
@@ -589,14 +642,15 @@ p{margin-top: 0.2rem;}
     form input, label, form p, form a, #loginButton, #registerButton, footer a, .press-button, 
     nav div i, nav input, .postDiv p, .postDiv a, #createPostForm textarea, #editPostForm textarea,
     #editProfileForm textarea, #createPostButton, #bioDisplay p, #profileInfo p, .deletePostButtons, 
-    .editPostButtons, #followButton, #updateButton{font-size: 18px;}
+    .editPostButtons, #followButton, #updateButton, #contactForm textarea, #contactForm button{font-size: 18px;}
 
     form input, form p, label, #createPostForm textarea, #editPostForm textarea, 
-    #editProfileForm textarea{width: 75%;}
+    #editProfileForm textarea, #contactForm textarea{width: 75%;}
 
     .action-buttons, #showAllPosts{margin-top: 3rem;}
 
-    #editProfileButton, #newPostButton, .editPostButtons, .deletePostButtons, #followButton{padding: 0.2rem 0.5rem;}
+    #editProfileButton, #newPostButton, .editPostButtons, .deletePostButtons, #followButton, 
+    #contactForm button{padding: 0.2rem 0.5rem;}
 
     #registerButton, #createPostButton{width: 7rem;}
 
@@ -645,6 +699,12 @@ p{margin-top: 0.2rem;}
     .termsSections p{font-size: 16px;}
     .termsSections h2{font-size: 18px; margin-top: 2rem}
     .termsSections h1{margin-top: 2rem; font-size: 22px;}
+
+    #settingsList{width: 50%;}
+    #settingsList h1{font-size: 25px;}
+    #settingsList h2{font-size: 22px;}
+    #settingsList a{font-size: 18px;}
+    #settingsList label, #settingsList input, #settingsList button{font-size: 16px;}
 }
 
 /*Quick costumization*/
@@ -655,9 +715,9 @@ p{margin-top: 0.2rem;}
     .profile-card{width: 65%;}
 }
 @media(min-width: 1100px){
-    form input, label, form p, form a, #loginButton, footer a, #registerButton, 
+    form input, label, form p, form a, #loginButton, footer a, #registerButton, #contactForm button,
     #createPostForm textarea, #editPostForm textarea, #createPostButton, #newPostButton, 
-    #editProfileButton, #updateButton, #editProfileForm textarea{font-size: 22px;}
+    #editProfileButton, #updateButton, #editProfileForm textarea, #contactForm textarea{font-size: 22px;}
 
     .action-buttons{width: 40vw;}
 
@@ -679,6 +739,12 @@ p{margin-top: 0.2rem;}
     #backButton{margin-left: 100%;}
 
     #editPostForm h1, #editProfileForm h1{font-size: 25px;}
+
+    #settingsList{width: 40%;}
+    #settingsList h1{font-size: 28px;}
+    #settingsList h2{font-size: 25px; margin-top: 3rem;}
+    #settingsList a{font-size: 20px;}
+    #settingsList label, #settingsList input, #settingsList button{font-size: 18px;}
 }
 
 
@@ -717,7 +783,7 @@ p{margin-top: 0.2rem;}
 
     #editPostForm{width: 40%;}
 
-    #topHomeButton, #bottomHomeButton{font-size: 20px;}
+    .homeButtons{font-size: 20px;}
     .termsSections{width: 50%;}
     .termsSections h1{font-size: 25px;}
     .termsSections h2{font-size: 20px;}
@@ -762,8 +828,8 @@ p{margin-top: 0.2rem;}
 
 /*Quick costumization*/
 @media(min-width: 1700px){
-    form input, label, form p, form a, #loginButton, #registerButton,
-    #createPostForm textarea, #editPostForm textarea, #createPostButton{font-size: 25px;}
+    form input, label, form p, form a, #loginButton, #registerButton, #contactForm textarea,
+    #createPostForm textarea, #editPostForm textarea, #createPostButton, #contactForm button{font-size: 25px;}
 
     .second{margin-left: 10rem;} .fade-text{right: 8rem;}
 
@@ -777,12 +843,14 @@ p{margin-top: 0.2rem;}
     #editPostForm h1, #editProfileForm h1{font-size: 28px;}
 
     .termsSections{width: 45%;}
+
+    #settingsList{width: 30%;}
 }
 
 /*Full HD size desktop*/
 @media(min-width: 1920px){
     form input, label, form p, #createPostForm textarea, #editPostForm textarea, 
-    #editProfileForm textarea{width: 70%;}
+    #editProfileForm textarea, #contactForm textarea{width: 70%;}
     #createPostForm{width: 35vw;}
 
     .logo, .second{margin-left: 15rem;}
