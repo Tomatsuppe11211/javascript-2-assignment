@@ -7,15 +7,30 @@
     <script src="https://kit.fontawesome.com/8908c40066.js" crossorigin="anonymous"></script>
 </head>
 <body>
-    <header></header>
-
-    <main>
-        <a href="#">
-            <div id="backButton">
-                <i class="fa-solid fa-arrow-left"></i>
-                <p id="navigationArrow">Back</p>
+    <header id= "loggedInTermsNav">
+        <nav class="desktopNav">
+            <a href="#">Feed</a>
+            <a href="../src/account/profile.html">Profile</a>
+            <a href="#">Settings</a>
+            <div>
+                <i class="fa-solid fa-magnifying-glass" id="desktopSearch"></i>
+                <input type="text" placeholder="Search...">
             </div>
-        </a>
+        </nav>
+
+        <nav class="mobileNav">
+            <a href="#"><i class="fa-solid fa-house"></i></a>
+            <a href="../src/account/profile.html"><i class="fa-solid fa-user"></i></a>
+            <a href=""><i class="fa-solid fa-gear"></i></a>
+            <div>
+                <i class="fa-solid fa-magnifying-glass" id="mobileSearch"></i>
+                <input type="text" placeholder="Search...">
+            </div>
+        </nav>
+    </header>
+
+    <main class="forms">
+        <a href="#" id="topHomeButton">Go home</a>
 
         <section class="termsSections">
             <p>Last updated: 06.11.2025</p>
@@ -92,6 +107,8 @@
                 For questions about these Terms of Use, please contact us at timeturner2025@gmail.com.
             </p>
         </section>
+
+        <a href="#" id="bottomHomeButton">Go home</a>
     </main>
 
     <footer>
