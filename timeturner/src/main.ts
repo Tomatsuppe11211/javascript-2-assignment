@@ -63,6 +63,48 @@ if(window.location.pathname.includes('edit-profile.html')){
 
 
 
+//for header in terms of use and privacy policy
+const topHomeButton = document.getElementById('topHomeButton') as HTMLLinkElement
+const bottomHomeButton = document.getElementById('bottomHomeButton') as HTMLLinkElement
+
+if(window.location.pathname.includes('privacy-policy.html')){
+  const privacyHeader = document.getElementById('loggedInPrivacyNav') as HTMLHeadingElement
+
+  console.log(currentUser)
+
+  if(privacyHeader){
+    if(!currentUser && currentUser !== 'null' ){
+      privacyHeader.style.display = 'none'
+      topHomeButton.href = bottomHomeButton.href = 'index.html'
+    } else {
+      privacyHeader.style.display = 'flex'
+      topHomeButton.href = bottomHomeButton.href = '/post/index.html'
+    }
+  }  
+}
+
+
+
+if(window.location.pathname.includes('terms-of-use.html')){
+  const tersmHeader = document.getElementById('loggedInTermsNav') as HTMLHeadingElement
+
+  if(tersmHeader){
+    if(!currentUser || currentUser !== 'null'){
+      tersmHeader.style.display = 'none'
+      topHomeButton.href = bottomHomeButton.href = 'index.html'
+    } else {
+      tersmHeader.style.display = 'flex'
+      topHomeButton.href = bottomHomeButton.href = '/post/index.html'
+    }
+  } 
+}
+
+
+
+
+
+
+
 
 
 
