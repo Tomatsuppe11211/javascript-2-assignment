@@ -112,7 +112,33 @@ if(window.location.pathname.includes('contact.html')){
 
 
 
+//For the searchbar
+const deskSearchButton = document.getElementById('desktopSearchButton') as HTMLElement
+const deskSearchInput = document.getElementById('desktopSearchInput') as HTMLInputElement
+const mobileSearchButton = document.getElementById('mobileSearchButton') as HTMLElement
+const mobileSearchInput = document.getElementById('mobileSearchInput') as HTMLInputElement
 
+
+deskSearchButton.addEventListener('click', function(){
+  if(deskSearchInput.value === "" || null){
+    alert(`You can't leave the search input field empty`)
+  } else {
+    sessionStorage.setItem('userSearch', deskSearchInput.value)
+    if(window.location.pathname.includes('post')){
+      window.location.href = 'search-results.html'
+    } else if(window.location.pathname.includes('account')){
+      window.location.href = '../../post/search-results.html'
+    }
+    
+    
+    
+  }
+})
+
+
+if(window.location.pathname.includes('search-results.html')){
+  import('../post/search-results.ts')
+}
 
 
 

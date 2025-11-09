@@ -447,12 +447,15 @@ p{margin-top: 0.2rem;}
     border-radius: 0.5rem;
     padding: 0.2rem;
     background-color: #A6F2FF;
-    box-shadow: 3px 4px 3px;
+    box-shadow: 3px 4px 3px #000;
     margin-bottom: 1rem;
+    background-color: #ff0000;
+    color: #fff;
 }
 
 #settingsList button:hover{
-    background-color: #FAD5DE;
+    background-color: #ffc400;
+    color: #000;
     font-weight: bold;
 }
 
@@ -460,12 +463,69 @@ p{margin-top: 0.2rem;}
     border-radius: 2rem;
     box-shadow: inset 2px 3px 2px;
 }
+
+#logoutButton{background-color: #ff0000;}
 /*------------------------------------------------*/
 
 
 
 
 
+/*------------------------------------------------*/
+#searchResults{align-items: center;}
+#searchResults section{
+    border: solid #000;
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    background-color: #A6F2FF;
+    box-shadow: #000 3px 4px 3px;
+    border-radius: 1rem;
+}
+
+
+
+
+/*complete display*/
+.showResults{
+    border: solid #000;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+
+    margin-top: 5rem;
+}
+
+/*container for all results*/
+.resultsShowcase{
+    border: solid #ff0000;
+    width: 90%;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+}
+
+/*each result*/
+.resultProfileAndPost{
+    border: solid green;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 15rem;
+    width: 15rem;
+
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.resultProfileAndPost h2{background-color: #FAD5DE; padding: 0.1rem}
+
+
+/*------------------------------------------------*/
 
 
 
@@ -704,6 +764,7 @@ p{margin-top: 0.2rem;}
     #settingsList h1{font-size: 25px;}
     #settingsList h2{font-size: 22px;}
     #settingsList a{font-size: 18px;}
+    #settingsList button{margin-top: 2rem;}
     #settingsList label, #settingsList input, #settingsList button{font-size: 16px;}
 }
 
