@@ -48,7 +48,7 @@ button.addEventListener('click', async function(e){
             const data = await response.json()
 
             const userData = data.data || data
-            localStorage.setItem('profileData', JSON.stringify(userData))
+            sessionStorage.setItem('profileData', JSON.stringify(userData))
 
 
             if(!response.ok){
@@ -66,7 +66,7 @@ button.addEventListener('click', async function(e){
 
             const loggedInUser:newProfile = {username: username.value, email: email.value}
 
-            localStorage.setItem('currentUser', JSON.stringify(loggedInUser.username))
+            sessionStorage.setItem('currentUser', JSON.stringify(loggedInUser.username))
 
             setTimeout(() => {
                 window.location.href = '../../post/index.html' //change to feed page

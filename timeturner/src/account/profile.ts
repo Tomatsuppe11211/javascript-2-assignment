@@ -71,15 +71,15 @@ async function getSocialProfile(){
         postsCount.id = 'postsCount'
         postsCount.innerHTML = `Posts: ${profileInfo._count.posts}`
         profileCount.appendChild(postsCount)
-
-        const followingCount = document.createElement('p')
-        followingCount.innerHTML = `Following: ${profileInfo._count.following}`
-        profileCount.appendChild(followingCount)
-
+        
         const followersCount = document.createElement('p')
         followersCount.innerHTML = `Followers: ${profileInfo._count.followers}`
         profileCount.appendChild(followersCount)
 
+        const followingCount = document.createElement('p')
+        followingCount.innerHTML = `Following: ${profileInfo._count.following}`
+        profileCount.appendChild(followingCount)
+        
         return data
 
     } catch(error){

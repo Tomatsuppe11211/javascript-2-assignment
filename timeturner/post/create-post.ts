@@ -8,7 +8,7 @@ const postImageAlt = document.getElementById('postImageDescription') as HTMLInpu
 const createPostButton = document.getElementById('createPostButton') as HTMLButtonElement
 
 
-const profileData = localStorage.getItem('profileData')
+const profileData = sessionStorage.getItem('profileData')
 
 interface profileToken{accessToken: string, name: string}
 

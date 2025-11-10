@@ -6,7 +6,7 @@ const tabName = document.getElementById('tabName')
 
 const id = sessionStorage.getItem('postId')
 
-const profileData = localStorage.getItem('profileData')
+const profileData = sessionStorage.getItem('profileData')
 
 interface profileToken{accessToken: string, name: string}
 
@@ -21,6 +21,10 @@ const API_KEY = sessionStorage.getItem('CurrentKey') || ''
 
 
 async function getPost(){
+    console.log('Token:', token)
+console.log('API_KEY:', API_KEY)
+console.log('Post ID:', id)
+    
     try{
         const response = await fetch(`https://v2.api.noroff.dev/social/posts/${id}?_author=true`, {
             method: 'GET',
