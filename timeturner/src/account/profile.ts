@@ -118,11 +118,7 @@ async function getPosts(){
         const myPosts = data.data
         
         if(data && myPosts.length !== 0){
-            console.log(data)
-
             for(let i = 0; i < myPosts.length; i++){
-                console.log(myPosts[i])
-                
                 const post = document.createElement('div')
                 post.className = 'userPosts'
 

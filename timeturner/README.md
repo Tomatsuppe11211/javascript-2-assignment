@@ -40,5 +40,6 @@ How to use the site:
 
 8) search results (only accessable through search bar)
     - get sent to a single page where your search results is displayed (in progress now)
+    - both posts and profiles can be searched. Both will also be shown if both profiles and posts contain the word(s) you searched.
 
 9) contact page (only for styiling but a "message sent" alert will appear)

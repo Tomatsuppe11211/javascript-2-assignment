@@ -1,14 +1,9 @@
 import '../css/style.css'
 
+
 const currentUser = sessionStorage.getItem('currentUser')
-if(currentUser && currentUser !== null){
-  console.log(currentUser)
-}
 
-
-
-
-if(currentUser && window.location.pathname.includes('/index.html')){
+if(currentUser && window.location.pathname.includes('index.html')){
   if(!window.location.pathname.includes('post/index.html')){
     window.location.href= '/post/index.html'
   }
@@ -118,22 +113,37 @@ const deskSearchInput = document.getElementById('desktopSearchInput') as HTMLInp
 const mobileSearchButton = document.getElementById('mobileSearchButton') as HTMLElement
 const mobileSearchInput = document.getElementById('mobileSearchInput') as HTMLInputElement
 
-
-deskSearchButton.addEventListener('click', function(){
-  if(deskSearchInput.value === "" || null){
-    alert(`You can't leave the search input field empty`)
-  } else {
-    sessionStorage.setItem('userSearch', deskSearchInput.value)
-    if(window.location.pathname.includes('post')){
-      window.location.href = 'search-results.html'
-    } else if(window.location.pathname.includes('account')){
-      window.location.href = '../../post/search-results.html'
+if(deskSearchButton){
+  deskSearchButton.addEventListener('click', function(){
+    if(deskSearchInput.value === "" || null){
+      alert(`You can't leave the search input field empty`)
+    } else {
+      sessionStorage.setItem('userSearch', deskSearchInput.value)
+      if(window.location.pathname.includes('post')){
+        window.location.href = 'search-results.html'
+      } else if(window.location.pathname.includes('account')){
+        window.location.href = '../../post/search-results.html'
+      }
     }
-    
-    
-    
-  }
-})
+  })
+}
+
+if(mobileSearchButton){
+  mobileSearchButton.addEventListener('click', function(){
+    if(mobileSearchInput.value === '' || null){
+      alert(`You can't leave the search input field empty`)
+    } else {
+      sessionStorage.setItem('userSearch', mobileSearchInput.value)
+      if(window.location.pathname.includes('post')){
+        window.location.href = 'search-results.html'
+      } else if(window.location.pathname.includes('account')){
+        window.location.href = '../../post/search-results.html'
+      }
+    }
+  })
+}
+
+
 
 
 if(window.location.pathname.includes('search-results.html')){
@@ -143,32 +153,15 @@ if(window.location.pathname.includes('search-results.html')){
 
 
 
+//for settings.html
+if(window.location.pathname.includes('settings.html')){
+  if(!currentUser){window.location.href = '../../index.html'}
+  
+  const logoutButton = document.getElementById('logoutButton') as HTMLButtonElement
 
-//removing standard coding:
-
-/*
-import './style.css'
-import typescriptLogo from './typescript.svg'
-import viteLogo from '/vite.svg'
-import { setupCounter } from './counter.ts'
-
-document.querySelector<HTMLDivElement>('#app')!.innerHTML = `
-  <div>
-    <a href="https://vite.dev" target="_blank">
-      <img src="${viteLogo}" class="logo" alt="Vite logo" />
-    </a>
-    <a href="https://www.typescriptlang.org/" target="_blank">
-      <img src="${typescriptLogo}" class="logo vanilla" alt="TypeScript logo" />
-    </a>
-    <h1>Vite + TypeScript</h1>
-    <div class="card">
-      <button id="counter" type="button"></button>
-    </div>
-    <p class="read-the-docs">
-      Click on the Vite and TypeScript logos to learn more
-    </p>
-  </div>
-`
-
-setupCounter(document.querySelector<HTMLButtonElement>('#counter')!)
-*/
+  logoutButton.addEventListener('click', function(){
+    alert('you have been logged out')
+    sessionStorage.removeItem('currentUser')
+    window.location.href = '../../index.html'
+  })
+}

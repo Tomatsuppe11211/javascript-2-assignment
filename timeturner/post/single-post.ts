@@ -59,7 +59,7 @@ async function getPost(){
 
         if(postDetails.updated !== postDetails.created){
             const showUpdateDate = document.createElement('p')
-            showUpdateDate.innerHTML = `Updated: ${postDetails.updated}`
+            showUpdateDate.innerHTML = `Updated: ${new Date(postDetails.updated).toLocaleDateString('no-NO')}`
             postDisplay?.appendChild(showUpdateDate)
         }
 
@@ -69,7 +69,7 @@ async function getPost(){
         postDisplay?.appendChild(postBody)
 
         const showCreatedDate = document.createElement('p')
-        showCreatedDate.innerHTML = `Created ${postDetails.created} by ${postDetails.author.name}`
+        showCreatedDate.innerHTML = `Created ${new Date(postDetails.created).toLocaleDateString('no-NO') } by ${postDetails.author.name}`
         postDisplay?.appendChild(showCreatedDate)
 
         const interactions = document.createElement('div')

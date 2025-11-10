@@ -1,531 +1,193 @@
 html, body{padding: 0; margin: 0; min-height: 100vh;}
 
-body, main, footer, nav, .action-buttons, .action-buttons div, .press-button,
-form, #postFeed, #showAllPosts, .extraInfo, nav div, .postDiv{display: flex;}
+body{font-family: monospace; background-image: url('../images/skies.png'); background-position: center; background-attachment: fixed;}
 
-body, main, form, #showAllPosts, .postDiv{flex-direction: column;}
+body, .resultProfileAndPost{background-repeat: no-repeat; background-size: cover;}
 
+body, main, footer, nav, .action-buttons, .action-buttons div, .press-button, form, #postFeed, #showAllPosts, 
+.extraInfo, nav div, .postDiv, #searchResults section, .showResults, .resultsShowcase, .resultProfileAndPost, 
+#settingsList, .termsSections, #interactions, #aPost, #singlePost, #backButton, .postActions, .userPosts, #myPosts, 
+#userPosts, #bioDisplay, #profileInfo, .profile-card, #showProfile, header nav{display: flex;}
 
-footer, .action-buttons div, .press-button, .forms, 
-#postFeed, .extraInfo, .postDiv{justify-content: center;}
-
-footer, nav, .action-buttons div, .press-button, form, .forms, 
-#postFeed, #showAllPosts, .extraInfo, nav div, .postDiv{align-items: center;}
-
-footer, .press-button, #loginButton{background-color: #fff;}
-
-footer nav, footer img{height: 100%;}
+body, main, form, #showAllPosts, .postDiv, #searchResults section, .showResults, #settingsList, .termsSections, 
+#aPost, #singlePost, .userPosts, #bioDisplay, .profile-card, #showProfile{flex-direction: column;}
 
 
-nav, .action-buttons{justify-content: space-evenly;}
-
-nav, .action-buttons, .extraInfo, nav div{flex-direction: row;}
-
-
-.action-buttons div, .press-button{border-radius: 100%} 
-
-
-.logo, .action-buttons{width: 25rem;}
-
-
-a, label{font-size: 20px;}
-
-a:hover, .press-button:hover ~ .press-button a, #loginButton:hover, label, #registerButton:hover{font-weight: bold;}
-
-form, #loginButton, #registerButton{border-radius: 1.5rem; box-shadow: 4px 6px 4px #000;}
-
-form h1, a, .postDiv h1{text-align: center;}
-
-form input, label{width: 30rem;}
-
-form input, label, #loginButton, #createPostForm textarea, #editPostForm textarea, 
-#editProfileForm textarea{margin-top: 1rem;}
-
-form, #createPostForm, #createPostButton, .editPostButtons, .deletePostButtons, #newPostButton{border: Solid #000;}
-
-p, #loginButton{font-size: 18px;}
-
-.press-button, #loginButton{width: 8rem;}
-
-.press-button:hover, #loginButton:hover, #editPostForm{background-color: #FAD5DE;}
-
-#loginMessage, #registerMessage{display: none; color: #ff0000;}
-
-#loginForm, #registerButton:hover, #createPostForm{background-color: #A6F2FF;}
-
-#showAllPosts, .extraInfo, nav div{height: fit-content;}
-
-#createPostForm, .action-buttons{margin-top: 5rem;}
-
-#editProfileButton, #createPostButton, .editPostButtons, #updateButton,
-.deletePostButtons, #newPostButton, #contactForm button{
-    border-radius: 10rem; 
-    background-color: #00aeff;
-    color: #fff;
-    box-shadow: 4px 5px 4px #000;
-    width: fit-content;
-}
-
-
-#editProfileButton:hover, #createPostButton:hover, #newPostButton:hover,
-.editPostButtons:hover, #updateButton:hover, #contactForm button:hover{color: #000; background-color: #FAD5DE;}
-
-
-
-body{
-    font-family: monospace; 
-    min-height: 100vh;
-
-    background-image: url('../images/skies.png');
-    background-repeat: no-repeat;
-    background-size: cover;
-    background-position: center;
-    background-attachment: fixed;
-}
-
-
-
-
-
-
-
-
+header{padding: 2rem 0; border-bottom: 0.1rem solid #000;}
+header, .profile-card{background-color: #fff;}
+header, form, #myPosts, #userPosts{height: auto;}
 header, footer{flex: 0 0 auto;}
-
-
-
-
-/*Starting for header on feed page*/
-/*--------------------------------------------------*/
-header{height: auto; padding: 2rem 0; border: solid black; background-color: #fff;}
-
-header nav{
-    height: 100%;
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
-    width: 100%;
-}
-
+header nav{height: 100%;}
+header nav, .resultsShowcase, footer nav, #interactions, #aPost img, .postActions, .banner, .profile-card div h2{width: 100%;}
+header nav,.resultsShowcase, #interactions, #backButton, .postActions, #profileInfo{flex-direction: row;}
+header nav, .termsSections, #aPost, #singlePost, .userPosts, #showProfile{justify-content: center;}
 header a{font-size: 25px;}
-
-.active{color: #00aeff; font-weight: bold;}
-/*----------------------------------------------------*/
-
-
-
-
-
-
-/*Testing post layout*/
-/*----------------------------------------------------*/
-#showAllPosts{width: 80vw; padding: 0.5rem 0;}
-.extraInfo{width: 90%;}
-.postDiv{border: solid #9a9a9a; box-shadow: #000 4px 6px 4px;}
-.postDiv:nth-child(odd){background-color: #A6F2FF;}
-.postDiv:nth-child(even){background-color: #FAD5DE;}
-.postDiv p, .postDiv a{width: 90%; text-align: start;}
-.extraInfo p{text-align: center;}
-nav div{justify-content: space-between;}
-nav input{border: none}
-.postCU{color: #9a9a9a;}
-/*----------------------------------------------------*/
-
-
-
-
-
-/*creating profile layout*/
-/*----------------------------------------------------*/
-#showProfile{
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-}
-
-.profile-card{
-    border: solid black;
-    width: 50rem;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    background-color: #fff;
-    border-radius: 2rem;
-    margin-top: 2rem;
-    margin-bottom: 2rem;
-    padding-bottom: 2rem;
-}
-
-#bioDisplay, #profileInfo{width: 70%; padding: 1rem; display: flex; align-items: center;}
-.profile-card div h2{ width: 100%; text-align: center;}
-.profile-card div p{font-size: 18px; text-align: start; width: 90%;}
-
-.banner{
-    width: 100%; 
-    border-top-left-radius: 2rem; 
-    border-top-right-radius: 2rem;
-    margin-bottom: 2rem;
-}
-
-.avatar{border: Solid black;}
-
-#editProfileButton{font-size: 16px;}
-
-#bioDisplay{flex-direction: column;}
-
-#profileInfo{
-    flex-direction: row;
-    margin-bottom: 2rem;
-    flex-wrap: wrap;
-    justify-content: space-evenly;
-}
-
-#profileInfo p{text-align: center; margin: 0; width: fit-content;}
-
-.profilePostImage{
-    height: 10rem; width: 10rem;
-}
-
-#myPosts, #userPosts{
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-evenly;
-    width: 80%;
-    height: auto;
-}
-
-.userPosts{
-    height: 15rem;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-}
-
-.postActions{
-    width: 100%; 
-    display: flex; 
-    flex-direction: row; 
-    justify-content: space-evenly;
-    align-items: center;
-}
-/*----------------------------------------------------*/
-
-
-
-
-
-
-
-/*create post page*/
-/*------------------------------------------------------*/
-#createPostForm textarea, #editPostForm textarea, #editProfileForm textarea, #contactForm textarea{
-    border-radius: 0.5rem;
-    padding: 0.5rem;
-    box-shadow: inset 2px 3px 3px #000;
-}
-
-#createPostButton, .editPostButtons, .deletePostButtons, #newPostButton, #contactForm button{
-    height: fit-content;
-}
-
-.deletePostButtons{background-color: #ff0000; color: #fff;}
-/*------------------------------------------------------*/
-
-
-
-/*for the single post page*/
-/*------------------------------------------------------*/
-#backButton{
-    display: flex;
-    flex-direction: row;
-    justify-content: space-evenly;
-    align-items: center;
-    height: fit-content;
-    width: 7rem;
-    padding: 0.2rem;
-    line-height: 100%;
-    margin-top: 2rem;
-}
-
-#backButton i, #backButton p{margin: 0; padding: 0;}
-
-#backButton:hover{color: #00aeff; font-weight: bold;}
-
-#singlePost{
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-}
-
-
-
-#aPost{
-    border: solid black;
-    height: fit-content;
-    margin: 2rem 0;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    border-radius: 2rem;
-    background-color: #A6F2FF;
-    width: 35%;
-    padding-bottom: 1rem;
-}
-
-#aPost h1{text-align: center;}
-
-#aPost p, #aPost div{width: 90%;}
-
-#aPost img{
-    border-top-left-radius: 2rem; 
-    border-top-right-radius: 2rem;
-    width: 100%;
-}
-
-#interactions{
-    display: flex;
-    flex-direction: row;
-    width: 100%;
-    justify-content: space-evenly;
-    color: #00aeff; 
-    -webkit-text-stroke: 1px #000;
-}
-
-#interactions p{margin: 0; padding: 0; width: fit-content}
-
-
-/*------------------------------------------------------*/
-
-
-
-
-
 
 
 main{flex: 1 1 auto;}
 
+
+footer{border-top: 0.1rem solid #000;}
+footer, nav, .action-buttons div, .press-button, form, .forms, #postFeed, #showAllPosts, .extraInfo, 
+nav div, .postDiv, #searchResults, .showResults, #searchResults section, .resultProfileAndPost{align-items: center;}
+
+footer, .action-buttons div, .press-button, .forms, .showResults, .resultProfileAndPost, #postFeed, .extraInfo, .postDiv{justify-content: center;}
+footer, .press-button, #loginButton{background-color: #fff;}
+footer nav, footer img{height: 100%;}
+
+
 nav{width: 60rem;}
+nav, .action-buttons{justify-content: space-evenly;}
+nav, .action-buttons, .extraInfo, nav div{flex-direction: row;}
+nav div{justify-content: space-between;}
+nav div, #showAllPosts, .extraInfo{height: fit-content;}
+nav input{border: none;}
 
 
-a{
-    text-decoration: none; 
-    color: #000;
-    width: 12rem;
-}
-
-a:hover{color: #00aeff;}
-
-.logo{
-    height: 20rem;
-    width: 20rem;
-    margin-top: 2rem; 
-    margin-left: 5rem;
-}
-
-footer nav{width: 100%;}
+form{width: 35rem; padding: 1.5rem;}
+form, #createPostForm, #createPostButton, .editPostButtons, .deletePostButtons, #newPostButton{border: Solid #000;}
+form, #loginButton, #registerButton{border-radius: 1.5rem; box-shadow: 4px 6px 4px #000;}
+form input{height: 2rem; padding-left: 1rem;}
+form input, #settingsList input, #createPostForm textarea, #editPostForm textarea, #editProfileForm textarea, #contactForm textarea{box-shadow: inset 2px 3px 3px #000;}
+form input, #settingsList button{margin-bottom: 1rem;}
+form input, #searchResults section{border-radius: 1rem;}
+form input, #editProfileButton{font-size: 16px;}
+form input, label{width: 30rem;}
+form input, label, #loginButton, #createPostForm textarea, #editPostForm textarea, #editProfileForm textarea{margin-top: 1rem;}
+form h1, a, .postDiv h1, #searchResults{text-align: center;}
+form a{text-decoration: underline;}
+form a, a:hover, #interactions, #backButton:hover, .active{color: #00aeff;}
 
 
-.action-buttons{height: fit-content; margin-left: 8rem;}
-
-.press-button{height: 8rem; font-size: 24px; border: solid #567C8D; }
-
-.press-button:hover{color: #A6F2FF; -webkit-text-stroke: 0.5px #000;}
-
-.fade-text{
-    position: absolute;
-    right: 10rem;
-    top: 1rem;
-    font-size: 22px;
-    color: #fff;
-    -webkit-text-stroke: 1px #000;
-    display: none;
-}
-
-.fade-text h1{margin-top: 3rem;}
-
-.second{margin-left: 15rem;}
+p{margin-top: 0.2rem;}
+p, #loginButton{font-size: 18px;}
 
 
+a{text-decoration: none; width: 12rem;}
+a, label{font-size: 20px;}
+a:hover, .press-button:hover ~ .press-button a, #loginButton:hover, label, #registerButton:hover{font-weight: bold;}
 
-
-form{
-    width: 35rem;
-    height: auto;
-    padding: 1.5rem;
-}
-
-form input{
-    height: 2rem;
-    border-radius: 1rem;
-    padding-left: 1rem;
-    font-size: 16px;
-    margin-bottom: 1rem;
-    box-shadow: inset 2px 3px 3px #000;
-}
-
-form a{text-decoration: underline; color:#00aeff;}
-
-
-#registerForm{background-color: #FAD5DE; margin-top: 2rem;}
 
 label{text-align: left;}
 
-#loginButton, #registerButton, #editProfileButton, 
-#createPostButton, #newPostButton, #contactForm button{padding: 0.5rem;}
 
-p{margin-top: 0.2rem;}
-
-#followButton{
-    border-radius: 2rem;
-    background-color: #A6F2FF;
-    box-shadow: 4px 5px 4px;
-}
-
-#followButton:hover{background-color: #FFF500;font-weight: bold;}
-
-#editPostButton{
-    width: fit-content; 
-    margin: 0; 
-    background-color: #A6F2FF;
-    box-shadow: #000 4px 5px 4px;
-}
-
-#editPostButton:hover{font-weight: bold;}
-
-#editProfileForm{background-color: #A6F2FF;}
+.action-buttons div, .press-button{border-radius: 100%}
+.action-buttons, .logo{width: 25rem;}
+.action-buttons, #createPostForm{margin-top: 5rem;}
+.action-buttons{margin-left: 8rem;}
+.action-buttons, .termsSections, #aPost, #backButton, #createPostButton, .editPostButtons, .deletePostButtons, #newPostButton, #contactForm button{height: fit-content;}
 
 
-.termsSections{
-    height: fit-content;
-    border: Solid #000;
-    border-radius: 2rem;
-    background-color: #A6F2FF;
-
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-}
+.press-button, #loginButton{width: 8rem;}
+.press-button:hover, #loginButton:hover, #editPostForm{background-color: #FAD5DE;}
+.press-button{height: 8rem; font-size: 24px; border: solid #567C8D;}
+.press-button:hover{color: #A6F2FF; -webkit-text-stroke: 0.5px #000;}
 
 
-#contactForm{background-color: #A6F2FF;}
+.fade-text{position: absolute; right: 10rem; top: 1rem; font-size: 22px; display: none;}
+.fade-text, #interactions{-webkit-text-stroke: 1px #000;}
+.fade-text, #settingsList button, .deletePostButtons{color: #fff;}
+.fade-text h1{margin-top: 3rem;}
 
 
+.profile-card{width: 50rem; padding-bottom: 2rem;}
+.profile-card, #settingsList, #profileInfo, .banner{margin-bottom: 2rem;}
+.profile-card, #settingsList, #searchResults section, .termsSections, #aPost, .avatar{border: solid #000;}
+.profile-card, #settingsList, #settingsList h2, #registerForm, .logo, #backButton{margin-top: 2rem;}
+.profile-card, #settingsList, #settingsList input .termsSections, #followButton, #aPost{border-radius: 2rem;}
+.profile-card, #settingsList, .termsSections, #aPost, #singlePost, #backButton, .postActions, .userPosts, #bioDisplay, #profileInfo, #showProfile{align-items: center;}
+.profile-card div p{font-size: 18px;}
+.profile-card div p, #aPost p, #aPost div, .postDiv p, .postDiv a, .extraInfo{width: 90%;}
+.profile-card div p, #settingsList a, .postDiv p, .postDiv a{text-align: start;}
+.profile-card div h2, #settingsList h1, #settingsList label, #aPost h1, #profileInfo p, .extraInfo p{text-align: center;}
 
 
-/*------------------------------------------------*/
-#settingsList{
-    border: solid #000;
-    box-shadow: 4px 5px 4px;
-    border-radius: 2rem;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    padding: 0.5rem;
-    margin-top: 2rem;
-    margin-bottom: 2rem;
-    background-color: #A6F2FF;
-}
+.postDiv{border: solid #9a9a9a;}
+.postDiv, #settingsList, #settingsList button, #editPostButton, #followButton, #searchResults section{box-shadow: #000 4px 5px 4px;}
+.postDiv:nth-child(odd), #aPost, #editProfileForm, .termsSections, #editPostButton, #followButton, #settingsList, #searchResults section, #contactForm{background-color: #A6F2FF;}
+.postDiv:nth-child(even), #registerForm, .resultProfileAndPost h2{background-color: #FAD5DE;}
 
-#settingsList a{
-    text-decoration: none;
-    text-align: start;
-    margin-top: 1rem;
-    width: fit-content;
-}
-
-#settingsList h1, #settingsList label{text-align: center;}
-
-#settingsList h2{margin-top: 2rem; margin-bottom: 0;}
-
-#settingsList button{
-    width: fit-content;
-    border-radius: 0.5rem;
-    padding: 0.2rem;
-    background-color: #A6F2FF;
-    box-shadow: 3px 4px 3px #000;
-    margin-bottom: 1rem;
-    background-color: #ff0000;
-    color: #fff;
-}
-
-#settingsList button:hover{
-    background-color: #ffc400;
-    color: #000;
-    font-weight: bold;
-}
-
-#settingsList input{
-    border-radius: 2rem;
-    box-shadow: inset 2px 3px 2px;
-}
-
-#logoutButton{background-color: #ff0000;}
-/*------------------------------------------------*/
+.postCU{color: #9a9a9a;}
 
 
+#aPost{margin: 2rem 0; width: 35%; padding-bottom: 1rem;}
+#aPost img, .banner{border-top-left-radius: 2rem; border-top-right-radius: 2rem;}
 
 
+#myPosts, #userPosts{width: 80%;}
+#myPosts, #searchResults section, .resultsShowcase, #userPosts, #profileInfo{flex-wrap: wrap;}
+#myPosts, .resultsShowcase, #interactions, #backButton, .postActions, #userPosts, #profileInfo{justify-content: space-evenly;}
 
-/*------------------------------------------------*/
-#searchResults{align-items: center;}
-#searchResults section{
-    border: solid #000;
-    display: flex;
-    flex-direction: column;
-    flex-wrap: wrap;
-    background-color: #A6F2FF;
-    box-shadow: #000 3px 4px 3px;
-    border-radius: 1rem;
-}
+
+#settingsList, #loginButton, #registerButton, #editProfileButton, #createPostButton, #newPostButton, #contactForm button, #createPostForm textarea, #editPostForm textarea, #editProfileForm textarea, #contactForm textarea{padding: 0.5rem;}
+ 
+#settingsList button:hover{background-color: #ffc400;}
+#settingsList button, #settingsList a, #editPostButton, #interactions p, #profileInfo p, #editProfileButton, #createPostButton, .editPostButtons, #updateButton, .deletePostButtons, #newPostButton, #contactForm button{width: fit-content;}
+#settingsList button:hover, #editPostButton:hover, #followButton:hover, #backButton:hover, .active{font-weight: bold;}
+#settingsList button:hover, a, #editProfileButton:hover, #createPostButton:hover, #newPostButton:hover, .editPostButtons:hover, #updateButton:hover, #contactForm button:hover{color: #000;}
+#settingsList button, #backButton{padding: 0.2rem;}
+#settingsList button, .deletePostButtons{background-color: #ff0000;}
+#settingsList button, #createPostForm textarea, #editPostForm textarea, #editProfileForm textarea, #contactForm textarea{border-radius: 0.5rem;}
+#settingsList a{margin-top: 1rem;}
+#settingsList h2{margin-bottom: 0;}
+
+
+#loginMessage, #registerMessage{display: none; color: #ff0000;}
+#loginForm, #registerButton:hover, #createPostForm{background-color: #A6F2FF;}
+
+
+#editProfileButton, #createPostButton, .editPostButtons, #updateButton, .deletePostButtons, #newPostButton, #contactForm button{border-radius: 10rem; color: #fff;box-shadow: 4px 5px 4px #000;}
+#editProfileButton, #createPostButton, .editPostButtons, #updateButton, #newPostButton, #contactForm button{background-color: #00aeff;}
+
+#editProfileButton:hover, #createPostButton:hover, #newPostButton:hover, .editPostButtons:hover, 
+#updateButton:hover, #contactForm button:hover{background-color: #FAD5DE;}
+
+
+#backButton{width: 7rem; line-height: 100%;}
+#backButton i, #interactions p, #backButton p{padding: 0;}
+#backButton i, #editPostButton, #interactions p, #backButton p, #profileInfo p{margin: 0;}
+
+
+#bioDisplay, #profileInfo{width: 70%; padding: 1rem;}
+
+#showAllPosts{width: 80vw; padding: 0.5rem 0;}
+
+.profilePostImage{height: 10rem; width: 10rem;}
+
+.logo{height: 20rem; width: 20rem; margin-left: 5rem;}
+
+.second{margin-left: 15rem;}
+
+#followButton:hover{background-color: #FFF500;}
+
+.resultProfileAndPost, .userPosts{height: 15rem;}
+
+.showResults{margin-top: 5rem;}
+
+.resultProfileAndPost{border: 0.15rem solid #000; width: 15rem;}
+.resultProfileAndPost h2{padding: 0.1rem}
 
 
 
 
-/*complete display*/
-.showResults{
-    border: solid #000;
-
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    text-align: center;
-
-    margin-top: 5rem;
-}
-
-/*container for all results*/
-.resultsShowcase{
-    border: solid #ff0000;
-    width: 90%;
-    display: flex;
-    flex-direction: row;
-    flex-wrap: wrap;
-    justify-content: space-evenly;
-}
-
-/*each result*/
-.resultProfileAndPost{
-    border: solid green;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 15rem;
-    width: 15rem;
-
-    background-repeat: no-repeat;
-    background-size: cover;
-}
-
-.resultProfileAndPost h2{background-color: #FAD5DE; padding: 0.1rem}
 
 
-/*------------------------------------------------*/
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -552,116 +214,106 @@ p{margin-top: 0.2rem;}
 
 
 
-
-
-
-
-
 /*before phone = hidden*/
 @media(max-width: 319px){body{display: none;}}
 
 /*phone vertical*/
 @media(min-width: 320px){
-    .logo, .action-buttons{margin-left: 0;}
-    .logo, footer a, .postDiv, .userPosts h2, #newPostButton, #contactForm button, 
-    #contactForm textarea{margin-top: 1rem;}
+    .profile-card h1, #editPostForm h1, .termsSections h1, #searchResults h1{font-size: 20px;}
 
-    .press-button, footer a, .postDiv p, .postDiv a{font-size: 12px;}
-
-    form, .action-buttons{margin-bottom: 5rem;}
-
-    #loginForm, #registerForm{margin-top: 2rem;}
-
-    form input, label, .postDiv, #createPostForm textarea, #editProfileForm textarea, 
-    #editPostForm textarea, .profile-card, .postDiv p, #contactForm textarea{width: 90%;}
+    #aPost, #editProfileForm h1, .homeButtons, #settingsList h2{font-size: 18px;}
+    
+    .profile-card h2, .termsSections h2, #settingsList a{font-size: 16px;}
 
     form input, label, form p, form a, #loginButton, #createPostForm textarea, #editPostForm textarea,
     #registerButton, nav input, #createPostButton, #profileInfo p, #bioDisplay p, #followButton,
     #editProfileButton, .editPostButtons, .deletePostButtons, #newPostButton, .postDiv h1, 
-    #contactForm textarea, #contactForm button{font-size: 14px;}
+    #contactForm textarea, #contactForm button, #backButton p, #backButton i, .termsSections p, 
+    #settingsList label, #settingsList input, #settingsList button{font-size: 14px;}
+    
+    .press-button, footer a, .postDiv p, .postDiv a, #aPost p{font-size: 12px;}
 
-    #editProfileButton, .editPostButtons, .deletePostButtons, #newPostButton, 
-    #followButton, #updateButton, #contactForm button{
-        padding: 0.1rem 0.3rem;
-        border-radius: 0.5rem;
-    }
-    #loginButton, #registerButton, #createPostButton{width: 5rem;}
+    #loginForm, #registerForm, .action-buttons, .userPosts, #newPostButton, #updateButton, 
+    #editProfileForm, .homeButtons, #editPostForm{margin-top: 2rem;}
+
+    #contactForm textarea, .showResults, #settingsList button, #searchResults, 
+    .termsSections h2{margin-top: 1rem;}
+    
+    #profileInfo p, .postActions, .termsSections p, #settingsList input, 
+    .resultProfileAndPost{margin-top: 0.5rem;}
+
+    .logo, .action-buttons{margin-left: 0;}
+
+    .logo, .postDiv, .userPosts h2, #newPostButton, #contactForm button, 
+    form, .action-buttons{margin-bottom: 5rem;}
+    
+    .postDiv, #profileInfo, #searchResults section, .showResults, footer a{margin-bottom: 1rem;}
 
     .userPosts img, .userPosts h2, .deletePostButtons{margin-bottom: 0;}
-
     
+    .avatar, .resultProfileAndPost{height: 5rem;}
+
+    form input, label, .postDiv, #createPostForm textarea, #editProfileForm textarea, 
+    #editPostForm textarea, .profile-card, .postDiv p, #contactForm textarea, .termsSections p, 
+    .showResults{width: 90%;}
+    
+    .termsSections, #settingsList, #searchResults section{width: 75%;}
+
+    #loginButton, #registerButton, #createPostButton, .avatar, #backButton, 
+    .resultProfileAndPost{width: 5rem;}
+
+    #editProfileButton, .editPostButtons, .deletePostButtons, #newPostButton, 
+    #followButton, #updateButton, #contactForm button{padding: 0.1rem 0.3rem; border-radius: 0.5rem;}
+
+    footer nav, #profileInfo{flex-direction: column;}
+
+    nav div, .termsSections{padding: 0.5rem;}
+    
+    .termsSections h1, .termsSections h2{text-align: center;}
+    
+
     main{justify-content: space-evenly; align-items: center;}
 
     .logo{height: 10rem; width: 10rem;}
 
-    .action-buttons{width: 80vw;  margin-top: 2rem;}
+    .action-buttons{width: 80vw;}
     .press-button{height: 3.5rem; width: 3.5rem;}
 
-    footer nav{flex-direction: column;}
     footer a{width: fit-content;}
     footer img{height: 3rem; width: 4rem;}
 
     form{width: 60vw;}
     form h1, nav i{font-size: 25px;}
     
-
     .postDiv {padding: 0.2rem;}
     .postDiv img{height: 150px; width: 100%;}
 
     .desktopNav{display: none;}
-    nav div{
-        border: 1px solid #000; 
-        width: 20rem; 
-        padding: 0.5rem; 
-        border-radius: 10rem;
-    }
+    nav div{border: 1px solid #000; width: 20rem; border-radius: 10rem;}
     nav input{width: 70%;}
     nav div i{font-size: 15px;}
-
-    .postDiv, #profileInfo{margin-bottom: 1rem;}
-
+    
     header{height: 0.1rem;}
 
-    .profile-card h1{font-size: 20px;}
-    .profile-card h2{font-size: 16px;}
-
-    #profileInfo{flex-direction: column;}
-    #profileInfo p, .postActions{margin-top: 0.5rem;}
-    
     .banner{height: 7rem;}
-    .avatar{height: 5rem; width: 5rem;}
 
     .userPosts img{height: 60%;}
     .postActions{height: 20%;}
 
-    .userPosts, #newPostButton{margin-top: 2rem;}
-
-    #backButton p, #backButton i{font-size: 14px;}
-    #backButton{width: 5rem; margin-left: 10%;}
+    #backButton{margin-left: 10%;}
     #aPost{width: 75vw;}
-    #aPost{font-size: 18px;}
-    #aPost p{font-size: 12px;}
 
-    #editPostForm{margin-top: 2rem;}
     #editPostButton{padding: 0 0.5rem;}
-    #editPostForm h1{font-size: 20px;}
+    
+    .homeButtons{margin-bottom: 2rem;}
 
-    #updateButton, #editProfileForm{margin-top: 2rem;}
-    #editProfileForm h1{font-size: 18px;}
+    .termsSections h1{margin: 0; border-bottom: 2px solid #000;}
 
-    .homeButtons{margin-top: 2rem; margin-bottom: 2rem; font-size: 18px;}
-    .termsSections{padding: 0.5rem; width: 75%;}
-    .termsSections p{width: 90%; font-size: 14px; margin-top: 0.5rem;}
-    .termsSections h2{font-size: 16px; margin-top: 1rem; text-align: center;}
-    .termsSections h1{font-size: 20px; margin: 0; text-align: center; border-bottom: 2px solid #000;}
-
-    #settingsList{width: 75%;}
     #settingsList h1{font-size: 22px;}
-    #settingsList h2{font-size: 18px;}
-    #settingsList a{font-size: 16px;}
-    #settingsList label{font-size: 14px;}
-    #settingsList input{padding: 0.4rem 0.5rem; font-size: 14px; width: 12rem; margin-top: 0.5rem;}
-    #settingsList button{margin-top: 1rem; padding: 0.1rem 0.5rem; font-size: 14px;}
+    #settingsList input{padding: 0.4rem 0.5rem; width: 12rem;}
+    #settingsList button{padding: 0.1rem 0.5rem;}
+
+    .resultProfileAndPost h2{font-size: 10px;}
 }
 
 /*Quick costumization*/
@@ -699,29 +351,46 @@ p{margin-top: 0.2rem;}
 
 /*Tablet vertical*/
 @media(min-width: 768px){
+    nav a, nav input, #bioDisplay h2, #editPostForm h1, #editProfileForm h1, .termsSections h1, 
+    #settingsList h2, #searchResults h1{font-size: 22px;}
+    
     form input, label, form p, form a, #loginButton, #registerButton, footer a, .press-button, 
     nav div i, nav input, .postDiv p, .postDiv a, #createPostForm textarea, #editPostForm textarea,
     #editProfileForm textarea, #createPostButton, #bioDisplay p, #profileInfo p, .deletePostButtons, 
-    .editPostButtons, #followButton, #updateButton, #contactForm textarea, #contactForm button{font-size: 18px;}
+    .editPostButtons, #followButton, #updateButton, #contactForm textarea, #contactForm button, 
+    .termsSections h2, #settingsList a{font-size: 18px;}
+    
+    #settingsList label, #settingsList input, #settingsList button{font-size: 16px;}
+
+    .fade-text, .resultProfileAndPost h2 {font-size: 14px;}
+
+    .logo, .banner{height: 15rem;}
+
+    nav input, .profile-card{width: 80%;}
 
     form input, form p, label, #createPostForm textarea, #editPostForm textarea, 
     #editProfileForm textarea, #contactForm textarea{width: 75%;}
 
+    .termsSections, #searchResults section{width: 60%;}
+
+    #registerButton, #createPostButton, .resultProfileAndPost{width: 7rem;}
+
+    #newPostButton, #editProfileForm{margin-top: 5rem;}
+
     .action-buttons, #showAllPosts{margin-top: 3rem;}
+
+    #myPosts, .termsSections h1, .termsSections h2, #settingsList button, 
+    #searchResults section, .showResults{margin-top: 2rem;}
+
+    .action-buttons, #searchResults section, .showResults{margin-bottom: 2rem;}
 
     #editProfileButton, #newPostButton, .editPostButtons, .deletePostButtons, #followButton, 
     #contactForm button{padding: 0.2rem 0.5rem;}
 
-    #registerButton, #createPostButton{width: 7rem;}
-
-    nav input, .profile-card{width: 80%;}
-
-    nav a, nav input, #bioDisplay h2{font-size: 22px;}
-
-    .logo{height: 15rem; width: 15rem;}
+    
+    .logo{width: 15rem;}
 
     .fade-text{
-        font-size: 14px; 
         right: 0;
         position: relative; 
         text-align: center; 
@@ -730,8 +399,6 @@ p{margin-top: 0.2rem;}
     .fade-text h1{margin-top: 1.5rem;}
     .second{margin-left: 0;}
 
-
-    .action-buttons{margin-bottom: 2rem;}
     .press-button{height: 6.3rem; width: 6.3rem;}
 
     form{width: 50vw;}
@@ -746,26 +413,17 @@ p{margin-top: 0.2rem;}
 
     .profile-card h1{font-size: 28px;}
     #profileInfo{flex-direction: row;}
-    #newPostButton{margin-top: 5rem;}
-    #myPosts{margin-top: 2rem;}
+    
     .avatar{height: 10rem; width: 10rem;}
-    .banner{height: 15rem;}
 
-    #editPostForm h1, #editProfileForm h1{font-size: 22px;}
+    #editProfileForm{width: 40%;}
 
-    #editProfileForm{width: 40%; margin-top: 5rem;}
-
-    .termsSections{width: 60%;}
     .termsSections p{font-size: 16px;}
-    .termsSections h2{font-size: 18px; margin-top: 2rem}
-    .termsSections h1{margin-top: 2rem; font-size: 22px;}
 
     #settingsList{width: 50%;}
     #settingsList h1{font-size: 25px;}
-    #settingsList h2{font-size: 22px;}
-    #settingsList a{font-size: 18px;}
-    #settingsList button{margin-top: 2rem;}
-    #settingsList label, #settingsList input, #settingsList button{font-size: 16px;}
+    
+    .resultProfileAndPost{height: 7rem;}
 }
 
 /*Quick costumization*/
@@ -774,53 +432,62 @@ p{margin-top: 0.2rem;}
     #loginForm, #registerForm{margin-top: 5rem;}
     .postDiv img{height: 350px;}
     .profile-card{width: 65%;}
+
+    #searchResults section{width: 45%;}
 }
 @media(min-width: 1100px){
+    #editPostForm h1, #editProfileForm h1, #settingsList h2{font-size: 25px;}
+    
     form input, label, form p, form a, #loginButton, footer a, #registerButton, #contactForm button,
     #createPostForm textarea, #editPostForm textarea, #createPostButton, #newPostButton, 
     #editProfileButton, #updateButton, #editProfileForm textarea, #contactForm textarea{font-size: 22px;}
+
+    #settingsList label, #settingsList input, #settingsList button, #aPost p, #backButton p, 
+    #backButton i, .profile-card h2{font-size: 18px;}
+
+    #bioDisplay p, #profileInfo p, .deletePostButtons, .editPostButtons, 
+    #editProfileButton, #newPostButton{font-size: 16px;}
+
+    #loginButton, #registerButton, #createPostButton{width: 7rem;}
+    
+    #settingsList, #searchResults section{width: 40%;}
+
+    #searchResults section, .showResults{margin-bottom: 5rem;}
+
 
     .action-buttons{width: 40vw;}
 
     form{width: 50vw;}
     form h1{font-size: 35px;}
     form input{padding: 0.3rem 0.6rem;}
-    #loginButton, #registerButton, #createPostButton{width: 7rem;}
-
-    .profile-card{width: 60%;}
-    .profile-card h2{font-size: 18px}
-    #bioDisplay p, #profileInfo p, .deletePostButtons, .editPostButtons, 
-    #editProfileButton, #newPostButton{font-size: 16px;}
-
-    .postDiv{width: 60%;}
-
+    
+    .profile-card, .postDiv{width: 60%;}
+    
     #aPost{width: 45vw;}
     #aPost img{height: 20rem;}
-    #aPost p, #backButton p, #backButton i{font-size: 18px;}
     #backButton{margin-left: 100%;}
 
-    #editPostForm h1, #editProfileForm h1{font-size: 25px;}
-
-    #settingsList{width: 40%;}
     #settingsList h1{font-size: 28px;}
-    #settingsList h2{font-size: 25px; margin-top: 3rem;}
+    #settingsList h2{margin-top: 3rem;}
     #settingsList a{font-size: 20px;}
-    #settingsList label, #settingsList input, #settingsList button{font-size: 18px;}
+    
+    #searchResults section{margin-top: 5rem;}
 }
-
 
 
 /*tablet horisontal*/
 @media(min-width: 1280px){
     .action-buttons, .logo{margin-top: 5rem;}
 
-    .fade-text, footer a, nav input{font-size: 20px;}
+    .fade-text, footer a, nav input, .homeButtons, .termsSections h2{font-size: 20px;}
 
     .press-button, .postDiv p, .postDiv a{font-size: 22px;}
 
+    .logo, .action-buttons{margin-left: 10rem;}
+
     main{align-items: start;}
 
-    .logo{margin-left: 10rem; height: 20rem; width: 20rem;}
+    .logo{height: 20rem; width: 20rem;}
 
     .fade-text{
         position: absolute; 
@@ -832,10 +499,11 @@ p{margin-top: 0.2rem;}
     .fade-text h1{margin-top: 2.5rem;}
     .second{margin-left: 7rem;}
 
-    .action-buttons{margin-left: 10rem;}
     .press-button{height: 7.7rem; width: 7.7rem;}
 
+    footer{padding: 1rem 0;}
     footer nav{flex-direction: row;}
+    footer a{margin: 0;}
 
     .postDiv h1{font-size: 30px;}
 
@@ -844,12 +512,9 @@ p{margin-top: 0.2rem;}
 
     #editPostForm{width: 40%;}
 
-    .homeButtons{font-size: 20px;}
     .termsSections{width: 50%;}
     .termsSections h1{font-size: 25px;}
-    .termsSections h2{font-size: 20px;}
     .termsSections p{font-size: 18px;}
-    
 }
 
 /*Desktop screens*/
@@ -863,7 +528,12 @@ p{margin-top: 0.2rem;}
     form{width: 40vw;}
 }
 @media(min-width: 1440px){
-    .logo{height: 20rem; width: 20rem; margin-top: 2rem;}
+    #bioDisplay p, #profileInfo p, .profile-card h2, #bioDisplay h2,
+    #aPost p, #backButton p, #backButton i{font-size: 20px;}
+
+    .logo, .banner{height: 20rem;}
+    
+    .logo{width: 20rem; margin-top: 2rem;}
 
     .fade-text{font-size: 22px; top: 1rem;}
 
@@ -875,43 +545,46 @@ p{margin-top: 0.2rem;}
 
     .profile-card, .postDiv{width: 50%;}
     .profile-card h1{font-size: 30px;}
-    .profile-card h2, #bioDisplay h2{font-size: 20px;}
-
-    #bioDisplay p, #profileInfo p{font-size: 20px;}
 
     .userPosts{width: 35%;}
     .userPosts img{width: 100%; height: 60%;}
 
-    .banner{height: 20rem;}
-
-    #aPost p, #backButton p, #backButton i{font-size: 20px;}
+    #searchResults section{width: 60%;}
+    .showResults{margin-bottom: 7rem;}
+    .resultProfileAndPost {height: 10rem; width: 10rem;}
+    .resultProfileAndPost h2{font-size: 18px;}
 }
 
 /*Quick costumization*/
 @media(min-width: 1700px){
     form input, label, form p, form a, #loginButton, #registerButton, #contactForm textarea,
     #createPostForm textarea, #editPostForm textarea, #createPostButton, #contactForm button{font-size: 25px;}
+    
+    #editPostForm, #editProfileForm{width: 35%;}
+    #editPostForm h1, #editProfileForm h1, #searchResults h1{font-size: 28px;}
 
-    .second{margin-left: 10rem;} .fade-text{right: 8rem;}
+    .second{margin-left: 10rem;} 
+    .fade-text{right: 8rem;}
 
     form h1{font-size: 50px;}
 
     #registerButton{width: 9rem;}
 
-    #aPost img{height: 25rem;}
-
-    #editPostForm, #editProfileForm{width: 35%;}
-    #editPostForm h1, #editProfileForm h1{font-size: 28px;}
+    #aPost img{height: 30rem;}
 
     .termsSections{width: 45%;}
 
     #settingsList{width: 30%;}
+
+    #searchResults section{width: 50%;}
+
 }
 
 /*Full HD size desktop*/
 @media(min-width: 1920px){
     form input, label, form p, #createPostForm textarea, #editPostForm textarea, 
     #editProfileForm textarea, #contactForm textarea{width: 70%;}
+
     #createPostForm{width: 35vw;}
 
     .logo, .second{margin-left: 15rem;}

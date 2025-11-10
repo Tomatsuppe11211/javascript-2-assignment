@@ -1,6 +1,7 @@
+const currentUser = sessionStorage.getItem('currentUser')
+if(!currentUser){window.location.href="../index.html"}
+
 const resultsDisplay = document.getElementById('resultsDisplay') as HTMLElement
-
-
 
 interface profileToken {accessToken: string}
 
@@ -18,7 +19,6 @@ const token = profile?.accessToken
 const API_KEY = sessionStorage.getItem('CurrentKey') || ''
 
 const userSearch = sessionStorage.getItem('userSearch') || ''
-console.log(userSearch)
 
 
 const showProfiles = document.createElement('div')
@@ -63,8 +63,6 @@ async function searchProfiles() {
         showProfiles.appendChild(allProfilesDisplay)
 
         if(profiles.length > 0){
-            console.log(profiles)
-
             for(let i = 0; i < profiles.length; i++){
                 const profileDiv = document.createElement('div')
                 profileDiv.className = 'resultProfileAndPost'
@@ -132,8 +130,6 @@ async function searchPosts(){
 
 
         if(posts.length > 0){
-            console.log(posts)
-            
             for(let i = 0; i < posts.length; i++){
                 const postDiv = document.createElement('div')
                 postDiv.className = 'resultProfileAndPost'

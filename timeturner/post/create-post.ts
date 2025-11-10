@@ -18,10 +18,7 @@ if (profileData){profile = JSON.parse(profileData)}
 
 const token = profile?.accessToken
 
-console.log(profile)
-
 const API_KEY = sessionStorage.getItem('CurrentKey') || ''
-console.log(API_KEY)
 
 
 createPostButton.addEventListener('click', async function(e){
@@ -32,12 +29,7 @@ createPostButton.addEventListener('click', async function(e){
     let body = postBody.value
     let imageURL = postImageUrl.value
     let imageAlt = postImageAlt.value
-
-
-    console.log(`Title: ${title}`)
-    console.log(`body: ${body}`)
-    console.log(`image url: ${imageURL}`)
-    console.log(`Image alt: ${imageAlt}`)
+    
 
     if(!title){alert('Title is required')}
 

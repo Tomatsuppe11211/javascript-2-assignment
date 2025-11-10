@@ -28,7 +28,6 @@ button.addEventListener('click', async function(e){
         if(password.value !== confirmedPassword.value){
             message.style.display = 'block'
             message.innerHTML = "Passwords do not match"
-            
             console.log('Passwords do not match')
             return
         }

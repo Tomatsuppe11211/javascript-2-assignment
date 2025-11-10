@@ -16,14 +16,12 @@ let profile: profileToken | null = null
 
 if(profileData){profile = JSON.parse(profileData)}
 
-console.log(profile)
 
 const token = profile?.accessToken
 
 const apiKey = sessionStorage.getItem('CurrentKey') || ''
 
 const editId = sessionStorage.getItem('editId')
-console.log(editId)
 
 async function getPost(){
     try{
@@ -38,13 +36,12 @@ async function getPost(){
 
         if(!response.ok){
             const errorMessage = response.text()
-            console.error(`error: ${errorMessage}`)
+            console.log(`error: ${errorMessage}`)
             return
         }
 
         const data = await response.json()
         const oldContent = data.data
-        console.log(data)
 
         postTitle.value = oldContent.title
 
@@ -59,8 +56,6 @@ async function getPost(){
         if(oldContent.media.alt && oldContent.media.alt !== null){
             postImageAlt.value = oldContent.media.alt
         }
-        
-
     } catch(error){
         console.error(error)
     }
