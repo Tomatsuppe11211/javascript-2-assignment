@@ -34,11 +34,9 @@ async function createApiKey(){
 
     const data = await response.json()
     const currentKey = data.data.key
-    sessionStorage.setItem('CurrentKey', currentKey)
+    sessionStorage.setItem('CurrentKey', 'bf3b32bf-8a23-4605-a49e-20608e621891')
     return data.data.key
 }
-
-createApiKey()
 
 
 
