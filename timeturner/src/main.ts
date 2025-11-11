@@ -10,12 +10,12 @@ if(currentUser && window.location.pathname.includes('index.html')){
 }
 
 
-if(window.location.pathname.includes('login.html')){
+if(window.location.pathname.includes('login')){
   import ('../src/account/login.ts')
 }
 
 
-if(window.location.pathname.includes('register.html')){
+if(window.location.pathname.includes('register')){
   import ('../src/account/register.ts')
 }
 
@@ -25,39 +25,39 @@ if(window.location.pathname.includes('/post/index.html')){
   if(!currentUser){window.location.href = '../index.html'}
 }
 
-if(window.location.pathname.includes('/account/profile.html')){
+if(window.location.pathname.includes('profile')){
   import ('../src/account/profile.ts')
   if(!currentUser){window.location.href = '../../index.html'}
 }
 
-if(window.location.pathname.includes('create-post.html')){
+if(window.location.pathname.includes('create-post')){
   import('../post/create-post.ts')
 }
 
 
-if(window.location.pathname.includes('single-post.html')){
+if(window.location.pathname.includes('single-post')){
   import('../post/single-post.ts')
 }
 
 
-if(window.location.pathname.includes('/edit-post.html')){
+if(window.location.pathname.includes('edit-post')){
   import('../post/edit-post.ts')
 }
 
 
-if(window.location.pathname.includes('seeProfile.html')){
+if(window.location.pathname.includes('seeProfile')){
   import('../src/account/seeProfile.ts')
 }
 
 
-if(window.location.pathname.includes('edit-profile.html')){
+if(window.location.pathname.includes('edit-profile')){
   import('../src/account/edit-profile.ts')
 }
 
 
 
 
-if(window.location.pathname.includes('privacy-policy.html')){
+if(window.location.pathname.includes('privacy-policy')){
   const privacyHeader = document.getElementById('loggedInPrivacyNav') as HTMLHeadingElement
 
   if(privacyHeader){
@@ -71,7 +71,7 @@ if(window.location.pathname.includes('privacy-policy.html')){
 
 
 
-if(window.location.pathname.includes('terms-of-use.html')){
+if(window.location.pathname.includes('terms-of-use')){
   const tersmHeader = document.getElementById('loggedInTermsNav') as HTMLHeadingElement
 
   if(tersmHeader){
@@ -84,7 +84,7 @@ if(window.location.pathname.includes('terms-of-use.html')){
 }
 
 
-if(window.location.pathname.includes('contact.html')){
+if(window.location.pathname.includes('contact')){
   const contactHeader = document.getElementById('loggedInContactNav') as HTMLHeadingElement
   
   if(!currentUser || currentUser === null){
