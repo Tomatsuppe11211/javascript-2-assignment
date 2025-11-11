@@ -4,7 +4,7 @@ import '../css/style.css'
 const currentUser = sessionStorage.getItem('currentUser')
 
 if(currentUser && window.location.pathname.includes('index')){
-  if(!window.location.pathname.includes('post/index.html')){
+  if(!window.location.pathname.includes('post/index')){
     window.location.href= '/post/index.html'
   }
 }
@@ -146,7 +146,7 @@ if(mobileSearchButton){
 
 
 
-if(window.location.pathname.includes('search-results.html')){
+if(window.location.pathname.includes('search-results')){
   import('../post/search-results.ts')
 }
 
@@ -154,7 +154,7 @@ if(window.location.pathname.includes('search-results.html')){
 
 
 //for settings.html
-if(window.location.pathname.includes('settings.html')){
+if(window.location.pathname.includes('settings')){
   if(!currentUser){window.location.href = '../../index.html'}
   
   const logoutButton = document.getElementById('logoutButton') as HTMLButtonElement
