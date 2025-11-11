@@ -3,7 +3,7 @@ import '../css/style.css'
 
 const currentUser = sessionStorage.getItem('currentUser')
 
-if(currentUser && window.location.pathname.includes('index.html')){
+if(currentUser && window.location.pathname.includes('index')){
   if(!window.location.pathname.includes('post/index.html')){
     window.location.href= '/post/index.html'
   }
@@ -20,7 +20,7 @@ if(window.location.pathname.includes('register')){
 }
 
 
-if(window.location.pathname.includes('/post/index.html')){
+if(window.location.pathname.includes('/post/index')){
   import ('../post/feed.ts')
   if(!currentUser){window.location.href = '../index.html'}
 }
