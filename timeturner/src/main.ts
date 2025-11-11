@@ -25,7 +25,7 @@ if(window.location.pathname.includes('/post/index.html')){
   if(!currentUser){window.location.href = '../index.html'}
 }
 
-if(window.location.pathname.includes('profile')){
+if(window.location.pathname.includes('/profile')){
   import ('../src/account/profile.ts')
   if(!currentUser){window.location.href = '../../index.html'}
 }
